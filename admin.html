@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin — PathWay Africa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --md-primary:       #1A73E8;
+      --md-primary-dark:  #1557B0;
+      --md-primary-light: #E8F0FE;
+      --md-surface:       #FFFFFF;
+      --md-background:    #F8F9FA;
+      --md-on-surface:    #202124;
+      --md-on-surface-2:  #3C4043;
+      --md-on-surface-3:  #5F6368;
+      --md-on-surface-4:  #9AA0A6;
+      --md-border:        #E8EAED;
+      --md-border-dark:   #DADCE0;
+      --md-success:       #34A853;
+      --md-error:         #EA4335;
+      --md-warning:       #FBBC05;
+      --md-elevation-1:   0 1px 2px rgba(60,64,67,0.3), 0 1px 3px rgba(60,64,67,0.15);
+      --md-elevation-2:   0 1px 3px rgba(60,64,67,0.3), 0 4px 8px rgba(60,64,67,0.15);
+      --md-radius:        8px;
+      --md-radius-lg:     12px;
+      --md-radius-xl:     16px;
+      --font-sans:        'Roboto', Arial, sans-serif;
+      --font-display:     'Google Sans', 'Roboto', Arial, sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--md-background);
+      color: var(--md-on-surface);
+      font-size: 14px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* LOGIN */
+    .login-screen {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--md-background);
+    }
+    .login-card {
+      background: var(--md-surface);
+      border: 1px solid var(--md-border);
+      border-radius: var(--md-radius-xl);
+      padding: 48px 40px;
+      width: 100%; max-width: 400px;
+      box-shadow: var(--md-elevation-2);
+      text-align: center;
+    }
+    .login-logo {
+      width: 56px; height: 56px;
+      background: var(--md-primary);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; margin: 0 auto 20px;
+    }
+    .login-card h1 {
+      font-family: var(--font-display);
+      font-size: 22px; font-weight: 500;
+      color: var(--md-on-surface); margin-bottom: 4px;
+    }
+    .login-card p { font-size: 14px; color: var(--md-on-surface-3); margin-bottom: 28px; }
+    .login-field { margin-bottom: 16px; text-align: left; }
+    .login-field label {
+      display: block; font-size: 12px; font-weight: 500;
+      color: var(--md-on-surface-3); margin-bottom: 6px;
+      letter-spacing: 0.03em; text-transform: uppercase;
+    }
+    .login-field input {
+      width: 100%; padding: 12px 16px;
+      border: 1.5px solid var(--md-border-dark);
+      border-radius: var(--md-radius);
+      font-size: 14px; font-family: var(--font-sans);
+      outline: none; transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .login-field input:focus {
+      border-color: var(--md-primary);
+      box-shadow: 0 0 0 3px rgba(26,115,232,0.12);
+    }
+    .login-btn {
+      width: 100%; padding: 12px;
+      background: var(--md-primary); color: #fff;
+      border: none; border-radius: 999px;
+      font-size: 15px; font-weight: 500;
+      font-family: var(--font-sans); cursor: pointer;
+      box-shadow: var(--md-elevation-1);
+      transition: background 0.2s;
+    }
+    .login-btn:hover { background: var(--md-primary-dark); }
+    .login-error {
+      color: var(--md-error); font-size: 13px;
+      margin-top: 12px; display: none;
+    }
+
+    /* DASHBOARD */
+    .dashboard { display: none; min-height: 100vh; }
+
+    /* TOP BAR */
+    .topbar {
+      background: var(--md-surface);
+      border-bottom: 1px solid var(--md-border);
+      padding: 0 24px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: var(--md-elevation-1);
+    }
+    .topbar-logo {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .topbar-logo-mark {
+      width: 32px; height: 32px;
+      background: var(--md-primary); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .topbar-title {
+      font-family: var(--font-display);
+      font-size: 18px; font-weight: 500; color: var(--md-on-surface);
+    }
+    .topbar-title span { color: var(--md-on-surface-3); font-size: 13px; font-weight: 400; margin-left: 8px; }
+    .topbar-right { display: flex; align-items: center; gap: 12px; }
+    .refresh-btn {
+      padding: 8px 16px; border-radius: var(--md-radius);
+      border: 1px solid var(--md-border-dark);
+      background: var(--md-surface); color: var(--md-on-surface-2);
+      font-size: 13px; font-family: var(--font-sans); cursor: pointer;
+      transition: background 0.15s;
+    }
+    .refresh-btn:hover { background: var(--md-background); }
+    .logout-btn {
+      padding: 8px 20px; border-radius: 999px;
+      border: 1px solid var(--md-border-dark);
+      background: transparent; color: var(--md-on-surface-3);
+      font-size: 13px; font-family: var(--font-sans); cursor: pointer;
+      transition: all 0.15s;
+    }
+    .logout-btn:hover { border-color: var(--md-error); color: var(--md-error); }
+
+    /* MAIN LAYOUT */
+    .main { display: flex; min-height: calc(100vh - 64px); }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 220px; flex-shrink: 0;
+      background: var(--md-surface);
+      border-right: 1px solid var(--md-border);
+      padding: 16px 8px;
+    }
+    .sidebar-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 16px; border-radius: var(--md-radius);
+      font-size: 14px; font-weight: 500; color: var(--md-on-surface-3);
+      cursor: pointer; transition: background 0.15s, color 0.15s;
+      margin-bottom: 2px; user-select: none;
+    }
+    .sidebar-item:hover { background: var(--md-background); color: var(--md-on-surface); }
+    .sidebar-item.active { background: var(--md-primary-light); color: var(--md-primary); }
+    .sidebar-icon { font-size: 18px; width: 20px; text-align: center; }
+    .sidebar-divider { height: 1px; background: var(--md-border); margin: 12px 8px; }
+
+    /* CONTENT */
+    .content { flex: 1; padding: 24px; overflow-x: auto; }
+
+    /* STATS CARDS */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px; margin-bottom: 24px;
+    }
+    .stat-card {
+      background: var(--md-surface);
+      border: 1px solid var(--md-border);
+      border-radius: var(--md-radius-lg);
+      padding: 20px 24px;
+      box-shadow: var(--md-elevation-1);
+    }
+    .stat-card-label {
+      font-size: 12px; font-weight: 500;
+      color: var(--md-on-surface-3); margin-bottom: 8px;
+      letter-spacing: 0.03em; text-transform: uppercase;
+    }
+    .stat-card-value {
+      font-family: var(--font-display);
+      font-size: 32px; font-weight: 700;
+      color: var(--md-on-surface); line-height: 1;
+    }
+    .stat-card-value.blue { color: var(--md-primary); }
+    .stat-card-value.green { color: var(--md-success); }
+    .stat-card-value.orange { color: #F9AB00; }
+    .stat-card-value.red { color: var(--md-error); }
+    .stat-card-sub { font-size: 12px; color: var(--md-on-surface-4); margin-top: 4px; }
+
+    /* SECTION CARD */
+    .section-card {
+      background: var(--md-surface);
+      border: 1px solid var(--md-border);
+      border-radius: var(--md-radius-lg);
+      box-shadow: var(--md-elevation-1);
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .section-card-header {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--md-border);
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    .section-card-title {
+      font-family: var(--font-display);
+      font-size: 16px; font-weight: 500; color: var(--md-on-surface);
+    }
+    .search-input {
+      padding: 8px 16px; border: 1px solid var(--md-border-dark);
+      border-radius: 999px; font-size: 13px; font-family: var(--font-sans);
+      outline: none; width: 240px; transition: border-color 0.15s;
+    }
+    .search-input:focus { border-color: var(--md-primary); }
+
+    /* TABLE */
+    .table-wrap { overflow-x: auto; }
+    table {
+      width: 100%; border-collapse: collapse;
+      font-size: 13px;
+    }
+    th {
+      padding: 12px 16px; text-align: left;
+      font-size: 11px; font-weight: 700;
+      color: var(--md-on-surface-3);
+      letter-spacing: 0.05em; text-transform: uppercase;
+      border-bottom: 1px solid var(--md-border);
+      white-space: nowrap;
+      background: var(--md-background);
+    }
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--md-border);
+      color: var(--md-on-surface-2);
+      vertical-align: middle;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--md-background); }
+
+    /* CHIPS / BADGES */
+    .chip {
+      display: inline-flex; align-items: center;
+      padding: 3px 10px; border-radius: 999px;
+      font-size: 11px; font-weight: 500; white-space: nowrap;
+    }
+    .chip-new { background: #E8F0FE; color: var(--md-primary); }
+    .chip-contacted { background: #E6F4EA; color: var(--md-success); }
+    .chip-processing { background: #FEF7E0; color: #F9AB00; }
+    .chip-completed { background: #E6F4EA; color: var(--md-success); }
+    .chip-cancelled { background: #FCE8E6; color: var(--md-error); }
+    .chip-study { background: #E8F0FE; color: var(--md-primary); }
+    .chip-work { background: #E6F4EA; color: var(--md-success); }
+    .chip-medical { background: #FCE8E6; color: var(--md-error); }
+    .chip-travel { background: #FEF7E0; color: #F9AB00; }
+    .chip-visitor { background: #F3E8FD; color: #7B1FA2; }
+
+    /* ACTION BUTTONS */
+    .action-btn {
+      padding: 5px 12px; border-radius: var(--md-radius);
+      border: 1px solid var(--md-border-dark);
+      background: var(--md-surface); color: var(--md-on-surface-2);
+      font-size: 12px; font-family: var(--font-sans);
+      cursor: pointer; transition: all 0.15s; margin-right: 4px;
+      white-space: nowrap;
+    }
+    .action-btn:hover { background: var(--md-background); }
+    .action-btn.green { border-color: var(--md-success); color: var(--md-success); }
+    .action-btn.green:hover { background: #E6F4EA; }
+    .action-btn.red { border-color: var(--md-error); color: var(--md-error); }
+    .action-btn.red:hover { background: #FCE8E6; }
+    .action-btn.blue { border-color: var(--md-primary); color: var(--md-primary); }
+    .action-btn.blue:hover { background: var(--md-primary-light); }
+    .wa-btn {
+      padding: 5px 12px; border-radius: var(--md-radius);
+      border: 1px solid #25D366; color: #25D366;
+      background: var(--md-surface); font-size: 12px;
+      font-family: var(--font-sans); cursor: pointer;
+      transition: all 0.15s; text-decoration: none;
+      display: inline-block;
+    }
+    .wa-btn:hover { background: #E6F4EA; }
+
+    /* EMPTY STATE */
+    .empty-state {
+      padding: 48px; text-align: center;
+      color: var(--md-on-surface-4); font-size: 14px;
+    }
+    .empty-state-icon { font-size: 40px; margin-bottom: 12px; }
+
+    /* EARNINGS */
+    .earnings-hero {
+      background: var(--md-primary);
+      border-radius: var(--md-radius-lg);
+      padding: 28px 32px; margin-bottom: 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .earnings-hero h3 {
+      font-family: var(--font-display);
+      font-size: 13px; font-weight: 500;
+      color: rgba(255,255,255,0.7); margin-bottom: 6px;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .earnings-amount {
+      font-family: var(--font-display);
+      font-size: 40px; font-weight: 700; color: #fff;
+    }
+    .earnings-sub { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+
+    /* STATUS SELECT */
+    .status-select {
+      padding: 4px 8px; border-radius: var(--md-radius);
+      border: 1px solid var(--md-border-dark);
+      font-size: 12px; font-family: var(--font-sans);
+      background: var(--md-surface); color: var(--md-on-surface-2);
+      cursor: pointer; outline: none;
+    }
+
+    /* TABS (hidden sections) */
+    .tab-section { display: none; }
+    .tab-section.active { display: block; }
+
+    /* DETAIL PANEL */
+    .detail-row {
+      display: flex; gap: 8px; padding: 8px 0;
+      border-bottom: 1px solid var(--md-border); font-size: 13px;
+    }
+    .detail-row:last-child { border-bottom: none; }
+    .detail-label { width: 140px; flex-shrink: 0; color: var(--md-on-surface-4); font-weight: 500; }
+    .detail-value { color: var(--md-on-surface-2); flex: 1; }
+
+    @media (max-width: 768px) {
+      .sidebar { display: none; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <div class="login-screen" id="login-screen">
+    <div class="login-card">
+      <div class="login-logo">🌍</div>
+      <h1>PathWay Africa</h1>
+      <p>Admin Dashboard — Sign in to continue</p>
+      <div class="login-field">
+        <label>Password</label>
+        <input type="password" id="admin-pwd" placeholder="Enter admin password"
+               onkeypress="if(event.key==='Enter') login()" />
+      </div>
+      <button class="login-btn" onclick="login()">Sign in</button>
+      <div class="login-error" id="login-err">❌ Incorrect password. Please try again.</div>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="dashboard" id="dashboard">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <div class="topbar-logo">
+        <div class="topbar-logo-mark">🌍</div>
+        <div class="topbar-title">
+          PathWay Africa
+          <span>Admin Dashboard</span>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <button class="refresh-btn" onclick="loadAll()">↻ Refresh</button>
+        <button class="logout-btn" onclick="logout()">Sign out</button>
+      </div>
+    </div>
+
+    <div class="main">
+
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <div class="sidebar-item active" onclick="showTab('clients')" id="tab-btn-clients">
+          <span class="sidebar-icon">👥</span> Clients
+        </div>
+        <div class="sidebar-item" onclick="showTab('earnings')" id="tab-btn-earnings">
+          <span class="sidebar-icon">💰</span> Earnings
+        </div>
+        <div class="sidebar-item" onclick="showTab('universities')" id="tab-btn-universities">
+          <span class="sidebar-icon">🎓</span> Universities
+        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-item" onclick="window.open('index.html')">
+          <span class="sidebar-icon">🌐</span> View website
+        </div>
+        <div class="sidebar-item" onclick="window.open('apply.html')">
+          <span class="sidebar-icon">📝</span> Apply form
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="content">
+
+        <!-- STATS -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-card-label">Total clients</div>
+            <div class="stat-card-value blue" id="stat-total">0</div>
+            <div class="stat-card-sub">All time</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-label">New cases</div>
+            <div class="stat-card-value orange" id="stat-new">0</div>
+            <div class="stat-card-sub">Awaiting contact</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-label">In progress</div>
+            <div class="stat-card-value blue" id="stat-processing">0</div>
+            <div class="stat-card-sub">Being processed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-label">Completed</div>
+            <div class="stat-card-value green" id="stat-completed">0</div>
+            <div class="stat-card-sub">Successfully done</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-label">Total earned</div>
+            <div class="stat-card-value green" id="stat-earned">$0</div>
+            <div class="stat-card-sub">Consultation fees</div>
+          </div>
+        </div>
+
+        <!-- CLIENTS TAB -->
+        <div class="tab-section active" id="tab-clients">
+          <div class="section-card">
+            <div class="section-card-header">
+              <div class="section-card-title">All Client Applications</div>
+              <input type="text" class="search-input"
+                     placeholder="Search by name, service, destination..."
+                     oninput="searchClients(this.value)" />
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Case #</th>
+                    <th>Name</th>
+                    <th>Service</th>
+                    <th>Destination</th>
+                    <th>Nationality</th>
+                    <th>Phone</th>
+                    <th>Budget</th>
+                    <th>Urgency</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="clients-tbody">
+                  <tr><td colspan="10" class="empty-state">
+                    <div class="empty-state-icon">👥</div>
+                    Loading clients...
+                  </td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- EARNINGS TAB -->
+        <div class="tab-section" id="tab-earnings">
+          <div class="earnings-hero">
+            <div>
+              <h3>Total consultation fees collected</h3>
+              <div class="earnings-amount" id="earn-total">$0</div>
+              <div class="earnings-sub" id="earn-sub">From 0 paid applications</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:4px">Study Abroad</div>
+              <div style="font-size:20px;font-weight:700;color:#fff" id="earn-study">$0</div>
+              <div style="font-size:13px;color:rgba(255,255,255,0.7);margin:8px 0 4px">Medical Tourism</div>
+              <div style="font-size:20px;font-weight:700;color:#fff" id="earn-medical">$0</div>
+            </div>
+          </div>
+
+          <div class="section-card">
+            <div class="section-card-header">
+              <div class="section-card-title">Payment History</div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Case #</th>
+                    <th>Client</th>
+                    <th>Service</th>
+                    <th>Fee</th>
+                    <th>Transaction ID</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="earnings-tbody">
+                  <tr><td colspan="7" class="empty-state">Loading...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- UNIVERSITIES TAB -->
+        <div class="tab-section" id="tab-universities">
+          <div class="section-card">
+            <div class="section-card-header">
+              <div class="section-card-title">University Database</div>
+              <button class="action-btn blue" onclick="showAddUniversity()">+ Add University</button>
+            </div>
+
+            <!-- ADD UNIVERSITY FORM -->
+            <div id="add-uni-form" style="display:none;padding:24px;border-bottom:1px solid var(--md-border)">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+                <div>
+                  <label style="font-size:12px;font-weight:500;color:var(--md-on-surface-3);display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.03em">University Name</label>
+                  <input type="text" id="uni-name" placeholder="e.g. University of Edinburgh"
+                         style="width:100%;padding:10px 14px;border:1.5px solid var(--md-border-dark);border-radius:var(--md-radius);font-size:14px;font-family:var(--font-sans);outline:none">
+                </div>
+                <div>
+                  <label style="font-size:12px;font-weight:500;color:var(--md-on-surface-3);display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.03em">Country</label>
+                  <input type="text" id="uni-country" placeholder="e.g. United Kingdom"
+                         style="width:100%;padding:10px 14px;border:1.5px solid var(--md-border-dark);border-radius:var(--md-radius);font-size:14px;font-family:var(--font-sans);outline:none">
+                </div>
+                <div>
+                  <label style="font-size:12px;font-weight:500;color:var(--md-on-surface-3);display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.03em">City</label>
+                  <input type="text" id="uni-city" placeholder="e.g. Edinburgh"
+                         style="width:100%;padding:10px 14px;border:1.5px solid var(--md-border-dark);border-radius:var(--md-radius);font-size:14px;font-family:var(--font-sans);outline:none">
+                </div>
+                <div>
+                  <label style="font-size:12px;font-weight:500;color:var(--md-on-surface-3);display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.03em">Tuition (USD/year)</label>
+                  <input type="text" id="uni-tuition" placeholder="e.g. $15,000 — $25,000"
+                         style="width:100%;padding:10px 14px;border:1.5px solid var(--md-border-dark);border-radius:var(--md-radius);font-size:14px;font-family:var(--font-sans);outline:none">
+                </div>
+                <div>
+                  <label style="font-size:12px;font-weight:500;color:var(--md-on-surface-3);display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.03em">Popular Courses</label>
+                  <input type="text" id="uni-courses" placeholder="e.g. Medicine, Law, Engineering"
+                         style="width:100%;padding:10px 14px;border:1.5px solid var(--md-border-dark);border-radius:var(--md-radius);font-size:14px;font-family:var(--font-sans);outline:none">
+                </div>
+                <div>
+                  <label style="font-size:12px;font-weight:500;color:var(--md-on-surface-3);display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.03em">Requirements</label>
+                  <input type="text" id="uni-reqs" placeholder="e.g. O-levels, IELTS 6.5"
+                         style="width:100%;padding:10px 14px;border:1.5px solid var(--md-border-dark);border-radius:var(--md-radius);font-size:14px;font-family:var(--font-sans);outline:none">
+                </div>
+              </div>
+              <div style="margin-bottom:16px">
+                <label style="font-size:12px;font-weight:500;color:var(--md-on-surface-3);display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.03em">Website</label>
+                <input type="text" id="uni-website" placeholder="e.g. https://ed.ac.uk"
+                       style="width:100%;padding:10px 14px;border:1.5px solid var(--md-border-dark);border-radius:var(--md-radius);font-size:14px;font-family:var(--font-sans);outline:none">
+              </div>
+              <button class="action-btn blue" onclick="saveUniversity()">Save University</button>
+              <button class="action-btn" onclick="document.getElementById('add-uni-form').style.display='none'" style="margin-left:8px">Cancel</button>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>University</th>
+                    <th>Country</th>
+                    <th>City</th>
+                    <th>Courses</th>
+                    <th>Tuition</th>
+                    <th>Requirements</th>
+                    <th>Website</th>
+                  </tr>
+                </thead>
+                <tbody id="uni-tbody">
+                  <tr><td colspan="7" class="empty-state">
+                    <div class="empty-state-icon">🎓</div>
+                    No universities added yet. Click "Add University" to start building your database.
+                  </td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.min.js"></script>
+  <script>
+    const SUPABASE_URL = 'https://pttzqvvhgnxampyojivh.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_kuoVpOKch7qCNwMeGi3U2w_NI6XfD8m';
+    const { createClient } = supabase;
+    const db = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    const ADMIN_PASSWORD = 'PathWay@Admin2026';
+
+    let allClients = [];
+    let allUnis    = [];
+
+    // ── AUTH ──
+    function login() {
+      const pwd = document.getElementById('admin-pwd').value;
+      if (pwd === ADMIN_PASSWORD) {
+        document.getElementById('login-screen').style.display = 'none';
+        document.getElementById('dashboard').style.display    = 'block';
+        loadAll();
+      } else {
+        document.getElementById('login-err').style.display = 'block';
+      }
+    }
+
+    function logout() {
+      document.getElementById('login-screen').style.display = 'flex';
+      document.getElementById('dashboard').style.display    = 'none';
+      document.getElementById('admin-pwd').value = '';
+    }
+
+    // ── TABS ──
+    function showTab(tab) {
+      document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.sidebar-item').forEach(s => s.classList.remove('active'));
+      document.getElementById('tab-' + tab).classList.add('active');
+      document.getElementById('tab-btn-' + tab).classList.add('active');
+    }
+
+    // ── LOAD ALL ──
+    async function loadAll() {
+      await loadClients();
+      await loadUniversities();
+    }
+
+    // ── CLIENTS ──
+    async function loadClients() {
+      const { data } = await db.from('clients').select('*').order('created_at', { ascending: false });
+      allClients = data || [];
+      renderClients(allClients);
+      updateStats();
+      renderEarnings(allClients);
+    }
+
+    function updateStats() {
+      const total      = allClients.length;
+      const newCases   = allClients.filter(c => c.status === 'new').length;
+      const processing = allClients.filter(c => c.status === 'processing' || c.status === 'contacted').length;
+      const completed  = allClients.filter(c => c.status === 'completed').length;
+
+      const serviceFees = { study:50, work:100, medical:200, travel:100, visitor:30 };
+      const earned = allClients.reduce((sum, c) => {
+        return sum + (serviceFees[c.service_type] || 50);
+      }, 0);
+
+      document.getElementById('stat-total').textContent     = total;
+      document.getElementById('stat-new').textContent       = newCases;
+      document.getElementById('stat-processing').textContent= processing;
+      document.getElementById('stat-completed').textContent = completed;
+      document.getElementById('stat-earned').textContent    = '$' + earned.toLocaleString();
+    }
+
+    function renderClients(data) {
+      const tbody = document.getElementById('clients-tbody');
+      if (!data || data.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="10">
+          <div class="empty-state">
+            <div class="empty-state-icon">👥</div>
+            No clients yet. Share your website to get your first application!
+          </div>
+        </td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = data.map(c => {
+        const svcChip = {
+          study:'chip-study', work:'chip-work', medical:'chip-medical',
+          travel:'chip-travel', visitor:'chip-visitor'
+        }[c.service_type] || 'chip-study';
+
+        const statusChip = {
+          new:'chip-new', contacted:'chip-contacted',
+          processing:'chip-processing', completed:'chip-completed',
+          cancelled:'chip-cancelled'
+        }[c.status] || 'chip-new';
+
+        const waMsg = encodeURIComponent(
+          `Hello ${c.full_name}, this is PathWay Africa regarding your case #${c.case_number}. We have reviewed your application for ${c.service_type} to ${c.destination_country}. We would like to guide you through the next steps.`
+        );
+        const waNum = (c.phone || '').replace(/\D/g, '');
+        const waLink = `https://wa.me/${waNum}?text=${waMsg}`;
+
+        const date = c.created_at ? new Date(c.created_at).toLocaleDateString() : '—';
+
+        return `<tr>
+          <td><strong style="color:var(--md-primary);font-family:var(--font-display)">${c.case_number || '—'}</strong><br>
+              <span style="font-size:11px;color:var(--md-on-surface-4)">${date}</span></td>
+          <td>
+            <strong>${c.full_name}</strong><br>
+            <span style="font-size:12px;color:var(--md-on-surface-4)">${c.nationality || ''}</span>
+          </td>
+          <td><span class="chip ${svcChip}">${c.service_type || '—'}</span></td>
+          <td>${c.destination_country || '—'}</td>
+          <td>${c.nationality || '—'}</td>
+          <td>${c.phone || '—'}</td>
+          <td>${c.budget || '—'}</td>
+          <td style="font-size:12px">${c.urgency || '—'}</td>
+          <td>
+            <select class="status-select" onchange="updateStatus('${c.id}', this.value)">
+              <option value="new"        ${c.status==='new'?'selected':''}>🆕 New</option>
+              <option value="contacted"  ${c.status==='contacted'?'selected':''}>📞 Contacted</option>
+              <option value="processing" ${c.status==='processing'?'selected':''}>⚙️ Processing</option>
+              <option value="completed"  ${c.status==='completed'?'selected':''}>✅ Completed</option>
+              <option value="cancelled"  ${c.status==='cancelled'?'selected':''}>❌ Cancelled</option>
+            </select>
+          </td>
+          <td>
+            ${waNum ? `<a href="${waLink}" target="_blank" class="wa-btn">💬 WhatsApp</a>` : ''}
+            <button class="action-btn" onclick="viewClient('${c.id}')" style="margin-top:4px">View</button>
+          </td>
+        </tr>`;
+      }).join('');
+    }
+
+    async function updateStatus(id, status) {
+      await db.from('clients').update({ status }).eq('id', id);
+      await loadClients();
+    }
+
+    function searchClients(query) {
+      const q = query.toLowerCase();
+      const filtered = allClients.filter(c =>
+        (c.full_name||'').toLowerCase().includes(q) ||
+        (c.service_type||'').toLowerCase().includes(q) ||
+        (c.destination_country||'').toLowerCase().includes(q) ||
+        (c.case_number||'').toLowerCase().includes(q) ||
+        (c.nationality||'').toLowerCase().includes(q)
+      );
+      renderClients(filtered);
+    }
+
+    function viewClient(id) {
+      const c = allClients.find(x => String(x.id) === String(id));
+      if (!c) return;
+      const info = `
+CASE: ${c.case_number || '—'}
+NAME: ${c.full_name}
+PHONE: ${c.phone || '—'}
+EMAIL: ${c.email || '—'}
+NATIONALITY: ${c.nationality || '—'}
+SERVICE: ${c.service_type}
+DESTINATION: ${c.destination_country}
+BUDGET: ${c.budget || '—'}
+URGENCY: ${c.urgency || '—'}
+STATUS: ${c.status}
+TRANSACTION ID: ${c.transaction_id || '—'}
+DATE: ${c.created_at ? new Date(c.created_at).toLocaleString() : '—'}
+
+MESSAGE:
+${c.message || '—'}
+      `;
+      alert(info);
+    }
+
+    // ── EARNINGS ──
+    function renderEarnings(data) {
+      const fees = { study:50, work:100, medical:200, travel:100, visitor:30 };
+      let total = 0, studyTotal = 0, medicalTotal = 0;
+
+      data.forEach(c => {
+        const fee = fees[c.service_type] || 50;
+        total += fee;
+        if (c.service_type === 'study')   studyTotal   += fee;
+        if (c.service_type === 'medical') medicalTotal += fee;
+      });
+
+      document.getElementById('earn-total').textContent   = '$' + total.toLocaleString();
+      document.getElementById('earn-sub').textContent     = `From ${data.length} paid application${data.length!==1?'s':''}`;
+      document.getElementById('earn-study').textContent   = '$' + studyTotal.toLocaleString();
+      document.getElementById('earn-medical').textContent = '$' + medicalTotal.toLocaleString();
+
+      const tbody = document.getElementById('earnings-tbody');
+      if (!data || data.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" class="empty-state">No payments yet.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = data.map(c => {
+        const fee  = fees[c.service_type] || 50;
+        const date = c.created_at ? new Date(c.created_at).toLocaleDateString() : '—';
+        const sChip = {
+          study:'chip-study', work:'chip-work', medical:'chip-medical',
+          travel:'chip-travel', visitor:'chip-visitor'
+        }[c.service_type] || 'chip-study';
+        return `<tr>
+          <td><strong style="color:var(--md-primary)">${c.case_number||'—'}</strong></td>
+          <td>${c.full_name}</td>
+          <td><span class="chip ${sChip}">${c.service_type}</span></td>
+          <td><strong style="color:var(--md-success)">$${fee}</strong></td>
+          <td style="font-size:12px;color:var(--md-on-surface-3)">${c.transaction_id||'—'}</td>
+          <td>${date}</td>
+          <td><span class="chip chip-contacted">✅ Paid</span></td>
+        </tr>`;
+      }).join('');
+    }
+
+    // ── UNIVERSITIES ──
+    async function loadUniversities() {
+      const { data } = await db.from('universities').select('*').order('name');
+      allUnis = data || [];
+      renderUniversities(allUnis);
+    }
+
+    function renderUniversities(data) {
+      const tbody = document.getElementById('uni-tbody');
+      if (!data || data.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7">
+          <div class="empty-state">
+            <div class="empty-state-icon">🎓</div>
+            No universities added yet. Click "Add University" to start building your database.
+          </div>
+        </td></tr>`;
+        return;
+      }
+      tbody.innerHTML = data.map(u => `<tr>
+        <td><strong>${u.name}</strong></td>
+        <td>${u.country}</td>
+        <td>${u.city||'—'}</td>
+        <td style="font-size:12px">${u.courses||'—'}</td>
+        <td>${u.tuition_usd||'—'}</td>
+        <td style="font-size:12px">${u.requirements||'—'}</td>
+        <td>${u.website ? `<a href="${u.website}" target="_blank" style="color:var(--md-primary)">${u.website.replace('https://','')}</a>` : '—'}</td>
+      </tr>`).join('');
+    }
+
+    function showAddUniversity() {
+      const form = document.getElementById('add-uni-form');
+      form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    }
+
+    async function saveUniversity() {
+      const name    = document.getElementById('uni-name').value.trim();
+      const country = document.getElementById('uni-country').value.trim();
+      if (!name || !country) { alert('University name and country are required.'); return; }
+
+      const { error } = await db.from('universities').insert([{
+        name, country,
+        city:           document.getElementById('uni-city').value.trim(),
+        courses:        document.getElementById('uni-courses').value.trim(),
+        tuition_usd:    document.getElementById('uni-tuition').value.trim(),
+        requirements:   document.getElementById('uni-reqs').value.trim(),
+        website:        document.getElementById('uni-website').value.trim(),
+        created_at:     new Date().toISOString()
+      }]);
+
+      if (error) { alert('Error: ' + error.message); return; }
+
+      ['uni-name','uni-country','uni-city','uni-courses','uni-tuition','uni-reqs','uni-website']
+        .forEach(id => document.getElementById(id).value = '');
+
+      document.getElementById('add-uni-form').style.display = 'none';
+      await loadUniversities();
+    }
+  </script>
+</body>
+</html>
+

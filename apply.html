@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apply Now — PathWay Africa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --md-primary:       #1A73E8;
+      --md-primary-dark:  #1557B0;
+      --md-primary-light: #E8F0FE;
+      --md-on-primary:    #FFFFFF;
+      --md-surface:       #FFFFFF;
+      --md-background:    #F8F9FA;
+      --md-on-surface:    #202124;
+      --md-on-surface-2:  #3C4043;
+      --md-on-surface-3:  #5F6368;
+      --md-on-surface-4:  #9AA0A6;
+      --md-border:        #E8EAED;
+      --md-border-dark:   #DADCE0;
+      --md-success:       #34A853;
+      --md-error:         #EA4335;
+      --md-elevation-1:   0 1px 2px rgba(60,64,67,0.3), 0 1px 3px rgba(60,64,67,0.15);
+      --md-elevation-2:   0 1px 3px rgba(60,64,67,0.3), 0 4px 8px rgba(60,64,67,0.15);
+      --md-radius:        8px;
+      --md-radius-lg:     12px;
+      --md-radius-xl:     16px;
+      --font-sans:        'Roboto', Arial, sans-serif;
+      --font-display:     'Google Sans', 'Roboto', Arial, sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--md-background);
+      color: var(--md-on-surface);
+      font-size: 14px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .lang-bar {
+      background: var(--md-on-surface);
+      padding: 6px 24px;
+      display: flex; justify-content: flex-end; align-items: center; gap: 4px;
+    }
+    .lang-btn {
+      padding: 4px 12px; border-radius: 999px; border: none;
+      background: transparent; color: var(--md-on-surface-4);
+      font-size: 12px; font-family: var(--font-sans); cursor: pointer;
+    }
+    .lang-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+    .lang-btn.active { background: var(--md-primary); color: #fff; font-weight: 500; }
+
+    header {
+      background: var(--md-surface);
+      border-bottom: 1px solid var(--md-border);
+      padding: 0 24px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: var(--md-elevation-1);
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-mark {
+      width: 32px; height: 32px; background: var(--md-primary);
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 16px;
+    }
+    .logo-name {
+      font-family: var(--font-display); font-size: 20px;
+      font-weight: 500; color: var(--md-on-surface);
+    }
+    .logo-name span { color: var(--md-primary); }
+    nav { display: flex; align-items: center; gap: 4px; }
+    nav a {
+      color: var(--md-on-surface-3); text-decoration: none;
+      font-size: 14px; font-weight: 500; padding: 8px 16px;
+      border-radius: var(--md-radius); transition: background 0.15s, color 0.15s;
+    }
+    nav a:hover { background: var(--md-primary-light); color: var(--md-primary); }
+    .nav-cta {
+      background: var(--md-primary) !important;
+      color: var(--md-on-primary) !important;
+      padding: 8px 24px !important; border-radius: 999px !important;
+    }
+    .nav-cta:hover { background: var(--md-primary-dark) !important; }
+
+    .page-header {
+      background: var(--md-surface);
+      border-bottom: 1px solid var(--md-border);
+      padding: 40px 24px 32px; text-align: center;
+    }
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: 32px; font-weight: 400;
+      color: var(--md-on-surface);
+      margin-bottom: 8px; letter-spacing: -0.01em;
+    }
+    .page-header h1 strong { font-weight: 700; color: var(--md-primary); }
+    .page-header p { font-size: 15px; color: var(--md-on-surface-3); max-width: 500px; margin: 0 auto; }
+
+    .stepper {
+      background: var(--md-surface);
+      border-bottom: 1px solid var(--md-border);
+      padding: 16px 24px;
+      display: flex; justify-content: center; align-items: center; gap: 0;
+    }
+    .stepper-step {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; color: var(--md-on-surface-4); font-weight: 500; padding: 0 16px;
+    }
+    .stepper-step.active { color: var(--md-primary); }
+    .stepper-step.done { color: var(--md-on-surface-2); }
+    .stepper-dot {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--md-border-dark); color: var(--md-on-surface-4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700; flex-shrink: 0;
+    }
+    .stepper-step.active .stepper-dot { background: var(--md-primary); color: #fff; }
+    .stepper-step.done .stepper-dot { background: var(--md-success); color: #fff; }
+    .stepper-line { width: 48px; height: 1px; background: var(--md-border-dark); }
+
+    .form-outer { max-width: 680px; margin: 32px auto; padding: 0 16px 64px; }
+
+    .card {
+      background: var(--md-surface);
+      border: 1px solid var(--md-border);
+      border-radius: var(--md-radius-xl);
+      padding: 32px; box-shadow: var(--md-elevation-1);
+    }
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 20px; font-weight: 500;
+      color: var(--md-on-surface); margin-bottom: 4px;
+    }
+    .card-sub { font-size: 14px; color: var(--md-on-surface-3); margin-bottom: 28px; line-height: 1.5; }
+
+    .field { margin-bottom: 20px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+    .field label {
+      display: block; font-size: 12px; font-weight: 500;
+      color: var(--md-on-surface-3); margin-bottom: 6px;
+      letter-spacing: 0.03em; text-transform: uppercase;
+    }
+    .field input, .field select, .field textarea {
+      width: 100%; padding: 12px 16px;
+      border: 1.5px solid var(--md-border-dark);
+      border-radius: var(--md-radius);
+      font-size: 14px; font-family: var(--font-sans);
+      background: var(--md-surface); color: var(--md-on-surface);
+      transition: border-color 0.15s, box-shadow 0.15s; outline: none;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: var(--md-primary);
+      box-shadow: 0 0 0 3px rgba(26,115,232,0.12);
+    }
+    .field textarea { resize: vertical; min-height: 100px; }
+
+    .service-label {
+      font-size: 12px; font-weight: 500; color: var(--md-on-surface-3);
+      margin-bottom: 10px; letter-spacing: 0.03em; text-transform: uppercase;
+    }
+    .service-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 10px; margin-bottom: 24px;
+    }
+    .service-opt {
+      border: 1.5px solid var(--md-border-dark); border-radius: var(--md-radius-lg);
+      padding: 16px 8px; text-align: center; cursor: pointer;
+      transition: all 0.15s; background: var(--md-surface); user-select: none;
+    }
+    .service-opt:hover { border-color: var(--md-primary); background: var(--md-primary-light); }
+    .service-opt.selected {
+      border-color: var(--md-primary); background: var(--md-primary-light);
+      box-shadow: 0 0 0 2px rgba(26,115,232,0.2);
+    }
+    .service-opt .opt-icon { font-size: 22px; margin-bottom: 6px; }
+    .service-opt .opt-name { font-size: 11px; font-weight: 500; color: var(--md-on-surface-2); line-height: 1.3; }
+    .service-opt.selected .opt-name { color: var(--md-primary); }
+    .service-opt .opt-price { font-size: 10px; color: var(--md-on-surface-4); margin-top: 3px; }
+    .service-opt.selected .opt-price { color: var(--md-primary); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--md-primary); color: var(--md-on-primary);
+      border: none; border-radius: 999px;
+      padding: 12px 28px; font-size: 14px; font-weight: 500;
+      font-family: var(--font-sans); cursor: pointer;
+      box-shadow: var(--md-elevation-1);
+      transition: box-shadow 0.2s, background 0.2s;
+      text-decoration: none; letter-spacing: 0.01em;
+    }
+    .btn-primary:hover { background: var(--md-primary-dark); box-shadow: var(--md-elevation-2); }
+    .btn-primary:disabled { background: var(--md-border-dark); box-shadow: none; cursor: not-allowed; color: var(--md-on-surface-4); }
+    .btn-primary.full { width: 100%; justify-content: center; padding: 14px 28px; font-size: 15px; }
+    .btn-text {
+      background: transparent; border: none; color: var(--md-on-surface-3);
+      font-size: 14px; font-family: var(--font-sans); cursor: pointer;
+      padding: 12px 16px; border-radius: var(--md-radius);
+      transition: background 0.15s; width: 100%; margin-top: 8px;
+    }
+    .btn-text:hover { background: var(--md-background); color: var(--md-on-surface-2); }
+
+    .price-block {
+      background: var(--md-primary); border-radius: var(--md-radius-lg);
+      padding: 24px; text-align: center; margin-bottom: 24px;
+    }
+    .price-label { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.7); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px; }
+    .price-value { font-family: var(--font-display); font-size: 48px; font-weight: 700; color: #fff; line-height: 1; }
+    .price-desc { font-size: 13px; color: rgba(255,255,255,0.7); margin-top: 6px; }
+
+    .info-banner {
+      background: var(--md-primary-light);
+      border-left: 4px solid var(--md-primary);
+      border-radius: 0 var(--md-radius) var(--md-radius) 0;
+      padding: 12px 16px; margin-bottom: 20px;
+      font-size: 13px; color: var(--md-primary-dark); line-height: 1.5;
+    }
+
+    .pay-steps { margin-bottom: 20px; }
+    .pay-step-row {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 10px 0; border-bottom: 1px solid var(--md-border);
+      font-size: 13px; color: var(--md-on-surface-2); line-height: 1.5;
+    }
+    .pay-step-row:last-child { border-bottom: none; }
+    .pay-num {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--md-primary); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+    }
+
+    .txn-field {
+      width: 100%; padding: 14px 16px;
+      border: 2px solid var(--md-primary); border-radius: var(--md-radius);
+      font-size: 14px; font-family: var(--font-sans);
+      text-align: center; color: var(--md-on-surface);
+      background: var(--md-surface); outline: none;
+      margin-bottom: 16px; transition: box-shadow 0.15s;
+    }
+    .txn-field:focus { box-shadow: 0 0 0 3px rgba(26,115,232,0.15); }
+
+    .error-msg {
+      display: none; background: #FCE8E6;
+      border-left: 4px solid var(--md-error);
+      border-radius: 0 var(--md-radius) var(--md-radius) 0;
+      padding: 10px 14px; margin-top: 12px;
+      font-size: 13px; color: #C5221F;
+    }
+
+    .success-card {
+      background: var(--md-surface); border: 1px solid var(--md-border);
+      border-radius: var(--md-radius-xl); padding: 48px 32px;
+      box-shadow: var(--md-elevation-1); text-align: center;
+    }
+    .success-icon {
+      width: 72px; height: 72px; background: #E6F4EA; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px; margin: 0 auto 24px; color: var(--md-success);
+      font-weight: 700;
+    }
+    .success-card h2 {
+      font-family: var(--font-display); font-size: 24px; font-weight: 500;
+      color: var(--md-on-surface); margin-bottom: 8px;
+    }
+    .success-card p { font-size: 15px; color: var(--md-on-surface-3); line-height: 1.6; margin-bottom: 6px; }
+    .case-badge {
+      display: inline-block; background: var(--md-primary-light);
+      border: 1px solid rgba(26,115,232,0.2); border-radius: var(--md-radius-lg);
+      padding: 16px 24px; margin: 20px 0;
+    }
+    .case-badge-num {
+      font-family: var(--font-display); font-size: 24px; font-weight: 700;
+      color: var(--md-primary); display: block; margin-bottom: 4px;
+    }
+    .case-badge-label { font-size: 12px; color: var(--md-on-surface-3); }
+    .success-list { background: var(--md-background); border-radius: var(--md-radius-lg); padding: 16px 20px; margin: 16px 0; text-align: left; }
+    .success-list-item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--md-on-surface-2); padding: 6px 0; }
+    .success-check {
+      width: 20px; height: 20px; background: var(--md-success); color: #fff;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; flex-shrink: 0;
+    }
+
+    footer {
+      background: var(--md-surface); border-top: 1px solid var(--md-border);
+      padding: 24px; text-align: center; font-size: 13px; color: var(--md-on-surface-4);
+    }
+    footer a { color: var(--md-primary); text-decoration: none; }
+
+    [dir="rtl"] nav a { margin-left: 0; }
+    [dir="rtl"] .lang-bar { justify-content: flex-start; }
+    [dir="rtl"] body { font-family: 'Roboto', 'Traditional Arabic', Arial, sans-serif; }
+    [dir="rtl"] .info-banner { border-left: none; border-right: 4px solid var(--md-primary); border-radius: var(--md-radius) 0 0 var(--md-radius); }
+    [dir="rtl"] .error-msg { border-left: none; border-right: 4px solid var(--md-error); border-radius: var(--md-radius) 0 0 var(--md-radius); }
+
+    @media (max-width: 600px) {
+      .field-row { grid-template-columns: 1fr; }
+      header { padding: 0 12px; }
+      .card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-bar">
+    <button class="lang-btn active" onclick="setLang('en')" id="btn-en">🇬🇧 EN</button>
+    <button class="lang-btn" onclick="setLang('ar')" id="btn-ar">🇸🇦 AR</button>
+    <button class="lang-btn" onclick="setLang('fr')" id="btn-fr">🇫🇷 FR</button>
+  </div>
+
+  <header>
+    <a href="index.html" class="logo">
+      <div class="logo-mark">🌍</div>
+      <span class="logo-name">Path<span>Way</span> Africa</span>
+    </a>
+    <nav>
+      <a href="index.html" id="nav-home">Home</a>
+      <a href="services.html" id="nav-services">Services</a>
+      <a href="universities.html" id="nav-uni">Universities</a>
+      <a href="about.html" id="nav-about">About</a>
+      <a href="apply.html" class="nav-cta" id="nav-apply">Apply Now</a>
+    </nav>
+  </header>
+
+  <div class="page-header">
+    <h1 id="page-title">Start your <strong>journey</strong> today</h1>
+    <p id="page-sub">Fill in your details and we will contact you within 24 hours to guide you every step of the way.</p>
+  </div>
+
+  <div class="stepper">
+    <div class="stepper-step active" id="stp-1">
+      <div class="stepper-dot">1</div>
+      <span id="stp-label-1">Your details</span>
+    </div>
+    <div class="stepper-line"></div>
+    <div class="stepper-step" id="stp-2">
+      <div class="stepper-dot">2</div>
+      <span id="stp-label-2">Payment</span>
+    </div>
+    <div class="stepper-line"></div>
+    <div class="stepper-step" id="stp-3">
+      <div class="stepper-dot">3</div>
+      <span id="stp-label-3">Confirmed</span>
+    </div>
+  </div>
+
+  <div class="form-outer">
+
+    <!-- STEP 1 -->
+    <div id="step1" class="card">
+      <div class="card-title" id="form-title">Tell us about yourself</div>
+      <div class="card-sub" id="form-sub">We need a few details to match you with the right service and destination. All information is kept confidential.</div>
+
+      <div class="service-label" id="lbl-service">Select your service</div>
+      <div class="service-grid">
+        <div class="service-opt" onclick="selectService('study',this)">
+          <div class="opt-icon">🎓</div>
+          <div class="opt-name" id="s1">Study Abroad</div>
+          <div class="opt-price">From $50</div>
+        </div>
+        <div class="service-opt" onclick="selectService('work',this)">
+          <div class="opt-icon">💼</div>
+          <div class="opt-name" id="s2">Work Abroad</div>
+          <div class="opt-price">From $100</div>
+        </div>
+        <div class="service-opt" onclick="selectService('medical',this)">
+          <div class="opt-icon">🏥</div>
+          <div class="opt-name" id="s3">Medical Tourism</div>
+          <div class="opt-price">From $200</div>
+        </div>
+        <div class="service-opt" onclick="selectService('travel',this)">
+          <div class="opt-icon">✈️</div>
+          <div class="opt-name" id="s4">Travel & Relocate</div>
+          <div class="opt-price">From $100</div>
+        </div>
+        <div class="service-opt" onclick="selectService('visitor',this)">
+          <div class="opt-icon">🗺️</div>
+          <div class="opt-name" id="s5">Visitor Guide</div>
+          <div class="opt-price">From $30</div>
+        </div>
+      </div>
+      <input type="hidden" id="selected_service" />
+
+      <div class="field-row">
+        <div class="field">
+          <label id="lbl-name">Full name</label>
+          <input type="text" id="full_name" placeholder="e.g. James Lado" />
+        </div>
+        <div class="field">
+          <label id="lbl-phone">Phone / WhatsApp</label>
+          <input type="text" id="phone" placeholder="e.g. +211 922 882 019" />
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label id="lbl-email">Email address</label>
+          <input type="email" id="email" placeholder="e.g. james@email.com" />
+        </div>
+        <div class="field">
+          <label id="lbl-nat">Nationality</label>
+          <select id="nationality">
+            <option value="">Select...</option>
+            <option>South Sudanese</option>
+            <option>Ugandan</option>
+            <option>Kenyan</option>
+            <option>Ethiopian</option>
+            <option>Congolese</option>
+            <option>Rwandan</option>
+            <option>Tanzanian</option>
+            <option>Sudanese</option>
+            <option>Other African</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label id="lbl-dest">Dream destination</label>
+          <select id="destination">
+            <option value="">Select country...</option>
+            <option>United Kingdom</option>
+            <option>United States</option>
+            <option>Canada</option>
+            <option>Australia</option>
+            <option>Germany</option>
+            <option>France</option>
+            <option>Netherlands</option>
+            <option>UAE</option>
+            <option>Saudi Arabia</option>
+            <option>Qatar</option>
+            <option>India</option>
+            <option>Malaysia</option>
+            <option>China</option>
+            <option>Turkey</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label id="lbl-budget">Your budget (USD)</label>
+          <select id="budget">
+            <option value="">Select range...</option>
+            <option>Less than $500</option>
+            <option>$500 — $1,000</option>
+            <option>$1,000 — $5,000</option>
+            <option>$5,000 — $10,000</option>
+            <option>More than $10,000</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label id="lbl-msg">Tell us about your situation</label>
+        <textarea id="message" placeholder="e.g. I want to study medicine in the UK. I have my O-level certificate. I need help with university application and student visa..."></textarea>
+      </div>
+
+      <div class="field">
+        <label id="lbl-urgency">How urgent is your request?</label>
+        <select id="urgency">
+          <option value="">Select urgency...</option>
+          <option>Very urgent — within 1 month</option>
+          <option>Soon — within 3 months</option>
+          <option>Planning ahead — 6+ months</option>
+          <option>Just exploring options</option>
+        </select>
+      </div>
+
+      <button class="btn-primary full" onclick="goToPayment()" id="btn-continue">
+        Continue to payment
+      </button>
+      <div class="error-msg" id="err1">Please fill in all required fields and select a service.</div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div id="step2" style="display:none" class="card">
+      <div class="card-title" id="pay-title">Consultation fee payment</div>
+      <div class="card-sub" id="pay-sub">Pay your consultation fee to activate your case. Our team will contact you within 24 hours on WhatsApp.</div>
+
+      <div class="price-block">
+        <div class="price-label" id="pay-lbl">Consultation fee</div>
+        <div class="price-value" id="price-val">$50</div>
+        <div class="price-desc" id="price-desc">Study Abroad consultation</div>
+      </div>
+
+      <div class="info-banner" id="info-banner">
+        🤖 Once you submit your payment — your case is created automatically and our team is notified immediately. You will receive a WhatsApp message within 24 hours.
+      </div>
+
+      <div class="pay-steps">
+        <div class="pay-step-row"><div class="pay-num">1</div><div id="ps1">Open MTN Mobile Money app or dial <strong>*165#</strong></div></div>
+        <div class="pay-step-row"><div class="pay-num">2</div><div id="ps2">Select <strong>"Send Money"</strong></div></div>
+        <div class="pay-step-row"><div class="pay-num">3</div><div id="ps3">Send fee to: <strong style="color:var(--md-primary)">+211 922 882 019</strong></div></div>
+        <div class="pay-step-row"><div class="pay-num">4</div><div id="ps4">Use your <strong>full name as reference</strong></div></div>
+        <div class="pay-step-row"><div class="pay-num">5</div><div id="ps5">Copy the <strong>Transaction ID</strong> from your confirmation SMS</div></div>
+        <div class="pay-step-row"><div class="pay-num">6</div><div id="ps6">Paste it below and click <strong>Confirm & submit</strong></div></div>
+      </div>
+
+      <input type="text" class="txn-field" id="transaction_id"
+             placeholder="Paste MTN Transaction ID here — e.g. TXN123456789" />
+
+      <button class="btn-primary full" onclick="submitApplication()" id="btn-submit">
+        Confirm payment & submit application
+      </button>
+      <button class="btn-text" onclick="goBack()" id="btn-back">← Go back and edit details</button>
+      <div class="error-msg" id="err2">Please paste your MTN Transaction ID before submitting.</div>
+    </div>
+
+    <!-- STEP 3 SUCCESS -->
+    <div id="step3" style="display:none" class="success-card">
+      <div class="success-icon">✓</div>
+      <h2 id="suc-title">Application submitted</h2>
+      <p id="suc-p1">Your case has been created and our team has been notified.</p>
+
+      <div class="case-badge">
+        <span class="case-badge-num" id="case-num">CASE #000000</span>
+        <span class="case-badge-label" id="suc-case-lbl">Save this number to track your application</span>
+      </div>
+
+      <div class="success-list">
+        <div class="success-list-item">
+          <div class="success-check">✓</div>
+          <span id="suc-i1">Payment received and recorded</span>
+        </div>
+        <div class="success-list-item">
+          <div class="success-check">✓</div>
+          <span id="suc-i2">Case file created in our system</span>
+        </div>
+        <div class="success-list-item">
+          <div class="success-check">✓</div>
+          <span id="suc-i3">Team notified — WhatsApp contact within 24 hours</span>
+        </div>
+      </div>
+
+      <p style="font-size:12px;color:var(--md-on-surface-4);margin-top:8px">
+        <span id="suc-txn-lbl">Transaction ID:</span> <strong id="suc-txn"></strong>
+      </p>
+      <br>
+      <a href="index.html" class="btn-primary" id="btn-home">← Back to home</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>PathWay Africa © 2026 &nbsp;·&nbsp;
+      <a href="https://wa.me/211922882019">WhatsApp</a>
+      &nbsp;·&nbsp; thebangbe@gmail.com
+      &nbsp;·&nbsp; South Sudan & East Africa
+    </p>
+  </footer>
+
+  <!-- EMAILJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <!-- SUPABASE -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.min.js"></script>
+
+  <script>
+    // ── SUPABASE ──
+    const SUPABASE_URL = 'https://pttzqvvhgnxampyojivh.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_kuoVpOKch7qCNwMeGi3U2w_NI6XfD8m';
+    const { createClient } = supabase;
+    const db = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    // ── EMAILJS ──
+    emailjs.init('j52Kv6WSQwDp2JsJp');
+    const EMAILJS_SERVICE  = 'pathway_service';
+    const EMAILJS_TEMPLATE = 'template_z85tocq';
+
+    let clientData = {};
+
+    const prices = {
+      study:   { val:'$50',  desc:'Study Abroad consultation' },
+      work:    { val:'$100', desc:'Work Abroad consultation' },
+      medical: { val:'$200', desc:'Medical Tourism consultation' },
+      travel:  { val:'$100', desc:'Travel & Relocation consultation' },
+      visitor: { val:'$30',  desc:'Visitor Guide service' },
+    };
+
+    // Auto-select service from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlSvc = urlParams.get('service');
+    if (urlSvc) {
+      setTimeout(() => {
+        const opts = document.querySelectorAll('.service-opt');
+        const svcs = ['study','work','medical','travel','visitor'];
+        const idx  = svcs.indexOf(urlSvc);
+        if (idx >= 0) selectService(urlSvc, opts[idx]);
+      }, 100);
+    }
+
+    function selectService(type, el) {
+      document.querySelectorAll('.service-opt').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      document.getElementById('selected_service').value = type;
+      const p = prices[type];
+      document.getElementById('price-val').textContent  = p.val;
+      document.getElementById('price-desc').textContent = p.desc;
+    }
+
+    function goToPayment() {
+      const svc  = document.getElementById('selected_service').value;
+      const name = document.getElementById('full_name').value.trim();
+      const phone= document.getElementById('phone').value.trim();
+      const nat  = document.getElementById('nationality').value;
+      const dest = document.getElementById('destination').value;
+      const msg  = document.getElementById('message').value.trim();
+
+      if (!svc||!name||!phone||!nat||!dest||!msg) {
+        document.getElementById('err1').style.display = 'block';
+        return;
+      }
+
+      clientData = {
+        full_name: name, phone, nationality: nat,
+        email: document.getElementById('email').value.trim(),
+        service_type: svc, destination_country: dest, message: msg,
+        budget:  document.getElementById('budget').value,
+        urgency: document.getElementById('urgency').value,
+      };
+
+      document.getElementById('err1').style.display = 'none';
+      document.getElementById('step1').style.display = 'none';
+      document.getElementById('step2').style.display = 'block';
+      document.getElementById('stp-1').className = 'stepper-step done';
+      document.getElementById('stp-2').className = 'stepper-step active';
+      window.scrollTo(0, 0);
+    }
+
+    function goBack() {
+      document.getElementById('step2').style.display = 'none';
+      document.getElementById('step1').style.display = 'block';
+      document.getElementById('stp-1').className = 'stepper-step active';
+      document.getElementById('stp-2').className = 'stepper-step';
+      window.scrollTo(0, 0);
+    }
+
+    async function submitApplication() {
+      const txn = document.getElementById('transaction_id').value.trim();
+      if (!txn) {
+        document.getElementById('err2').style.display = 'block';
+        return;
+      }
+
+      const btn = document.getElementById('btn-submit');
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+
+      const caseNum = 'PW' + Date.now().toString().slice(-6);
+
+      // Save to Supabase
+      const { error } = await db.from('clients').insert([{
+        full_name:             clientData.full_name,
+        phone:                 clientData.phone,
+        email:                 clientData.email,
+        nationality:           clientData.nationality,
+        service_type:          clientData.service_type,
+        destination_country:   clientData.destination_country,
+        message:               clientData.message,
+        budget:                clientData.budget,
+        urgency:               clientData.urgency,
+        transaction_id:        txn,
+        consultation_fee_paid: true,
+        status:                'new',
+        case_number:           caseNum,
+        created_at:            new Date().toISOString()
+      }]);
+
+      if (error) {
+        btn.disabled = false;
+        btn.textContent = 'Confirm payment & submit application';
+        alert('Error: ' + error.message);
+        return;
+      }
+
+      // Send email notification
+      try {
+        await emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE, {
+          client_name:        clientData.full_name,
+          client_phone:       clientData.phone,
+          client_email:       clientData.email || 'Not provided',
+          client_nationality: clientData.nationality,
+          service_type:       clientData.service_type,
+          destination:        clientData.destination_country,
+          budget:             clientData.budget || 'Not specified',
+          urgency:            clientData.urgency || 'Not specified',
+          client_message:     clientData.message,
+          transaction_id:     txn,
+          case_number:        caseNum,
+          time:               new Date().toLocaleString()
+        });
+        console.log('Email notification sent!');
+      } catch(e) {
+        console.log('Email error:', e);
+      }
+
+      // Show success
+      document.getElementById('step2').style.display = 'none';
+      document.getElementById('step3').style.display = 'block';
+      document.getElementById('stp-2').className = 'stepper-step done';
+      document.getElementById('stp-3').className = 'stepper-step active';
+      document.getElementById('case-num').textContent = 'CASE #' + caseNum;
+      document.getElementById('suc-txn').textContent  = txn;
+      window.scrollTo(0, 0);
+    }
+
+    // ── TRANSLATIONS ──
+    const T = {
+      en: {
+        'nav-home':'Home','nav-services':'Services','nav-uni':'Universities',
+        'nav-about':'About','nav-apply':'Apply Now',
+        'page-title':'Start your <strong>journey</strong> today',
+        'page-sub':'Fill in your details and we will contact you within 24 hours.',
+        'stp-label-1':'Your details','stp-label-2':'Payment','stp-label-3':'Confirmed',
+        'form-title':'Tell us about yourself',
+        'form-sub':'We need a few details to match you with the right service and destination.',
+        'lbl-service':'Select your service',
+        's1':'Study Abroad','s2':'Work Abroad','s3':'Medical Tourism',
+        's4':'Travel & Relocate','s5':'Visitor Guide',
+        'lbl-name':'Full name','lbl-phone':'Phone / WhatsApp',
+        'lbl-email':'Email address','lbl-nat':'Nationality',
+        'lbl-dest':'Dream destination','lbl-budget':'Your budget (USD)',
+        'lbl-msg':'Tell us about your situation',
+        'lbl-urgency':'How urgent is your request?',
+        'btn-continue':'Continue to payment',
+        'pay-title':'Consultation fee payment',
+        'pay-sub':'Pay your consultation fee to activate your case.',
+        'pay-lbl':'Consultation fee',
+        'info-banner':'🤖 Once you submit — your case is created automatically and our team is notified immediately.',
+        'ps1':'Open MTN Mobile Money app or dial <strong>*165#</strong>',
+        'ps2':'Select <strong>"Send Money"</strong>',
+        'ps3':'Send fee to: <strong style="color:var(--md-primary)">+211 922 882 019</strong>',
+        'ps4':'Use your <strong>full name as reference</strong>',
+        'ps5':'Copy the <strong>Transaction ID</strong> from your confirmation SMS',
+        'ps6':'Paste it below and click <strong>Confirm & submit</strong>',
+        'btn-submit':'Confirm payment & submit application',
+        'btn-back':'← Go back and edit details',
+        'suc-title':'Application submitted',
+        'suc-p1':'Your case has been created and our team has been notified.',
+        'suc-case-lbl':'Save this number to track your application',
+        'suc-i1':'Payment received and recorded',
+        'suc-i2':'Case file created in our system',
+        'suc-i3':'Team notified — WhatsApp contact within 24 hours',
+        'suc-txn-lbl':'Transaction ID:',
+        'btn-home':'← Back to home',
+      },
+      ar: {
+        'nav-home':'الرئيسية','nav-services':'الخدمات','nav-uni':'الجامعات',
+        'nav-about':'عن الشركة','nav-apply':'قدّم الآن',
+        'page-title':'ابدأ <strong>رحلتك</strong> اليوم',
+        'page-sub':'أدخل بياناتك وسنتواصل معك خلال 24 ساعة.',
+        'stp-label-1':'بياناتك','stp-label-2':'الدفع','stp-label-3':'تم التأكيد',
+        'form-title':'أخبرنا عن نفسك',
+        'form-sub':'نحتاج بعض التفاصيل لمطابقتك مع الخدمة والوجهة المناسبة.',
+        'lbl-service':'اختر خدمتك',
+        's1':'الدراسة في الخارج','s2':'العمل في الخارج','s3':'السياحة العلاجية',
+        's4':'السفر والانتقال','s5':'دليل الزوار',
+        'lbl-name':'الاسم الكامل','lbl-phone':'الهاتف / واتساب',
+        'lbl-email':'البريد الإلكتروني','lbl-nat':'الجنسية',
+        'lbl-dest':'الوجهة الحلم','lbl-budget':'ميزانيتك (دولار)',
+        'lbl-msg':'أخبرنا أكثر عن وضعك',
+        'lbl-urgency':'ما مدى إلحاح طلبك؟',
+        'btn-continue':'متابعة إلى الدفع',
+        'pay-title':'دفع رسوم الاستشارة',
+        'pay-sub':'ادفع رسوم الاستشارة لتفعيل قضيتك.',
+        'pay-lbl':'رسوم الاستشارة',
+        'info-banner':'🤖 بمجرد الإرسال — يتم إنشاء قضيتك تلقائياً وإخطار فريقنا فوراً.',
+        'ps1':'افتح تطبيق MTN موبايل موني أو اتصل بـ <strong>*165#</strong>',
+        'ps2':'اختر <strong>"إرسال أموال"</strong>',
+        'ps3':'أرسل الرسوم إلى: <strong style="color:var(--md-primary)">+211 922 882 019</strong>',
+        'ps4':'استخدم <strong>اسمك الكامل كمرجع</strong>',
+        'ps5':'انسخ <strong>رقم المعاملة</strong> من رسالة التأكيد',
+        'ps6':'الصقه أدناه واضغط <strong>تأكيد وإرسال</strong>',
+        'btn-submit':'تأكيد الدفع وإرسال الطلب',
+        'btn-back':'→ العودة وتعديل البيانات',
+        'suc-title':'تم إرسال الطلب',
+        'suc-p1':'تم إنشاء قضيتك وإخطار فريقنا.',
+        'suc-case-lbl':'احفظ هذا الرقم لتتبع طلبك',
+        'suc-i1':'تم استلام الدفعة وتسجيلها',
+        'suc-i2':'تم إنشاء ملف القضية في نظامنا',
+        'suc-i3':'تم إخطار الفريق — تواصل واتساب خلال 24 ساعة',
+        'suc-txn-lbl':'رقم المعاملة:',
+        'btn-home':'→ العودة إلى الرئيسية',
+      },
+      fr: {
+        'nav-home':'Accueil','nav-services':'Services','nav-uni':'Universités',
+        'nav-about':'À Propos','nav-apply':'Postuler',
+        'page-title':'Commencez votre <strong>voyage</strong> aujourd\'hui',
+        'page-sub':'Remplissez vos coordonnées et nous vous contacterons dans les 24 heures.',
+        'stp-label-1':'Vos détails','stp-label-2':'Paiement','stp-label-3':'Confirmé',
+        'form-title':'Parlez-nous de vous',
+        'form-sub':'Nous avons besoin de quelques détails pour vous associer au bon service.',
+        'lbl-service':'Sélectionnez votre service',
+        's1':'Études à l\'Étranger','s2':'Travail à l\'Étranger','s3':'Tourisme Médical',
+        's4':'Voyage et Relocalisation','s5':'Guide Visiteur',
+        'lbl-name':'Nom complet','lbl-phone':'Téléphone / WhatsApp',
+        'lbl-email':'Adresse email','lbl-nat':'Nationalité',
+        'lbl-dest':'Destination rêvée','lbl-budget':'Votre budget (USD)',
+        'lbl-msg':'Parlez-nous de votre situation',
+        'lbl-urgency':'Quelle est l\'urgence de votre demande?',
+        'btn-continue':'Continuer vers le paiement',
+        'pay-title':'Paiement des frais de consultation',
+        'pay-sub':'Payez vos frais de consultation pour activer votre dossier.',
+        'pay-lbl':'Frais de consultation',
+        'info-banner':'🤖 Une fois soumis — votre dossier est créé automatiquement et notre équipe est notifiée.',
+        'ps1':'Ouvrez l\'application MTN Mobile Money ou composez <strong>*165#</strong>',
+        'ps2':'Sélectionnez <strong>"Envoyer de l\'argent"</strong>',
+        'ps3':'Envoyez les frais à: <strong style="color:var(--md-primary)">+211 922 882 019</strong>',
+        'ps4':'Utilisez votre <strong>nom complet comme référence</strong>',
+        'ps5':'Copiez l\'<strong>ID de transaction</strong> de votre SMS',
+        'ps6':'Collez-le ci-dessous et cliquez <strong>Confirmer et soumettre</strong>',
+        'btn-submit':'Confirmer le paiement et soumettre',
+        'btn-back':'← Retour et modifier les détails',
+        'suc-title':'Demande soumise',
+        'suc-p1':'Votre dossier a été créé et notre équipe a été notifiée.',
+        'suc-case-lbl':'Sauvegardez ce numéro pour suivre votre demande',
+        'suc-i1':'Paiement reçu et enregistré',
+        'suc-i2':'Dossier créé dans notre système',
+        'suc-i3':'Équipe notifiée — contact WhatsApp dans les 24 heures',
+        'suc-txn-lbl':'ID de transaction:',
+        'btn-home':'← Retour à l\'accueil',
+      }
+    };
+
+    function setLang(lang) {
+      const html = document.getElementById('html-root');
+      html.setAttribute('lang', lang);
+      html.setAttribute('dir', lang==='ar'?'rtl':'ltr');
+      ['btn-en','btn-ar','btn-fr'].forEach(id => {
+        document.getElementById(id).className = 'lang-btn';
+      });
+      document.getElementById('btn-'+lang).className = 'lang-btn active';
+      const t = T[lang];
+      for (const [id, text] of Object.entries(t)) {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = text;
+      }
+      localStorage.setItem('pw-lang', lang);
+    }
+
+    const saved = localStorage.getItem('pw-lang');
+    if (saved) setLang(saved);
+  </script>
+</body>
+</html>
+

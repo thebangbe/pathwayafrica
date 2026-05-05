@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PathWay Africa — Your Gateway from Africa to the World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ── MATERIAL DESIGN TOKENS ── */
+    :root {
+      --md-primary:       #1A73E8;
+      --md-primary-dark:  #1557B0;
+      --md-primary-light: #E8F0FE;
+      --md-on-primary:    #FFFFFF;
+      --md-surface:       #FFFFFF;
+      --md-background:    #F8F9FA;
+      --md-on-surface:    #202124;
+      --md-on-surface-2:  #3C4043;
+      --md-on-surface-3:  #5F6368;
+      --md-on-surface-4:  #9AA0A6;
+      --md-border:        #E8EAED;
+      --md-border-dark:   #DADCE0;
+      --md-success:       #34A853;
+      --md-error:         #EA4335;
+      --md-warning:       #FBBC05;
+      --md-elevation-1:   0 1px 2px rgba(60,64,67,0.3), 0 1px 3px rgba(60,64,67,0.15);
+      --md-elevation-2:   0 1px 3px rgba(60,64,67,0.3), 0 4px 8px rgba(60,64,67,0.15);
+      --md-elevation-3:   0 2px 6px rgba(60,64,67,0.3), 0 6px 12px rgba(60,64,67,0.15);
+      --md-radius:        8px;
+      --md-radius-lg:     12px;
+      --md-radius-xl:     16px;
+      --font-sans:        'Roboto', Arial, sans-serif;
+      --font-display:     'Google Sans', 'Roboto', Arial, sans-serif;
+    }
+
+    /* ── RESET ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--md-background);
+      color: var(--md-on-surface);
+      font-size: 14px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── LANGUAGE BAR ── */
+    .lang-bar {
+      background: var(--md-on-surface);
+      padding: 6px 24px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 4px;
+    }
+    .lang-btn {
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: none;
+      background: transparent;
+      color: var(--md-on-surface-4);
+      font-size: 12px;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .lang-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+    .lang-btn.active {
+      background: var(--md-primary);
+      color: #fff;
+      font-weight: 500;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--md-surface);
+      border-bottom: 1px solid var(--md-border);
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--md-elevation-1);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo-mark {
+      width: 32px; height: 32px;
+      background: var(--md-primary);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .logo-name {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--md-on-surface);
+      letter-spacing: -0.01em;
+    }
+    .logo-name span { color: var(--md-primary); }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    nav a {
+      color: var(--md-on-surface-3);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: var(--md-radius);
+      transition: background 0.15s, color 0.15s;
+      letter-spacing: 0.01em;
+    }
+    nav a:hover {
+      background: var(--md-primary-light);
+      color: var(--md-primary);
+    }
+    .nav-cta {
+      background: var(--md-primary) !important;
+      color: var(--md-on-primary) !important;
+      padding: 8px 24px !important;
+      border-radius: 999px !important;
+      box-shadow: var(--md-elevation-1);
+      transition: box-shadow 0.2s, background 0.2s !important;
+    }
+    .nav-cta:hover {
+      background: var(--md-primary-dark) !important;
+      box-shadow: var(--md-elevation-2) !important;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--md-surface);
+      padding: 80px 24px 72px;
+      text-align: center;
+      border-bottom: 1px solid var(--md-border);
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--md-primary-light);
+      color: var(--md-primary);
+      border-radius: 999px;
+      padding: 4px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 24px;
+      letter-spacing: 0.02em;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: 52px;
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--md-on-surface);
+      max-width: 720px;
+      margin: 0 auto 16px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 strong {
+      font-weight: 700;
+      color: var(--md-primary);
+    }
+    .hero-sub {
+      font-size: 18px;
+      color: var(--md-on-surface-3);
+      max-width: 560px;
+      margin: 0 auto 40px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-contained {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--md-primary);
+      color: var(--md-on-primary);
+      border: none;
+      border-radius: 999px;
+      padding: 12px 28px;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: var(--md-elevation-1);
+      transition: box-shadow 0.2s, background 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .btn-contained:hover {
+      background: var(--md-primary-dark);
+      box-shadow: var(--md-elevation-2);
+    }
+    .btn-outlined {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--md-primary);
+      border: 1.5px solid var(--md-primary);
+      border-radius: 999px;
+      padding: 12px 28px;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+      letter-spacing: 0.01em;
+    }
+    .btn-outlined:hover { background: var(--md-primary-light); }
+
+    /* ── STATS STRIP ── */
+    .stats-strip {
+      background: var(--md-surface);
+      border-top: 1px solid var(--md-border);
+      border-bottom: 1px solid var(--md-border);
+      padding: 32px 24px;
+      display: flex;
+      justify-content: center;
+      gap: 64px;
+      flex-wrap: wrap;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--md-primary);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: var(--md-on-surface-3);
+      font-weight: 400;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      padding: 72px 24px;
+      max-width: 1128px;
+      margin: 0 auto;
+    }
+    .section-header {
+      margin-bottom: 48px;
+    }
+    .section-header.center { text-align: center; }
+    .overline {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--md-primary);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--md-on-surface);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+    .section-title strong { font-weight: 700; }
+    .section-body {
+      font-size: 16px;
+      color: var(--md-on-surface-3);
+      max-width: 560px;
+      line-height: 1.6;
+    }
+    .section-header.center .section-body { margin: 0 auto; }
+
+    /* ── SERVICE CARDS ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .service-card {
+      background: var(--md-surface);
+      border: 1px solid var(--md-border);
+      border-radius: var(--md-radius-xl);
+      padding: 28px 24px;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow 0.2s, border-color 0.2s;
+      cursor: pointer;
+    }
+    .service-card:hover {
+      box-shadow: var(--md-elevation-2);
+      border-color: var(--md-primary);
+    }
+    .service-card-icon {
+      width: 48px; height: 48px;
+      background: var(--md-primary-light);
+      border-radius: var(--md-radius-lg);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--md-on-surface);
+      margin-bottom: 6px;
+    }
+    .service-card p {
+      font-size: 13px;
+      color: var(--md-on-surface-3);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .service-chip {
+      display: inline-block;
+      background: var(--md-primary-light);
+      color: var(--md-primary);
+      border-radius: 999px;
+      padding: 3px 12px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how-section {
+      background: var(--md-surface);
+      border-top: 1px solid var(--md-border);
+      border-bottom: 1px solid var(--md-border);
+    }
+    .steps-row {
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+      counter-reset: steps;
+    }
+    .step-item {
+      flex: 1;
+      min-width: 160px;
+      padding: 32px 24px;
+      border-right: 1px solid var(--md-border);
+      position: relative;
+    }
+    .step-item:last-child { border-right: none; }
+    .step-number {
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--md-border-dark);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .step-icon {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    .step-item h4 {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--md-on-surface);
+      margin-bottom: 6px;
+    }
+    .step-item p {
+      font-size: 13px;
+      color: var(--md-on-surface-3);
+      line-height: 1.5;
+    }
+
+    /* ── DESTINATIONS ── */
+    .chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 32px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--md-surface);
+      border: 1px solid var(--md-border-dark);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 13px;
+      color: var(--md-on-surface-2);
+      font-weight: 400;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .chip:hover {
+      border-color: var(--md-primary);
+      background: var(--md-primary-light);
+      color: var(--md-primary);
+    }
+
+    /* ── TRUST SECTION ── */
+    .trust-section {
+      background: var(--md-on-surface);
+    }
+    .trust-section .section-title { color: #fff; }
+    .trust-section .section-body { color: var(--md-on-surface-4); }
+    .trust-section .overline { color: var(--md-primary); }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .trust-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--md-radius-xl);
+      padding: 28px 24px;
+      transition: background 0.2s;
+    }
+    .trust-card:hover { background: rgba(255,255,255,0.08); }
+    .trust-card-icon {
+      width: 44px; height: 44px;
+      background: var(--md-primary-light);
+      border-radius: var(--md-radius);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+    .trust-card h4 {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .trust-card p {
+      font-size: 13px;
+      color: var(--md-on-surface-4);
+      line-height: 1.5;
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: var(--md-primary);
+      padding: 64px 24px;
+      text-align: center;
+    }
+    .cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .cta-banner h2 strong { font-weight: 700; }
+    .cta-banner p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 32px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      color: var(--md-primary);
+      border: none;
+      border-radius: 999px;
+      padding: 14px 32px;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: var(--md-elevation-2);
+      transition: box-shadow 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .btn-white:hover { box-shadow: var(--md-elevation-3); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--md-surface);
+      border-top: 1px solid var(--md-border);
+      padding: 32px 24px;
+    }
+    .footer-inner {
+      max-width: 1128px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--md-on-surface);
+    }
+    .footer-logo span { color: var(--md-primary); }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: 13px;
+      color: var(--md-on-surface-3);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--md-primary); }
+    .footer-copy {
+      font-size: 12px;
+      color: var(--md-on-surface-4);
+      width: 100%;
+      text-align: center;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--md-border);
+    }
+
+    /* ── RTL ── */
+    [dir="rtl"] nav a { margin-left: 0; }
+    [dir="rtl"] .lang-bar { justify-content: flex-start; }
+    [dir="rtl"] body { font-family: 'Roboto', 'Traditional Arabic', Arial, sans-serif; }
+    [dir="rtl"] .step-item { border-right: none; border-left: 1px solid var(--md-border); }
+    [dir="rtl"] .step-item:last-child { border-left: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 32px; }
+      .hero-sub { font-size: 16px; }
+      header { padding: 0 16px; }
+      nav a { padding: 8px 10px; font-size: 13px; }
+      .stats-strip { gap: 32px; }
+      .section { padding: 48px 16px; }
+      .step-item { border-right: none; border-bottom: 1px solid var(--md-border); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LANGUAGE BAR -->
+  <div class="lang-bar">
+    <button class="lang-btn active" onclick="setLang('en')" id="btn-en">🇬🇧 EN</button>
+    <button class="lang-btn" onclick="setLang('ar')" id="btn-ar">🇸🇦 AR</button>
+    <button class="lang-btn" onclick="setLang('fr')" id="btn-fr">🇫🇷 FR</button>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="logo">
+      <div class="logo-mark">🌍</div>
+      <span class="logo-name">Path<span>Way</span> Africa</span>
+    </a>
+    <nav>
+      <a href="index.html" id="nav-home">Home</a>
+      <a href="services.html" id="nav-services">Services</a>
+      <a href="universities.html" id="nav-uni">Universities</a>
+      <a href="about.html" id="nav-about">About</a>
+      <a href="apply.html" class="nav-cta" id="nav-apply">Apply Now</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow" id="hero-badge">
+      🌍 Serving South Sudan · East Africa · The World
+    </div>
+    <h1 id="hero-title">Your gateway from<br><strong>Africa to the World</strong></h1>
+    <p class="hero-sub" id="hero-sub">
+      Study abroad. Work abroad. Medical treatment. Travel. Relocation.
+      We handle everything — visa, university, flights, hotels and more.
+    </p>
+    <div class="hero-actions">
+      <a href="apply.html" class="btn-contained" id="hero-btn1">
+        Start your journey
+      </a>
+      <a href="services.html" class="btn-outlined" id="hero-btn2">
+        Explore services
+      </a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-strip">
+    <div class="stat">
+      <div class="stat-value">50+</div>
+      <div class="stat-label" id="stat-1">Destination countries</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">500+</div>
+      <div class="stat-label" id="stat-2">Partner universities</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">24h</div>
+      <div class="stat-label" id="stat-3">Response time</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">100%</div>
+      <div class="stat-label" id="stat-4">Verified services</div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="section">
+    <div class="section-header center">
+      <div class="overline" id="services-overline">What we do</div>
+      <h2 class="section-title" id="services-title">Complete relocation <strong>services</strong></h2>
+      <p class="section-body" id="services-sub">Everything you need to move from Africa to anywhere in the world — handled by experts.</p>
+    </div>
+    <div class="services-grid">
+      <a href="apply.html?service=study" class="service-card">
+        <div class="service-card-icon">🎓</div>
+        <h3 id="svc1-title">Study Abroad</h3>
+        <p id="svc1-desc">University applications, course selection, student visa, accommodation and airport pickup.</p>
+        <span class="service-chip" id="svc1-price">From $50</span>
+      </a>
+      <a href="apply.html?service=work" class="service-card">
+        <div class="service-card-icon">💼</div>
+        <h3 id="svc2-title">Work Abroad</h3>
+        <p id="svc2-desc">Job placement assistance, work permit, visa application and relocation support.</p>
+        <span class="service-chip" id="svc2-price">From $100</span>
+      </a>
+      <a href="apply.html?service=medical" class="service-card">
+        <div class="service-card-icon">🏥</div>
+        <h3 id="svc3-title">Medical Tourism</h3>
+        <p id="svc3-desc">Top hospitals in India, UAE, Thailand. Medical visa, flights, hotel and appointments.</p>
+        <span class="service-chip" id="svc3-price">From $200</span>
+      </a>
+      <a href="apply.html?service=travel" class="service-card">
+        <div class="service-card-icon">✈️</div>
+        <h3 id="svc4-title">Travel & Relocation</h3>
+        <p id="svc4-desc">Flight booking, hotel reservation, travel visa, airport pickup and local guidance.</p>
+        <span class="service-chip" id="svc4-price">From $100</span>
+      </a>
+      <a href="apply.html?service=visitor" class="service-card">
+        <div class="service-card-icon">🗺️</div>
+        <h3 id="svc5-title">Visitor Guide</h3>
+        <p id="svc5-desc">Foreigners visiting South Sudan or East Africa — local transport, hotels and safety.</p>
+        <span class="service-chip" id="svc5-price">From $30</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="how-section">
+    <div class="section">
+      <div class="section-header center">
+        <div class="overline" id="how-overline">How it works</div>
+        <h2 class="section-title" id="how-title">Simple. Fast. <strong>Trusted.</strong></h2>
+        <p class="section-body" id="how-sub">From your first inquiry to your arrival abroad — we handle every step.</p>
+      </div>
+      <div class="steps-row">
+        <div class="step-item">
+          <div class="step-number">01</div>
+          <div class="step-icon">📝</div>
+          <h4 id="step1-title">Apply online</h4>
+          <p id="step1-desc">Fill our simple form and tell us your dream destination and service needed.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">02</div>
+          <div class="step-icon">💳</div>
+          <h4 id="step2-title">Pay consultation</h4>
+          <p id="step2-desc">Pay a small fee via MTN Mobile Money to activate your case instantly.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">03</div>
+          <div class="step-icon">📞</div>
+          <h4 id="step3-title">We contact you</h4>
+          <p id="step3-desc">Our team contacts you within 24 hours via WhatsApp to guide you.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">04</div>
+          <div class="step-icon">📄</div>
+          <h4 id="step4-title">We process</h4>
+          <p id="step4-desc">We handle your visa, university, flights and hotels — everything.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">05</div>
+          <div class="step-icon">🌍</div>
+          <h4 id="step5-title">You travel</h4>
+          <p id="step5-desc">You arrive at your destination. We pick you up and guide you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESTINATIONS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="overline" id="dest-overline">Destinations</div>
+      <h2 class="section-title" id="dest-title">We send you <strong>anywhere</strong></h2>
+      <p class="section-body" id="dest-sub">Our network covers the most popular destinations for Africans worldwide.</p>
+    </div>
+    <div class="chips-row">
+      <div class="chip">🇬🇧 United Kingdom</div>
+      <div class="chip">🇺🇸 United States</div>
+      <div class="chip">🇨🇦 Canada</div>
+      <div class="chip">🇦🇺 Australia</div>
+      <div class="chip">🇩🇪 Germany</div>
+      <div class="chip">🇫🇷 France</div>
+      <div class="chip">🇳🇱 Netherlands</div>
+      <div class="chip">🇦🇪 UAE</div>
+      <div class="chip">🇸🇦 Saudi Arabia</div>
+      <div class="chip">🇶🇦 Qatar</div>
+      <div class="chip">🇮🇳 India</div>
+      <div class="chip">🇲🇾 Malaysia</div>
+      <div class="chip">🇨🇳 China</div>
+      <div class="chip">🇹🇷 Turkey</div>
+      <div class="chip">🇷🇼 Rwanda</div>
+      <div class="chip">🇰🇪 Kenya</div>
+      <div class="chip">🇯🇵 Japan</div>
+      <div class="chip">🇸🇬 Singapore</div>
+    </div>
+  </div>
+
+  <!-- TRUST -->
+  <div class="trust-section">
+    <div class="section">
+      <div class="section-header center">
+        <div class="overline" id="trust-overline">Why choose us</div>
+        <h2 class="section-title" id="trust-title">Built for Africans.<br><strong>Trusted by Africans.</strong></h2>
+        <p class="section-body" id="trust-sub">We understand the challenges of travelling from conflict-affected regions.</p>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="trust-card-icon">🔒</div>
+          <h4 id="trust1-title">100% Legitimate</h4>
+          <p id="trust1-desc">All our university partners, visa agents and hospitals are fully verified and legitimate.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card-icon">💬</div>
+          <h4 id="trust2-title">WhatsApp support</h4>
+          <p id="trust2-desc">We communicate with you directly on WhatsApp — no complicated systems or call centres.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card-icon">💰</div>
+          <h4 id="trust3-title">Pay via MTN Money</h4>
+          <p id="trust3-desc">Pay consultation fees easily via MTN Mobile Money — no bank account needed.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card-icon">🌍</div>
+          <h4 id="trust4-title">We know Africa</h4>
+          <p id="trust4-desc">Founded in South Sudan — we understand your documents, your situation and your needs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <h2 id="cta-title">Ready to start your <strong>journey?</strong></h2>
+    <p id="cta-sub">Thousands of people from South Sudan and East Africa are waiting for exactly this service. Be among the first.</p>
+    <a href="apply.html" class="btn-white" id="cta-btn">
+      Start your application →
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Path<span>Way</span> Africa</div>
+      <div class="footer-links">
+        <a href="index.html" id="f-home">Home</a>
+        <a href="services.html" id="f-services">Services</a>
+        <a href="universities.html" id="f-uni">Universities</a>
+        <a href="apply.html" id="f-apply">Apply</a>
+        <a href="https://wa.me/211922882019" id="f-wa">WhatsApp</a>
+      </div>
+      <div class="footer-copy" id="footer-copy">
+        PathWay Africa © 2026 — South Sudan & East Africa — thebangbe@gmail.com
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const T = {
+      en: {
+        'nav-home':'Home','nav-services':'Services','nav-uni':'Universities',
+        'nav-about':'About','nav-apply':'Apply Now',
+        'hero-badge':'🌍 Serving South Sudan · East Africa · The World',
+        'hero-title':'Your gateway from<br><strong>Africa to the World</strong>',
+        'hero-sub':'Study abroad. Work abroad. Medical treatment. Travel. Relocation. We handle everything — visa, university, flights, hotels and more.',
+        'hero-btn1':'Start your journey','hero-btn2':'Explore services',
+        'stat-1':'Destination countries','stat-2':'Partner universities',
+        'stat-3':'Response time','stat-4':'Verified services',
+        'services-overline':'What we do',
+        'services-title':'Complete relocation <strong>services</strong>',
+        'services-sub':'Everything you need to move from Africa to anywhere in the world.',
+        'svc1-title':'Study Abroad','svc1-desc':'University applications, course selection, student visa, accommodation and airport pickup.','svc1-price':'From $50',
+        'svc2-title':'Work Abroad','svc2-desc':'Job placement assistance, work permit, visa application and relocation support.','svc2-price':'From $100',
+        'svc3-title':'Medical Tourism','svc3-desc':'Top hospitals in India, UAE, Thailand. Medical visa, flights, hotel and appointments.','svc3-price':'From $200',
+        'svc4-title':'Travel & Relocation','svc4-desc':'Flight booking, hotel reservation, travel visa, airport pickup and local guidance.','svc4-price':'From $100',
+        'svc5-title':'Visitor Guide','svc5-desc':'Foreigners visiting South Sudan or East Africa — local transport, hotels and safety.','svc5-price':'From $30',
+        'how-overline':'How it works','how-title':'Simple. Fast. <strong>Trusted.</strong>',
+        'how-sub':'From your first inquiry to your arrival abroad — we handle every step.',
+        'step1-title':'Apply online','step1-desc':'Fill our simple form and tell us your dream destination.',
+        'step2-title':'Pay consultation','step2-desc':'Pay a small fee via MTN Mobile Money to activate your case.',
+        'step3-title':'We contact you','step3-desc':'Our team contacts you within 24 hours via WhatsApp.',
+        'step4-title':'We process','step4-desc':'We handle your visa, university, flights and hotels.',
+        'step5-title':'You travel','step5-desc':'You arrive at your destination. We pick you up and guide you.',
+        'dest-overline':'Destinations','dest-title':'We send you <strong>anywhere</strong>',
+        'dest-sub':'Our network covers the most popular destinations for Africans worldwide.',
+        'trust-overline':'Why choose us',
+        'trust-title':'Built for Africans.<br><strong>Trusted by Africans.</strong>',
+        'trust-sub':'We understand the challenges of travelling from conflict-affected regions.',
+        'trust1-title':'100% Legitimate','trust1-desc':'All our university partners, visa agents and hospitals are fully verified.',
+        'trust2-title':'WhatsApp support','trust2-desc':'We communicate directly on WhatsApp — no complicated systems.',
+        'trust3-title':'Pay via MTN Money','trust3-desc':'Pay easily via MTN Mobile Money — no bank account needed.',
+        'trust4-title':'We know Africa','trust4-desc':'Founded in South Sudan — we understand your documents and needs.',
+        'cta-title':'Ready to start your <strong>journey?</strong>',
+        'cta-sub':'Thousands of people from South Sudan and East Africa are waiting for this service.',
+        'cta-btn':'Start your application →',
+        'f-home':'Home','f-services':'Services','f-uni':'Universities','f-apply':'Apply','f-wa':'WhatsApp',
+        'footer-copy':'PathWay Africa © 2026 — South Sudan & East Africa — thebangbe@gmail.com',
+      },
+      ar: {
+        'nav-home':'الرئيسية','nav-services':'الخدمات','nav-uni':'الجامعات',
+        'nav-about':'عن الشركة','nav-apply':'قدّم الآن',
+        'hero-badge':'🌍 نخدم جنوب السودان · شرق أفريقيا · العالم',
+        'hero-title':'بوابتك من<br><strong>أفريقيا إلى العالم</strong>',
+        'hero-sub':'الدراسة في الخارج. العمل في الخارج. العلاج الطبي. السفر. الانتقال. نتولى كل شيء — التأشيرة والجامعة والرحلات والفنادق وأكثر.',
+        'hero-btn1':'ابدأ رحلتك','hero-btn2':'استكشف الخدمات',
+        'stat-1':'دولة وجهة','stat-2':'جامعة شريكة','stat-3':'وقت الاستجابة','stat-4':'خدمات موثقة',
+        'services-overline':'ما نقدمه',
+        'services-title':'خدمات انتقال <strong>متكاملة</strong>',
+        'services-sub':'كل ما تحتاجه للانتقال من أفريقيا إلى أي مكان في العالم.',
+        'svc1-title':'الدراسة في الخارج','svc1-desc':'طلبات القبول الجامعي، اختيار التخصص، تأشيرة الطالب، السكن والاستقبال في المطار.','svc1-price':'من 50$',
+        'svc2-title':'العمل في الخارج','svc2-desc':'مساعدة في التوظيف، تصريح العمل، طلب التأشيرة ودعم الانتقال.','svc2-price':'من 100$',
+        'svc3-title':'السياحة العلاجية','svc3-desc':'أفضل المستشفيات في الهند والإمارات وتايلاند. تأشيرة طبية ورحلات وفنادق ومواعيد.','svc3-price':'من 200$',
+        'svc4-title':'السفر والانتقال','svc4-desc':'حجز الطيران والفنادق وتأشيرة السفر والاستقبال في المطار والإرشاد المحلي.','svc4-price':'من 100$',
+        'svc5-title':'دليل الزوار','svc5-desc':'للأجانب الزائرين لجنوب السودان أو شرق أفريقيا — نقل محلي وفنادق وأمان وإرشاد.','svc5-price':'من 30$',
+        'how-overline':'كيف يعمل النظام','how-title':'بسيط. سريع. <strong>موثوق.</strong>',
+        'how-sub':'من استفساركم الأول حتى وصولكم إلى الخارج — نتولى كل خطوة.',
+        'step1-title':'قدّم عبر الإنترنت','step1-desc':'أكمل النموذج البسيط وأخبرنا بوجهتك الحلم.',
+        'step2-title':'ادفع رسوم الاستشارة','step2-desc':'ادفع رسوماً رمزية عبر MTN موبايل موني لتفعيل قضيتك.',
+        'step3-title':'نتواصل معك','step3-desc':'يتصل بك فريقنا خلال 24 ساعة عبر واتساب.',
+        'step4-title':'نعالج طلبك','step4-desc':'نتولى التأشيرة والجامعة والرحلات والفنادق.',
+        'step5-title':'أنت تسافر','step5-desc':'تصل إلى وجهتك ونستقبلك ونرشدك.',
+        'dest-overline':'الوجهات','dest-title':'نرسلك إلى <strong>أي مكان</strong>',
+        'dest-sub':'تغطي شبكتنا الوجهات الأكثر شعبية للأفارقة حول العالم.',
+        'trust-overline':'لماذا تختارنا',
+        'trust-title':'مبني للأفارقة.<br><strong>موثوق من الأفارقة.</strong>',
+        'trust-sub':'نفهم تحديات السفر من المناطق المتضررة من النزاعات.',
+        'trust1-title':'100% شرعي','trust1-desc':'جميع شركائنا من الجامعات ووكلاء التأشيرات والمستشفيات موثقون بالكامل.',
+        'trust2-title':'دعم واتساب','trust2-desc':'نتواصل معك مباشرة عبر واتساب — لا أنظمة معقدة.',
+        'trust3-title':'ادفع عبر MTN','trust3-desc':'ادفع بسهولة عبر MTN موبايل موني — لا حاجة لحساب بنكي.',
+        'trust4-title':'نعرف أفريقيا','trust4-desc':'تأسست في جنوب السودان — نفهم وثائقك واحتياجاتك.',
+        'cta-title':'مستعد لبدء <strong>رحلتك؟</strong>',
+        'cta-sub':'الآلاف من جنوب السودان وشرق أفريقيا ينتظرون هذه الخدمة بالضبط.',
+        'cta-btn':'ابدأ طلبك الآن ←',
+        'f-home':'الرئيسية','f-services':'الخدمات','f-uni':'الجامعات','f-apply':'قدّم','f-wa':'واتساب',
+        'footer-copy':'PathWay Africa © 2026 — جنوب السودان وشرق أفريقيا — thebangbe@gmail.com',
+      },
+      fr: {
+        'nav-home':'Accueil','nav-services':'Services','nav-uni':'Universités',
+        'nav-about':'À Propos','nav-apply':'Postuler',
+        'hero-badge':'🌍 Au service du Soudan du Sud · Afrique de l\'Est · Le Monde',
+        'hero-title':'Votre passerelle de<br><strong>l\'Afrique vers le Monde</strong>',
+        'hero-sub':'Études à l\'étranger. Travail à l\'étranger. Soins médicaux. Voyage. Relocalisation. Nous gérons tout — visa, université, vols, hôtels et plus.',
+        'hero-btn1':'Commencer votre voyage','hero-btn2':'Explorer les services',
+        'stat-1':'Pays de destination','stat-2':'Universités partenaires','stat-3':'Délai de réponse','stat-4':'Services vérifiés',
+        'services-overline':'Ce que nous faisons',
+        'services-title':'Services de relocalisation <strong>complets</strong>',
+        'services-sub':'Tout ce dont vous avez besoin pour aller d\'Afrique vers n\'importe où dans le monde.',
+        'svc1-title':'Études à l\'Étranger','svc1-desc':'Demandes universitaires, sélection de cours, visa étudiant, hébergement et accueil à l\'aéroport.','svc1-price':'À partir de 50$',
+        'svc2-title':'Travail à l\'Étranger','svc2-desc':'Aide au placement, permis de travail, demande de visa et soutien à la relocalisation.','svc2-price':'À partir de 100$',
+        'svc3-title':'Tourisme Médical','svc3-desc':'Meilleurs hôpitaux en Inde, EAU, Thaïlande. Visa médical, vols, hôtel et rendez-vous.','svc3-price':'À partir de 200$',
+        'svc4-title':'Voyage et Relocalisation','svc4-desc':'Réservation de vols, hôtels, visa de voyage, accueil à l\'aéroport et guide local.','svc4-price':'À partir de 100$',
+        'svc5-title':'Guide Visiteur','svc5-desc':'Étrangers visitant le Soudan du Sud ou l\'Afrique de l\'Est — transport, hôtels, sécurité.','svc5-price':'À partir de 30$',
+        'how-overline':'Comment ça marche','how-title':'Simple. Rapide. <strong>De confiance.</strong>',
+        'how-sub':'De votre première demande à votre arrivée à l\'étranger — nous gérons chaque étape.',
+        'step1-title':'Postulez en ligne','step1-desc':'Remplissez notre formulaire simple et dites-nous votre destination rêvée.',
+        'step2-title':'Payez la consultation','step2-desc':'Payez un petit frais via MTN Mobile Money pour activer votre dossier.',
+        'step3-title':'Nous vous contactons','step3-desc':'Notre équipe vous contacte dans les 24 heures via WhatsApp.',
+        'step4-title':'Nous traitons','step4-desc':'Nous gérons visa, université, vols et hôtels.',
+        'step5-title':'Vous voyagez','step5-desc':'Vous arrivez à destination. Nous vous accueillons et vous guidons.',
+        'dest-overline':'Destinations','dest-title':'Nous vous envoyons <strong>partout</strong>',
+        'dest-sub':'Notre réseau couvre les destinations les plus populaires pour les Africains.',
+        'trust-overline':'Pourquoi nous choisir',
+        'trust-title':'Construit pour les Africains.<br><strong>De confiance.</strong>',
+        'trust-sub':'Nous comprenons les défis des voyages depuis les régions touchées par les conflits.',
+        'trust1-title':'100% Légitime','trust1-desc':'Tous nos partenaires universitaires, agents de visa et hôpitaux sont entièrement vérifiés.',
+        'trust2-title':'Support WhatsApp','trust2-desc':'Nous communiquons directement sur WhatsApp — aucun système compliqué.',
+        'trust3-title':'Payer via MTN','trust3-desc':'Payez facilement via MTN Mobile Money — pas besoin de compte bancaire.',
+        'trust4-title':'Nous connaissons l\'Afrique','trust4-desc':'Fondé au Soudan du Sud — nous comprenons vos documents et vos besoins.',
+        'cta-title':'Prêt à commencer votre <strong>voyage?</strong>',
+        'cta-sub':'Des milliers de personnes du Soudan du Sud et d\'Afrique de l\'Est attendent ce service.',
+        'cta-btn':'Commencer votre demande →',
+        'f-home':'Accueil','f-services':'Services','f-uni':'Universités','f-apply':'Postuler','f-wa':'WhatsApp',
+        'footer-copy':'PathWay Africa © 2026 — Soudan du Sud & Afrique de l\'Est — thebangbe@gmail.com',
+      }
+    };
+
+    function setLang(lang) {
+      const html = document.getElementById('html-root');
+      html.setAttribute('lang', lang);
+      html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      ['btn-en','btn-ar','btn-fr'].forEach(id => {
+        document.getElementById(id).className = 'lang-btn';
+      });
+      document.getElementById('btn-'+lang).className = 'lang-btn active';
+      const t = T[lang];
+      for (const [id, text] of Object.entries(t)) {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = text;
+      }
+      localStorage.setItem('pw-lang', lang);
+    }
+
+    const saved = localStorage.getItem('pw-lang');
+    if (saved) setLang(saved);
+  </script>
+</body>
+</html>
+
