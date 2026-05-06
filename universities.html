@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Universities — PathWay Africa</title>
+
+  <!-- ── 1. SECURITY META TAGS ── -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+
+  <!-- ── 2. SEO & OPEN GRAPH ── -->
+  <meta name="description" content="PathWay Africa partner universities — top universities in UK, Canada, Australia, Germany, Malaysia, UAE and more. Apply from South Sudan and East Africa." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Partner Universities — PathWay Africa" />
+  <meta property="og:description" content="Browse our verified partner universities worldwide and apply from Africa today." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thebangbe.github.io/pathwayafrica/universities.html" />
+
+  <!-- ── 3. GOOGLE FONTS — same as all other pages ── -->
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- ── 4. CSS — exact same design tokens as all other pages ── -->
+  <style>
+    /* ── MATERIAL DESIGN TOKENS ── */
+    :root {
+      --md-primary:       #1A73E8;
+      --md-primary-dark:  #1557B0;
+      --md-primary-light: #E8F0FE;
+      --md-on-primary:    #FFFFFF;
+      --md-surface:       #FFFFFF;
+      --md-background:    #F8F9FA;
+      --md-on-surface:    #202124;
+      --md-on-surface-2:  #3C4043;
+      --md-on-surface-3:  #5F6368;
+      --md-on-surface-4:  #9AA0A6;
+      --md-border:        #E8EAED;
+      --md-border-dark:   #DADCE0;
+      --md-success:       #34A853;
+      --md-error:         #EA4335;
+      --md-warning:       #FBBC05;
+      --md-elevation-1:   0 1px 2px rgba(60,64,67,0.3), 0 1px 3px rgba(60,64,67,0.15);
+      --md-elevation-2:   0 1px 3px rgba(60,64,67,0.3), 0 4px 8px rgba(60,64,67,0.15);
+      --md-elevation-3:   0 2px 6px rgba(60,64,67,0.3), 0 6px 12px rgba(60,64,67,0.15);
+      --md-radius:        8px;
+      --md-radius-lg:     12px;
+      --md-radius-xl:     16px;
+      --font-sans:        'Roboto', Arial, sans-serif;
+      --font-display:     'Google Sans', 'Roboto', Arial, sans-serif;
+    }
+
+    /* ── RESET ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--md-background);
+      color: var(--md-on-surface);
+      font-size: 14px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── LANGUAGE BAR — identical to all pages ── */
+    .lang-bar {
+      background: var(--md-on-surface);
+      padding: 6px 24px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 4px;
+    }
+    .lang-btn {
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: none;
+      background: transparent;
+      color: var(--md-on-surface-4);
+      font-size: 12px;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .lang-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+    .lang-btn.active { background: var(--md-primary); color: #fff; font-weight: 500; }
+
+    /* ── HEADER — identical to all pages ── */
+    header {
+      background: var(--md-surface);
+      border-bottom: 1px solid var(--md-border);
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--md-elevation-1);
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-mark {
+      width: 32px; height: 32px;
+      background: var(--md-primary);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .logo-name {
+      font-family: var(--font-display);
+      font-size: 20px; font-weight: 500;
+      color: var(--md-on-surface); letter-spacing: -0.01em;
+    }
+    .logo-name span { color: var(--md-primary); }
+    nav { display: flex; align-items: center; gap: 4px; }
+    nav a {
+      color: var(--md-on-surface-3);
+      text-decoration: none;
+      font-size: 14px; font-weight: 500;
+      padding: 8px 16px;
+      border-radius: var(--md-radius);
+      transition: background 0.15s, color 0.15s;
+      letter-spacing: 0.01em;
+    }
+    nav a:hover { background: var(--md-primary-light); color: var(--md-primary); }
+    nav a.nav-active { background: var(--md-primary-light); color: var(--md-primary); }
+    .nav-cta {
+      background: var(--md-primary) !important;
+      color: var(--md-on-primary) !important;
+      padding: 8px 24px !important;
+      border-radius: 999px !important;
+      box-shadow: var(--md-elevation-1);
+      transition: box-shadow 0.2s, background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--md-primary-dark) !important; box-shadow: var(--md-elevation-2) !important; }
+
+    /* ── PAGE HEADER — same pattern as apply.html & services.html ── */
+    .page-header {
+      background: var(--md-surface);
+      border-bottom: 1px solid var(--md-border);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--md-primary-light); color: var(--md-primary);
+      border-radius: 999px; padding: 4px 16px;
+      font-size: 13px; font-weight: 500;
+      margin-bottom: 20px; letter-spacing: 0.02em;
+    }
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: 40px; font-weight: 400;
+      color: var(--md-on-surface);
+      margin-bottom: 12px; letter-spacing: -0.02em; line-height: 1.2;
+    }
+    .page-header h1 strong { font-weight: 700; color: var(--md-primary); }
+    .page-header p {
+      font-size: 16px; color: var(--md-on-surface-3);
+      max-width: 540px; margin: 0 auto; line-height: 1.6;
+    }
+
+    /* ── STATS STRIP — same as index.html ── */
+    .stats-strip {
+      background: var(--md-surface);
+      border-top: 1px solid var(--md-border);
+      border-bottom: 1px solid var(--md-border);
+      padding: 28px 24px;
+      display: flex; justify-content: center; gap: 64px; flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: 28px; font-weight: 700;
+      color: var(--md-primary); line-height: 1; margin-bottom: 4px;
+    }
+    .stat-label { font-size: 13px; color: var(--md-on-surface-3); }
+
+    /* ── SECTION — same as index.html ── */
+    .section { padding: 64px 24px; max-width: 1128px; margin: 0 auto; }
+    .section-header { margin-bottom: 40px; }
+    .section-header.center { text-align: center; }
+    .overline {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--md-primary); margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 32px; font-weight: 400;
+      color: var(--md-on-surface); margin-bottom: 8px;
+      letter-spacing: -0.01em; line-height: 1.25;
+    }
+    .section-title strong { font-weight: 700; }
+    .section-body {
+      font-size: 16px; color: var(--md-on-surface-3);
+      max-width: 560px; line-height: 1.6;
+    }
+    .section-header.center .section-body { margin: 0 auto; }
+
+    /* ── FILTER BAR ── */
+    .filter-bar {
+      background: var(--md-surface);
+      border-bottom: 1px solid var(--md-border);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 64px;
+      z-index: 90;
+      box-shadow: var(--md-elevation-1);
+    }
+    .filter-label {
+      font-size: 12px; font-weight: 500;
+      color: var(--md-on-surface-3);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+    .filter-chips { display: flex; gap: 8px; flex-wrap: wrap; flex: 1; }
+    .filter-chip {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: var(--md-surface);
+      border: 1.5px solid var(--md-border-dark);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 12px; font-weight: 500;
+      color: var(--md-on-surface-2);
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: var(--font-sans);
+    }
+    .filter-chip:hover { border-color: var(--md-primary); color: var(--md-primary); background: var(--md-primary-light); }
+    .filter-chip.active { background: var(--md-primary); color: #fff; border-color: var(--md-primary); }
+    .search-box {
+      padding: 8px 16px;
+      border: 1.5px solid var(--md-border-dark);
+      border-radius: 999px;
+      font-size: 13px;
+      font-family: var(--font-sans);
+      outline: none;
+      width: 220px;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      margin-left: auto;
+    }
+    .search-box:focus { border-color: var(--md-primary); box-shadow: 0 0 0 3px rgba(26,115,232,0.12); }
+
+    /* ── UNIVERSITY GRID ── */
+    .uni-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+      margin-top: 8px;
+    }
+
+    /* ── UNIVERSITY CARD — extended from index.html service-card ── */
+    .uni-card {
+      background: var(--md-surface);
+      border: 1px solid var(--md-border);
+      border-radius: var(--md-radius-xl);
+      overflow: hidden;
+      box-shadow: var(--md-elevation-1);
+      transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .uni-card:hover {
+      box-shadow: var(--md-elevation-3);
+      border-color: var(--md-primary);
+      transform: translateY(-2px);
+    }
+    .uni-card-header {
+      padding: 24px 24px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .uni-flag {
+      width: 48px; height: 48px;
+      border-radius: var(--md-radius-lg);
+      background: var(--md-primary-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px;
+      flex-shrink: 0;
+      border: 1px solid var(--md-border);
+    }
+    .uni-meta { flex: 1; min-width: 0; }
+    .uni-name {
+      font-family: var(--font-display);
+      font-size: 15px; font-weight: 500;
+      color: var(--md-on-surface);
+      margin-bottom: 3px;
+      line-height: 1.3;
+    }
+    .uni-location {
+      font-size: 12px; color: var(--md-on-surface-3);
+      display: flex; align-items: center; gap: 4px;
+    }
+    .uni-rank-badge {
+      flex-shrink: 0;
+      background: var(--md-primary-light);
+      color: var(--md-primary);
+      border-radius: var(--md-radius);
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    .uni-card-body { padding: 0 24px 16px; flex: 1; }
+    .uni-tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .uni-tag {
+      background: var(--md-background);
+      border: 1px solid var(--md-border);
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 11px;
+      color: var(--md-on-surface-3);
+    }
+    .uni-detail-row {
+      display: flex; align-items: flex-start;
+      gap: 8px; margin-bottom: 8px;
+      font-size: 12px; color: var(--md-on-surface-2); line-height: 1.5;
+    }
+    .uni-detail-icon { color: var(--md-primary); flex-shrink: 0; font-size: 13px; margin-top: 1px; }
+
+    .uni-card-footer {
+      padding: 14px 24px;
+      border-top: 1px solid var(--md-border);
+      background: var(--md-background);
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 10px;
+    }
+    .uni-fee {
+      font-family: var(--font-display);
+      font-size: 13px; font-weight: 500;
+      color: var(--md-on-surface-2);
+    }
+    .uni-fee strong { color: var(--md-primary); font-size: 15px; }
+
+    /* ── BUTTONS ── */
+    .btn-contained {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--md-primary); color: var(--md-on-primary);
+      border: none; border-radius: 999px;
+      padding: 8px 18px; font-size: 13px; font-weight: 500;
+      font-family: var(--font-sans); cursor: pointer;
+      text-decoration: none; box-shadow: var(--md-elevation-1);
+      transition: box-shadow 0.2s, background 0.2s;
+      letter-spacing: 0.01em; white-space: nowrap;
+    }
+    .btn-contained:hover { background: var(--md-primary-dark); box-shadow: var(--md-elevation-2); }
+    .btn-outlined {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: transparent; color: var(--md-primary);
+      border: 1.5px solid var(--md-primary); border-radius: 999px;
+      padding: 8px 18px; font-size: 13px; font-weight: 500;
+      font-family: var(--font-sans); cursor: pointer;
+      text-decoration: none; transition: background 0.15s;
+      letter-spacing: 0.01em; white-space: nowrap;
+    }
+    .btn-outlined:hover { background: var(--md-primary-light); }
+
+    /* ── EMPTY STATE ── */
+    .empty-state {
+      text-align: center; padding: 64px 24px;
+      color: var(--md-on-surface-4);
+      grid-column: 1 / -1;
+    }
+    .empty-state-icon { font-size: 48px; margin-bottom: 16px; }
+    .empty-state p { font-size: 16px; }
+
+    /* ── RESULTS COUNT ── */
+    .results-bar {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px; flex-wrap: wrap; gap: 8px;
+    }
+    .results-count {
+      font-size: 13px; color: var(--md-on-surface-3);
+    }
+    .results-count strong { color: var(--md-on-surface); }
+
+    /* ── HOW TO APPLY BAND — same as how-section in index.html ── */
+    .band-section {
+      background: var(--md-surface);
+      border-top: 1px solid var(--md-border);
+      border-bottom: 1px solid var(--md-border);
+    }
+    .steps-row {
+      display: flex; gap: 0; flex-wrap: wrap;
+      counter-reset: steps;
+    }
+    .step-item {
+      flex: 1; min-width: 160px;
+      padding: 32px 24px;
+      border-right: 1px solid var(--md-border);
+    }
+    .step-item:last-child { border-right: none; }
+    .step-number {
+      font-family: var(--font-display);
+      font-size: 40px; font-weight: 700;
+      color: var(--md-border-dark); line-height: 1; margin-bottom: 12px;
+    }
+    .step-icon { font-size: 24px; margin-bottom: 12px; }
+    .step-item h4 {
+      font-family: var(--font-display);
+      font-size: 15px; font-weight: 500;
+      color: var(--md-on-surface); margin-bottom: 6px;
+    }
+    .step-item p { font-size: 13px; color: var(--md-on-surface-3); line-height: 1.5; }
+
+    /* ── TRUST SECTION — identical to index.html ── */
+    .trust-section { background: var(--md-on-surface); }
+    .trust-section .section-title { color: #fff; }
+    .trust-section .section-body  { color: var(--md-on-surface-4); }
+    .trust-section .overline       { color: var(--md-primary); }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px; margin-top: 40px;
+    }
+    .trust-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--md-radius-xl);
+      padding: 28px 24px; transition: background 0.2s;
+    }
+    .trust-card:hover { background: rgba(255,255,255,0.08); }
+    .trust-card-icon {
+      width: 44px; height: 44px;
+      background: var(--md-primary-light);
+      border-radius: var(--md-radius);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; margin-bottom: 16px;
+    }
+    .trust-card h4 { font-family: var(--font-display); font-size: 15px; font-weight: 500; color: #fff; margin-bottom: 6px; }
+    .trust-card p { font-size: 13px; color: var(--md-on-surface-4); line-height: 1.5; }
+
+    /* ── CTA BANNER — identical to index.html ── */
+    .cta-banner { background: var(--md-primary); padding: 64px 24px; text-align: center; }
+    .cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: 36px; font-weight: 400;
+      color: #fff; margin-bottom: 12px; letter-spacing: -0.01em;
+    }
+    .cta-banner h2 strong { font-weight: 700; }
+    .cta-banner p {
+      font-size: 16px; color: rgba(255,255,255,0.8);
+      margin-bottom: 32px; max-width: 500px;
+      margin-left: auto; margin-right: auto;
+    }
+    .btn-white {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; color: var(--md-primary);
+      border: none; border-radius: 999px;
+      padding: 14px 32px; font-size: 15px; font-weight: 500;
+      font-family: var(--font-sans); cursor: pointer;
+      text-decoration: none; box-shadow: var(--md-elevation-2);
+      transition: box-shadow 0.2s; letter-spacing: 0.01em;
+    }
+    .btn-white:hover { box-shadow: var(--md-elevation-3); }
+
+    /* ── FOOTER — identical to all pages ── */
+    footer { background: var(--md-surface); border-top: 1px solid var(--md-border); padding: 32px 24px; }
+    .footer-inner {
+      max-width: 1128px; margin: 0 auto;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-logo { font-family: var(--font-display); font-size: 16px; font-weight: 500; color: var(--md-on-surface); }
+    .footer-logo span { color: var(--md-primary); }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--md-on-surface-3); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--md-primary); }
+    .footer-copy {
+      font-size: 12px; color: var(--md-on-surface-4);
+      width: 100%; text-align: center;
+      margin-top: 16px; padding-top: 16px;
+      border-top: 1px solid var(--md-border);
+    }
+
+    /* ── FLOATING WHATSAPP — same as services.html ── */
+    .wa-float {
+      position: fixed; bottom: 24px; right: 24px; z-index: 999;
+      width: 56px; height: 56px; background: #25D366;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 28px; box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+      text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(37,211,102,0.5); }
+    .wa-tooltip {
+      position: absolute; right: 68px;
+      background: var(--md-on-surface); color: #fff;
+      font-size: 12px; font-weight: 500;
+      padding: 6px 12px; border-radius: var(--md-radius);
+      white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.2s;
+    }
+    .wa-float:hover .wa-tooltip { opacity: 1; }
+
+    /* ── RTL — same as all pages ── */
+    [dir="rtl"] nav a { margin-left: 0; }
+    [dir="rtl"] .lang-bar { justify-content: flex-start; }
+    [dir="rtl"] body { font-family: 'Roboto', 'Traditional Arabic', Arial, sans-serif; }
+    [dir="rtl"] .wa-float { right: auto; left: 24px; }
+    [dir="rtl"] .wa-tooltip { right: auto; left: 68px; }
+    [dir="rtl"] .step-item { border-right: none; border-left: 1px solid var(--md-border); }
+    [dir="rtl"] .step-item:last-child { border-left: none; }
+    [dir="rtl"] .search-box { margin-left: 0; margin-right: auto; }
+
+    /* ── RESPONSIVE — same breakpoints ── */
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 28px; }
+      header { padding: 0 16px; }
+      nav a { padding: 8px 10px; font-size: 13px; }
+      .section { padding: 48px 16px; }
+      .stats-strip { gap: 32px; }
+      .filter-bar { top: 56px; padding: 12px 16px; }
+      .search-box { width: 100%; margin-left: 0; }
+      .uni-grid { grid-template-columns: 1fr; }
+      .step-item { border-right: none; border-bottom: 1px solid var(--md-border); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── 5. LANGUAGE BAR ── -->
+  <div class="lang-bar">
+    <button class="lang-btn active" onclick="setLang('en')" id="btn-en">🇬🇧 EN</button>
+    <button class="lang-btn" onclick="setLang('ar')" id="btn-ar">🇸🇦 AR</button>
+    <button class="lang-btn" onclick="setLang('fr')" id="btn-fr">🇫🇷 FR</button>
+  </div>
+
+  <!-- ── 6. HEADER ── -->
+  <header>
+    <a href="index.html" class="logo">
+      <div class="logo-mark">🌍</div>
+      <span class="logo-name">Path<span>Way</span> Africa</span>
+    </a>
+    <nav>
+      <a href="index.html" id="nav-home">Home</a>
+      <a href="services.html" id="nav-services">Services</a>
+      <a href="universities.html" class="nav-active" id="nav-uni">Universities</a>
+      <a href="about.html" id="nav-about">About</a>
+      <a href="apply.html" class="nav-cta" id="nav-apply">Apply Now</a>
+    </nav>
+  </header>
+
+  <!-- ── 7. PAGE CONTENT ── -->
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="hero-eyebrow" id="ph-badge">🎓 Partner Universities</div>
+    <h1 id="ph-title">Top universities <strong>around the world</strong></h1>
+    <p id="ph-sub">Browse our verified partner universities. We handle your application, student visa and accommodation — so you just focus on getting accepted.</p>
+  </div>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="stat">
+      <div class="stat-value">500+</div>
+      <div class="stat-label" id="stat-1">Partner universities</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">40+</div>
+      <div class="stat-label" id="stat-2">Countries covered</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">100%</div>
+      <div class="stat-label" id="stat-3">Verified & accredited</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">24h</div>
+      <div class="stat-label" id="stat-4">Application response</div>
+    </div>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <span class="filter-label" id="filter-lbl">Filter:</span>
+    <div class="filter-chips">
+      <button class="filter-chip active" onclick="filterUni('all', this)" id="fc-all">🌍 All</button>
+      <button class="filter-chip" onclick="filterUni('uk', this)" id="fc-uk">🇬🇧 UK</button>
+      <button class="filter-chip" onclick="filterUni('canada', this)" id="fc-ca">🇨🇦 Canada</button>
+      <button class="filter-chip" onclick="filterUni('australia', this)" id="fc-au">🇦🇺 Australia</button>
+      <button class="filter-chip" onclick="filterUni('germany', this)" id="fc-de">🇩🇪 Germany</button>
+      <button class="filter-chip" onclick="filterUni('malaysia', this)" id="fc-my">🇲🇾 Malaysia</button>
+      <button class="filter-chip" onclick="filterUni('uae', this)" id="fc-ae">🇦🇪 UAE</button>
+      <button class="filter-chip" onclick="filterUni('turkey', this)" id="fc-tr">🇹🇷 Turkey</button>
+    </div>
+    <input type="text" class="search-box" id="uni-search"
+           placeholder="Search universities..."
+           oninput="searchUni(this.value)" />
+  </div>
+
+  <!-- UNIVERSITY GRID -->
+  <div class="section" style="padding-top:32px;padding-bottom:64px">
+    <div class="results-bar">
+      <div class="results-count" id="results-count">
+        Showing <strong>20</strong> universities
+      </div>
+    </div>
+    <div class="uni-grid" id="uni-grid">
+      <!-- Cards rendered by JS -->
+    </div>
+  </div>
+
+  <!-- HOW TO APPLY — same band style as index.html how-section -->
+  <div class="band-section">
+    <div class="section">
+      <div class="section-header center">
+        <div class="overline" id="how-overline">How to apply</div>
+        <h2 class="section-title" id="how-title">We handle <strong>everything</strong></h2>
+        <p class="section-body" id="how-sub">From choosing your university to landing at campus — our team guides you every step.</p>
+      </div>
+      <div class="steps-row">
+        <div class="step-item">
+          <div class="step-number">01</div>
+          <div class="step-icon">🎓</div>
+          <h4 id="step1-title">Choose your university</h4>
+          <p id="step1-desc">Browse this page and pick the universities that interest you, or let us recommend based on your qualifications.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">02</div>
+          <div class="step-icon">📝</div>
+          <h4 id="step2-title">Submit your application</h4>
+          <p id="step2-desc">Fill our simple form and tell us your dream university, course and destination country.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">03</div>
+          <div class="step-icon">💳</div>
+          <h4 id="step3-title">Pay consultation fee</h4>
+          <p id="step3-desc">Pay a small fee via MTN Mobile Money to activate your university application case.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">04</div>
+          <div class="step-icon">📄</div>
+          <h4 id="step4-title">We apply for you</h4>
+          <p id="step4-desc">We submit your application to up to 3 universities, handle documents and student visa.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">05</div>
+          <div class="step-icon">✈️</div>
+          <h4 id="step5-title">You travel & study</h4>
+          <p id="step5-desc">We book your flight, arrange accommodation and pick you up at the airport.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRUST SECTION — identical to index.html -->
+  <div class="trust-section">
+    <div class="section">
+      <div class="section-header center">
+        <div class="overline" id="trust-overline">Why choose us</div>
+        <h2 class="section-title" id="trust-title">Built for Africans.<br><strong>Trusted by Africans.</strong></h2>
+        <p class="section-body" id="trust-sub">We understand the challenges of studying abroad from conflict-affected regions.</p>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="trust-card-icon">🔒</div>
+          <h4 id="trust1-title">100% Verified</h4>
+          <p id="trust1-desc">Every university on this page is accredited, legitimate and accepting international students.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card-icon">📋</div>
+          <h4 id="trust2-title">We apply for you</h4>
+          <p id="trust2-desc">We handle your full university application — forms, documents, references and follow-ups.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card-icon">🛂</div>
+          <h4 id="trust3-title">Visa included</h4>
+          <p id="trust3-desc">Student visa application guidance is included with every university application package.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card-icon">🏠</div>
+          <h4 id="trust4-title">Accommodation arranged</h4>
+          <p id="trust4-desc">We arrange student accommodation near your university before you even arrive.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA BANNER — identical to index.html -->
+  <div class="cta-banner">
+    <h2 id="cta-title">Ready to apply to a <strong>university?</strong></h2>
+    <p id="cta-sub">Tell us your dream university and course. We will handle everything — application, visa, flights and accommodation.</p>
+    <a href="apply.html?service=study" class="btn-white" id="cta-btn">Apply for Study Abroad →</a>
+  </div>
+
+  <!-- ── 8. FOOTER — identical to all pages ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Path<span>Way</span> Africa</div>
+      <div class="footer-links">
+        <a href="index.html" id="f-home">Home</a>
+        <a href="services.html" id="f-services">Services</a>
+        <a href="universities.html" id="f-uni">Universities</a>
+        <a href="apply.html" id="f-apply">Apply</a>
+        <a href="https://wa.me/211922882019" id="f-wa" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+      <div class="footer-copy" id="footer-copy">
+        PathWay Africa © 2026 — South Sudan & East Africa — thebangbe@gmail.com
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── 9. FLOATING WHATSAPP ── -->
+  <a href="https://wa.me/211922882019?text=Hello%20PathWay%20Africa%2C%20I%20want%20to%20apply%20to%20a%20university%20abroad."
+     class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    💬
+    <span class="wa-tooltip" id="wa-tooltip">Chat with us</span>
+  </a>
+
+  <!-- ── 10. JAVASCRIPT ── -->
+  <script>
+    // ── SECURITY: Anti-clickjacking — same as all pages ──
+    if (window.self !== window.top) {
+      window.top.location = window.self.location;
+    }
+
+    // ── SECURITY: HTML sanitizer ──
+    function escapeHTML(str) {
+      if (typeof str !== 'string') return '';
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // ── UNIVERSITY DATA ──
+    // All URLs are real, accredited universities.
+    // Security: URLs are hardcoded — never taken from user input.
+    const UNIVERSITIES = [
+      // ── UK ──
+      {
+        country: 'uk', flag: '🇬🇧',
+        name: 'University of Edinburgh',
+        city: 'Edinburgh, United Kingdom',
+        rank: 'Top 20 UK',
+        tags: ['Medicine','Law','Engineering','Business'],
+        tuition: '$18,000 – $32,000 / year',
+        requirements: 'O-levels + A-levels or equivalent. IELTS 6.5+',
+        intakes: 'September',
+        website: 'https://www.ed.ac.uk'
+      },
+      {
+        country: 'uk', flag: '🇬🇧',
+        name: 'University of Manchester',
+        city: 'Manchester, United Kingdom',
+        rank: 'Top 30 UK',
+        tags: ['Science','Business','Architecture','Nursing'],
+        tuition: '$17,000 – $30,000 / year',
+        requirements: 'A-levels or equivalent. IELTS 6.5+',
+        intakes: 'September',
+        website: 'https://www.manchester.ac.uk'
+      },
+      {
+        country: 'uk', flag: '🇬🇧',
+        name: 'University of Birmingham',
+        city: 'Birmingham, United Kingdom',
+        rank: 'Top 15 UK',
+        tags: ['Engineering','Law','Medicine','Education'],
+        tuition: '$16,000 – $28,000 / year',
+        requirements: 'A-levels or equivalent. IELTS 6.0+',
+        intakes: 'September',
+        website: 'https://www.birmingham.ac.uk'
+      },
+      {
+        country: 'uk', flag: '🇬🇧',
+        name: 'Coventry University',
+        city: 'Coventry, United Kingdom',
+        rank: 'Modern UK',
+        tags: ['Business','IT','Health','Engineering'],
+        tuition: '$12,000 – $18,000 / year',
+        requirements: 'O-levels sufficient for some courses. IELTS 6.0+',
+        intakes: 'September · January',
+        website: 'https://www.coventry.ac.uk'
+      },
+      // ── CANADA ──
+      {
+        country: 'canada', flag: '🇨🇦',
+        name: 'University of Toronto',
+        city: 'Toronto, Canada',
+        rank: 'Top 3 Canada',
+        tags: ['Medicine','Engineering','Business','Arts'],
+        tuition: '$22,000 – $45,000 / year',
+        requirements: 'Strong A-levels or equivalent. IELTS 6.5+',
+        intakes: 'September · January',
+        website: 'https://www.utoronto.ca'
+      },
+      {
+        country: 'canada', flag: '🇨🇦',
+        name: 'University of British Columbia',
+        city: 'Vancouver, Canada',
+        rank: 'Top 5 Canada',
+        tags: ['Forestry','Science','Business','Education'],
+        tuition: '$20,000 – $38,000 / year',
+        requirements: 'A-levels or equivalent. IELTS 6.5+',
+        intakes: 'September · January',
+        website: 'https://www.ubc.ca'
+      },
+      {
+        country: 'canada', flag: '🇨🇦',
+        name: 'Humber College',
+        city: 'Toronto, Canada',
+        rank: 'Top College CA',
+        tags: ['Business','Hospitality','IT','Health'],
+        tuition: '$14,000 – $22,000 / year',
+        requirements: 'O-levels or equivalent. IELTS 6.0+',
+        intakes: 'September · January · May',
+        website: 'https://humber.ca'
+      },
+      // ── AUSTRALIA ──
+      {
+        country: 'australia', flag: '🇦🇺',
+        name: 'University of Melbourne',
+        city: 'Melbourne, Australia',
+        rank: 'Top 5 Australia',
+        tags: ['Medicine','Law','Engineering','Arts'],
+        tuition: '$22,000 – $40,000 / year',
+        requirements: 'A-levels or equivalent. IELTS 6.5+',
+        intakes: 'February · July',
+        website: 'https://www.unimelb.edu.au'
+      },
+      {
+        country: 'australia', flag: '🇦🇺',
+        name: 'University of Sydney',
+        city: 'Sydney, Australia',
+        rank: 'Top 10 Australia',
+        tags: ['Business','Medicine','Law','Architecture'],
+        tuition: '$24,000 – $42,000 / year',
+        requirements: 'A-levels or equivalent. IELTS 6.5+',
+        intakes: 'February · July',
+        website: 'https://www.sydney.edu.au'
+      },
+      {
+        country: 'australia', flag: '🇦🇺',
+        name: 'RMIT University',
+        city: 'Melbourne, Australia',
+        rank: 'Modern Australia',
+        tags: ['Design','Engineering','Business','IT'],
+        tuition: '$18,000 – $30,000 / year',
+        requirements: 'O-levels + foundation or equivalent. IELTS 6.0+',
+        intakes: 'February · July',
+        website: 'https://www.rmit.edu.au'
+      },
+      // ── GERMANY ──
+      {
+        country: 'germany', flag: '🇩🇪',
+        name: 'Technical University of Munich',
+        city: 'Munich, Germany',
+        rank: 'Top 1 Germany',
+        tags: ['Engineering','Computer Science','Natural Science'],
+        tuition: 'Low fees + €120 semester fee',
+        requirements: 'A-levels equivalent. German/English B2+',
+        intakes: 'October · April',
+        website: 'https://www.tum.de'
+      },
+      {
+        country: 'germany', flag: '🇩🇪',
+        name: 'Heidelberg University',
+        city: 'Heidelberg, Germany',
+        rank: 'Top 5 Germany',
+        tags: ['Medicine','Law','Natural Science','Humanities'],
+        tuition: 'Low fees + €160 semester fee',
+        requirements: 'A-levels equivalent. German C1 for most courses',
+        intakes: 'October · April',
+        website: 'https://www.uni-heidelberg.de'
+      },
+      {
+        country: 'germany', flag: '🇩🇪',
+        name: 'University of Hamburg',
+        city: 'Hamburg, Germany',
+        rank: 'Top 10 Germany',
+        tags: ['Business','Law','Sciences','Social Work'],
+        tuition: 'Low fees + €340 semester fee',
+        requirements: 'A-levels equivalent. German B2 or IELTS 6.0+',
+        intakes: 'October · April',
+        website: 'https://www.uni-hamburg.de'
+      },
+      // ── MALAYSIA ──
+      {
+        country: 'malaysia', flag: '🇲🇾',
+        name: 'University of Malaya',
+        city: 'Kuala Lumpur, Malaysia',
+        rank: 'Top 1 Malaysia',
+        tags: ['Medicine','Engineering','Business','Law'],
+        tuition: '$4,000 – $10,000 / year',
+        requirements: 'O-levels / A-levels. IELTS 6.0+',
+        intakes: 'February · September',
+        website: 'https://www.um.edu.my'
+      },
+      {
+        country: 'malaysia', flag: '🇲🇾',
+        name: 'UITM — Universiti Teknologi MARA',
+        city: 'Shah Alam, Malaysia',
+        rank: 'Top 5 Malaysia',
+        tags: ['Engineering','Business','Architecture','IT'],
+        tuition: '$3,000 – $8,000 / year',
+        requirements: 'O-levels. English proficiency required',
+        intakes: 'March · September',
+        website: 'https://www.uitm.edu.my'
+      },
+      {
+        country: 'malaysia', flag: '🇲🇾',
+        name: 'Limkokwing University',
+        city: 'Cyberjaya, Malaysia',
+        rank: 'Creative MY',
+        tags: ['Design','Media','Fashion','Business'],
+        tuition: '$4,500 – $9,000 / year',
+        requirements: 'O-levels minimum. English proficiency',
+        intakes: 'January · May · September',
+        website: 'https://www.limkokwing.edu.my'
+      },
+      // ── UAE ──
+      {
+        country: 'uae', flag: '🇦🇪',
+        name: 'American University of Sharjah',
+        city: 'Sharjah, UAE',
+        rank: 'Top UAE',
+        tags: ['Engineering','Business','Architecture','Arts'],
+        tuition: '$13,000 – $22,000 / year',
+        requirements: 'O-levels / A-levels. IELTS 6.0+',
+        intakes: 'August · January',
+        website: 'https://www.aus.edu'
+      },
+      {
+        country: 'uae', flag: '🇦🇪',
+        name: 'University of Dubai',
+        city: 'Dubai, UAE',
+        rank: 'Top Dubai',
+        tags: ['Business','Law','IT','Engineering'],
+        tuition: '$10,000 – $18,000 / year',
+        requirements: 'O-levels. IELTS 5.5+',
+        intakes: 'September · February',
+        website: 'https://ud.ac.ae'
+      },
+      // ── TURKEY ──
+      {
+        country: 'turkey', flag: '🇹🇷',
+        name: 'Istanbul University',
+        city: 'Istanbul, Turkey',
+        rank: 'Top Turkey',
+        tags: ['Medicine','Law','Engineering','Social Sciences'],
+        tuition: '$1,500 – $5,000 / year',
+        requirements: 'O-levels / A-levels. Turkish B2 or English programs',
+        intakes: 'October · February',
+        website: 'https://www.istanbul.edu.tr'
+      },
+      {
+        country: 'turkey', flag: '🇹🇷',
+        name: 'Middle East Technical University',
+        city: 'Ankara, Turkey',
+        rank: 'Top 2 Turkey',
+        tags: ['Engineering','Science','Architecture','Education'],
+        tuition: '$800 – $3,000 / year',
+        requirements: 'A-levels equivalent. IELTS 6.0+ (English medium)',
+        intakes: 'October · February',
+        website: 'https://www.metu.edu.tr'
+      },
+    ];
+
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    // ── RENDER CARDS ──
+    function renderCards() {
+      const grid = document.getElementById('uni-grid');
+      const filtered = UNIVERSITIES.filter(u => {
+        const matchFilter = currentFilter === 'all' || u.country === currentFilter;
+        const q = currentSearch.toLowerCase();
+        const matchSearch = !q ||
+          u.name.toLowerCase().includes(q) ||
+          u.city.toLowerCase().includes(q) ||
+          u.tags.some(t => t.toLowerCase().includes(q));
+        return matchFilter && matchSearch;
+      });
+
+      // Update count
+      document.getElementById('results-count').innerHTML =
+        `Showing <strong>${filtered.length}</strong> ${filtered.length === 1 ? 'university' : 'universities'}`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-state-icon">🎓</div>
+            <p>No universities found. Try a different filter or search term.</p>
+          </div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(u => `
+        <div class="uni-card">
+          <div class="uni-card-header">
+            <div class="uni-flag">${escapeHTML(u.flag)}</div>
+            <div class="uni-meta">
+              <div class="uni-name">${escapeHTML(u.name)}</div>
+              <div class="uni-location">📍 ${escapeHTML(u.city)}</div>
+            </div>
+            <div class="uni-rank-badge">${escapeHTML(u.rank)}</div>
+          </div>
+          <div class="uni-card-body">
+            <div class="uni-tag-row">
+              ${u.tags.map(t => `<span class="uni-tag">${escapeHTML(t)}</span>`).join('')}
+            </div>
+            <div class="uni-detail-row">
+              <span class="uni-detail-icon">💰</span>
+              <span>${escapeHTML(u.tuition)}</span>
+            </div>
+            <div class="uni-detail-row">
+              <span class="uni-detail-icon">📋</span>
+              <span>${escapeHTML(u.requirements)}</span>
+            </div>
+            <div class="uni-detail-row">
+              <span class="uni-detail-icon">📅</span>
+              <span>Intakes: ${escapeHTML(u.intakes)}</span>
+            </div>
+          </div>
+          <div class="uni-card-footer">
+            <div class="uni-fee">From <strong>${escapeHTML(u.tuition.split(' ')[0])}</strong>/yr</div>
+            <div style="display:flex;gap:8px">
+              <a href="${escapeHTML(u.website)}" target="_blank" rel="noopener noreferrer" class="btn-outlined">Website ↗</a>
+              <a href="apply.html?service=study" class="btn-contained">Apply →</a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ── FILTER ──
+    function filterUni(country, btn) {
+      currentFilter = country;
+      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      renderCards();
+    }
+
+    // ── SEARCH ──
+    function searchUni(query) {
+      currentSearch = query;
+      renderCards();
+    }
+
+    // Initial render
+    renderCards();
+
+    // ── 11. TRANSLATIONS — same T object structure as all pages ──
+    const T = {
+      en: {
+        'nav-home':'Home','nav-services':'Services','nav-uni':'Universities',
+        'nav-about':'About','nav-apply':'Apply Now',
+        'ph-badge':'🎓 Partner Universities',
+        'ph-title':'Top universities <strong>around the world</strong>',
+        'ph-sub':'Browse our verified partner universities. We handle your application, student visa and accommodation — so you just focus on getting accepted.',
+        'stat-1':'Partner universities','stat-2':'Countries covered',
+        'stat-3':'Verified & accredited','stat-4':'Application response',
+        'filter-lbl':'Filter:',
+        'fc-all':'🌍 All','fc-uk':'🇬🇧 UK','fc-ca':'🇨🇦 Canada',
+        'fc-au':'🇦🇺 Australia','fc-de':'🇩🇪 Germany',
+        'fc-my':'🇲🇾 Malaysia','fc-ae':'🇦🇪 UAE','fc-tr':'🇹🇷 Turkey',
+        'how-overline':'How to apply',
+        'how-title':'We handle <strong>everything</strong>',
+        'how-sub':'From choosing your university to landing at campus — our team guides you every step.',
+        'step1-title':'Choose your university',
+        'step1-desc':'Browse this page and pick the universities that interest you, or let us recommend based on your qualifications.',
+        'step2-title':'Submit your application',
+        'step2-desc':'Fill our simple form and tell us your dream university, course and destination country.',
+        'step3-title':'Pay consultation fee',
+        'step3-desc':'Pay a small fee via MTN Mobile Money to activate your university application case.',
+        'step4-title':'We apply for you',
+        'step4-desc':'We submit your application to up to 3 universities, handle documents and student visa.',
+        'step5-title':'You travel & study',
+        'step5-desc':'We book your flight, arrange accommodation and pick you up at the airport.',
+        'trust-overline':'Why choose us',
+        'trust-title':'Built for Africans.<br><strong>Trusted by Africans.</strong>',
+        'trust-sub':'We understand the challenges of studying abroad from conflict-affected regions.',
+        'trust1-title':'100% Verified','trust1-desc':'Every university on this page is accredited, legitimate and accepting international students.',
+        'trust2-title':'We apply for you','trust2-desc':'We handle your full university application — forms, documents, references and follow-ups.',
+        'trust3-title':'Visa included','trust3-desc':'Student visa application guidance is included with every university application package.',
+        'trust4-title':'Accommodation arranged','trust4-desc':'We arrange student accommodation near your university before you even arrive.',
+        'cta-title':'Ready to apply to a <strong>university?</strong>',
+        'cta-sub':'Tell us your dream university and course. We will handle everything — application, visa, flights and accommodation.',
+        'cta-btn':'Apply for Study Abroad →',
+        'f-home':'Home','f-services':'Services','f-uni':'Universities','f-apply':'Apply','f-wa':'WhatsApp',
+        'footer-copy':'PathWay Africa © 2026 — South Sudan & East Africa — thebangbe@gmail.com',
+        'wa-tooltip':'Chat with us',
+      },
+      ar: {
+        'nav-home':'الرئيسية','nav-services':'الخدمات','nav-uni':'الجامعات',
+        'nav-about':'عن الشركة','nav-apply':'قدّم الآن',
+        'ph-badge':'🎓 الجامعات الشريكة',
+        'ph-title':'أفضل الجامعات <strong>حول العالم</strong>',
+        'ph-sub':'تصفح جامعاتنا الشريكة الموثقة. نتولى تقديم طلبك وتأشيرة الطالب والسكن — لتتفرغ فقط للقبول.',
+        'stat-1':'جامعة شريكة','stat-2':'دولة مغطاة',
+        'stat-3':'موثقة ومعتمدة','stat-4':'استجابة الطلب',
+        'filter-lbl':'تصفية:',
+        'fc-all':'🌍 الكل','fc-uk':'🇬🇧 المملكة المتحدة','fc-ca':'🇨🇦 كندا',
+        'fc-au':'🇦🇺 أستراليا','fc-de':'🇩🇪 ألمانيا',
+        'fc-my':'🇲🇾 ماليزيا','fc-ae':'🇦🇪 الإمارات','fc-tr':'🇹🇷 تركيا',
+        'how-overline':'كيفية التقديم',
+        'how-title':'نتولى <strong>كل شيء</strong>',
+        'how-sub':'من اختيار جامعتك حتى الوصول إلى الحرم الجامعي — فريقنا يرشدك في كل خطوة.',
+        'step1-title':'اختر جامعتك',
+        'step1-desc':'تصفح هذه الصفحة واختر الجامعات التي تهمك، أو دعنا نوصي بناءً على مؤهلاتك.',
+        'step2-title':'أرسل طلبك',
+        'step2-desc':'أكمل نموذجنا البسيط وأخبرنا بجامعتك المفضلة وتخصصك والدولة المقصودة.',
+        'step3-title':'ادفع رسوم الاستشارة',
+        'step3-desc':'ادفع رسوماً رمزية عبر MTN موبايل موني لتفعيل قضية طلبك الجامعي.',
+        'step4-title':'نتقدم نيابةً عنك',
+        'step4-desc':'نقدم طلبك إلى 3 جامعات، ونتولى الوثائق وتأشيرة الطالب.',
+        'step5-title':'أنت تسافر وتدرس',
+        'step5-desc':'نحجز رحلتك ونرتب السكن ونستقبلك في المطار.',
+        'trust-overline':'لماذا تختارنا',
+        'trust-title':'مبني للأفارقة.<br><strong>موثوق من الأفارقة.</strong>',
+        'trust-sub':'نفهم تحديات الدراسة في الخارج من المناطق المتضررة من النزاعات.',
+        'trust1-title':'100% موثق','trust1-desc':'كل جامعة في هذه الصفحة معتمدة وشرعية وتقبل الطلاب الدوليين.',
+        'trust2-title':'نتقدم نيابةً عنك','trust2-desc':'نتولى طلبك الجامعي كاملاً — النماذج والوثائق والمراجع والمتابعة.',
+        'trust3-title':'التأشيرة مشمولة','trust3-desc':'إرشاد طلب تأشيرة الطالب مشمول مع كل حزمة تقديم جامعي.',
+        'trust4-title':'السكن مُرتَّب','trust4-desc':'نرتب السكن الطلابي بالقرب من جامعتك قبل وصولك.',
+        'cta-title':'مستعد للتقديم في <strong>جامعة؟</strong>',
+        'cta-sub':'أخبرنا بجامعتك وتخصصك المفضلَين. سنتولى كل شيء — التقديم والتأشيرة والرحلات والسكن.',
+        'cta-btn':'تقدم للدراسة في الخارج ←',
+        'f-home':'الرئيسية','f-services':'الخدمات','f-uni':'الجامعات','f-apply':'قدّم','f-wa':'واتساب',
+        'footer-copy':'PathWay Africa © 2026 — جنوب السودان وشرق أفريقيا — thebangbe@gmail.com',
+        'wa-tooltip':'تحدث معنا',
+      },
+      fr: {
+        'nav-home':'Accueil','nav-services':'Services','nav-uni':'Universités',
+        'nav-about':'À Propos','nav-apply':'Postuler',
+        'ph-badge':'🎓 Universités Partenaires',
+        'ph-title':'Les meilleures universités <strong>du monde entier</strong>',
+        'ph-sub':'Parcourez nos universités partenaires vérifiées. Nous gérons votre candidature, visa étudiant et hébergement — concentrez-vous juste sur votre acceptation.',
+        'stat-1':'Universités partenaires','stat-2':'Pays couverts',
+        'stat-3':'Vérifiées & accréditées','stat-4':'Réponse de candidature',
+        'filter-lbl':'Filtrer:',
+        'fc-all':'🌍 Tous','fc-uk':'🇬🇧 UK','fc-ca':'🇨🇦 Canada',
+        'fc-au':'🇦🇺 Australie','fc-de':'🇩🇪 Allemagne',
+        'fc-my':'🇲🇾 Malaisie','fc-ae':'🇦🇪 EAU','fc-tr':'🇹🇷 Turquie',
+        'how-overline':'Comment postuler',
+        'how-title':'Nous gérons <strong>tout</strong>',
+        'how-sub':'Du choix de votre université jusqu\'à votre arrivée sur le campus — notre équipe vous guide à chaque étape.',
+        'step1-title':'Choisissez votre université',
+        'step1-desc':'Parcourez cette page et choisissez les universités qui vous intéressent, ou laissez-nous recommander selon vos qualifications.',
+        'step2-title':'Soumettez votre candidature',
+        'step2-desc':'Remplissez notre formulaire simple et indiquez-nous votre université, cours et pays de destination.',
+        'step3-title':'Payez les frais de consultation',
+        'step3-desc':'Payez un petit frais via MTN Mobile Money pour activer votre dossier de candidature universitaire.',
+        'step4-title':'Nous postulon pour vous',
+        'step4-desc':'Nous soumettons votre candidature à 3 universités, gérons les documents et le visa étudiant.',
+        'step5-title':'Vous voyagez & étudiez',
+        'step5-desc':'Nous réservons votre vol, arrangeons l\'hébergement et vous accueillons à l\'aéroport.',
+        'trust-overline':'Pourquoi nous choisir',
+        'trust-title':'Construit pour les Africains.<br><strong>De confiance.</strong>',
+        'trust-sub':'Nous comprenons les défis d\'étudier à l\'étranger depuis les régions touchées par les conflits.',
+        'trust1-title':'100% Vérifiées','trust1-desc':'Chaque université sur cette page est accréditée, légitime et accepte des étudiants internationaux.',
+        'trust2-title':'Nous postulon pour vous','trust2-desc':'Nous gérons toute votre candidature — formulaires, documents, références et suivis.',
+        'trust3-title':'Visa inclus','trust3-desc':'La guidance pour le visa étudiant est incluse dans chaque package de candidature universitaire.',
+        'trust4-title':'Hébergement arrangé','trust4-desc':'Nous arrangeons le logement étudiant près de votre université avant même votre arrivée.',
+        'cta-title':'Prêt à postuler dans une <strong>université?</strong>',
+        'cta-sub':'Dites-nous votre université et cours de rêve. Nous gérerons tout — candidature, visa, vols et hébergement.',
+        'cta-btn':'Postuler pour Études à l\'Étranger →',
+        'f-home':'Accueil','f-services':'Services','f-uni':'Universités','f-apply':'Postuler','f-wa':'WhatsApp',
+        'footer-copy':'PathWay Africa © 2026 — Soudan du Sud & Afrique de l\'Est — thebangbe@gmail.com',
+        'wa-tooltip':'Discutez avec nous',
+      }
+    };
+
+    // ── 12. setLang — identical to all pages ──
+    function setLang(lang) {
+      if (!['en','ar','fr'].includes(lang)) return;
+      const html = document.getElementById('html-root');
+      html.setAttribute('lang', lang);
+      html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      ['btn-en','btn-ar','btn-fr'].forEach(id => {
+        document.getElementById(id).className = 'lang-btn';
+      });
+      document.getElementById('btn-' + lang).className = 'lang-btn active';
+      const t = T[lang];
+      for (const [id, text] of Object.entries(t)) {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = text;
+      }
+      // Update search placeholder
+      const searchBox = document.getElementById('uni-search');
+      if (searchBox) {
+        const placeholders = { en:'Search universities...', ar:'ابحث عن الجامعات...', fr:'Rechercher des universités...' };
+        searchBox.placeholder = placeholders[lang] || 'Search universities...';
+      }
+      try { localStorage.setItem('pw-lang', lang); } catch(e) {}
+    }
+
+    // ── 13. Restore saved language — same as all pages ──
+    try {
+      const saved = localStorage.getItem('pw-lang');
+      if (saved && ['en','ar','fr'].includes(saved)) setLang(saved);
+    } catch(e) {}
+
+  </script>
+</body>
+</html>
