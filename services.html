@@ -1484,4 +1484,1490 @@
 
   </script>
 </body>
+</html><!DOCTYPE html>
+<html lang="en" dir="ltr" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services — PathWay Africa</title>
+
+  <!-- ── 1. SECURITY META TAGS ── -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+
+  <!-- ── 2. SEO & OPEN GRAPH ── -->
+  <meta name="description" content="PathWay Africa services — Study Abroad, Work Abroad, Medical Tourism, Travel & Relocation, Visitor Guide. Serving South Sudan and East Africa." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Services — PathWay Africa" />
+  <meta property="og:description" content="Complete relocation services from Africa to the world. Visa, university, flights, hotels and more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thebangbe.github.io/pathwayafrica/services.html" />
+
+  <!-- ── 3. GOOGLE FONTS — same as all other pages ── -->
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- ── 4. CSS — exact same design tokens as index/apply/admin ── -->
+  <style>
+    /* ── MATERIAL DESIGN TOKENS ── */
+    :root {
+      --md-primary:       #1A73E8;
+      --md-primary-dark:  #1557B0;
+      --md-primary-light: #E8F0FE;
+      --md-on-primary:    #FFFFFF;
+      --md-surface:       #FFFFFF;
+      --md-background:    #F8F9FA;
+      --md-on-surface:    #202124;
+      --md-on-surface-2:  #3C4043;
+      --md-on-surface-3:  #5F6368;
+      --md-on-surface-4:  #9AA0A6;
+      --md-border:        #E8EAED;
+      --md-border-dark:   #DADCE0;
+      --md-success:       #34A853;
+      --md-error:         #EA4335;
+      --md-warning:       #FBBC05;
+      --md-elevation-1:   0 1px 2px rgba(60,64,67,0.3), 0 1px 3px rgba(60,64,67,0.15);
+      --md-elevation-2:   0 1px 3px rgba(60,64,67,0.3), 0 4px 8px rgba(60,64,67,0.15);
+      --md-elevation-3:   0 2px 6px rgba(60,64,67,0.3), 0 6px 12px rgba(60,64,67,0.15);
+      --md-radius:        8px;
+      --md-radius-lg:     12px;
+      --md-radius-xl:     16px;
+      --font-sans:        'Roboto', Arial, sans-serif;
+      --font-display:     'Google Sans', 'Roboto', Arial, sans-serif;
+    }
+
+    /* ── RESET ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--md-background);
+      color: var(--md-on-surface);
+      font-size: 14px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── LANGUAGE BAR — identical to index.html ── */
+    .lang-bar {
+      background: var(--md-on-surface);
+      padding: 6px 24px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 4px;
+    }
+    .lang-btn {
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: none;
+      background: transparent;
+      color: var(--md-on-surface-4);
+      font-size: 12px;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .lang-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+    .lang-btn.active {
+      background: var(--md-primary);
+      color: #fff;
+      font-weight: 500;
+    }
+
+    /* ── HEADER — identical to index.html ── */
+    header {
+      background: var(--md-surface);
+      border-bottom: 1px solid var(--md-border);
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--md-elevation-1);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo-mark {
+      width: 32px; height: 32px;
+      background: var(--md-primary);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .logo-name {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--md-on-surface);
+      letter-spacing: -0.01em;
+    }
+    .logo-name span { color: var(--md-primary); }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    nav a {
+      color: var(--md-on-surface-3);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: var(--md-radius);
+      transition: background 0.15s, color 0.15s;
+      letter-spacing: 0.01em;
+    }
+    nav a:hover { background: var(--md-primary-light); color: var(--md-primary); }
+    nav a.nav-active { background: var(--md-primary-light); color: var(--md-primary); }
+    .nav-cta {
+      background: var(--md-primary) !important;
+      color: var(--md-on-primary) !important;
+      padding: 8px 24px !important;
+      border-radius: 999px !important;
+      box-shadow: var(--md-elevation-1);
+      transition: box-shadow 0.2s, background 0.2s !important;
+    }
+    .nav-cta:hover {
+      background: var(--md-primary-dark) !important;
+      box-shadow: var(--md-elevation-2) !important;
+    }
+
+    /* ── PAGE HEADER — same pattern as apply.html .page-header ── */
+    .page-header {
+      background: var(--md-surface);
+      border-bottom: 1px solid var(--md-border);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--md-primary-light);
+      color: var(--md-primary);
+      border-radius: 999px;
+      padding: 4px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 400;
+      color: var(--md-on-surface);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .page-header h1 strong { font-weight: 700; color: var(--md-primary); }
+    .page-header p {
+      font-size: 16px;
+      color: var(--md-on-surface-3);
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ── SECTION — same as index.html ── */
+    .section {
+      padding: 64px 24px;
+      max-width: 1128px;
+      margin: 0 auto;
+    }
+    .section-header { margin-bottom: 40px; }
+    .section-header.center { text-align: center; }
+    .overline {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--md-primary);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--md-on-surface);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+    .section-title strong { font-weight: 700; }
+    .section-body {
+      font-size: 16px;
+      color: var(--md-on-surface-3);
+      max-width: 560px;
+      line-height: 1.6;
+    }
+    .section-header.center .section-body { margin: 0 auto; }
+
+    /* ── SERVICE BLOCKS — extended from index.html service-card ── */
+    .service-block {
+      background: var(--md-surface);
+      border: 1px solid var(--md-border);
+      border-radius: var(--md-radius-xl);
+      overflow: hidden;
+      margin-bottom: 24px;
+      box-shadow: var(--md-elevation-1);
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .service-block:hover {
+      box-shadow: var(--md-elevation-2);
+      border-color: var(--md-primary);
+    }
+    .service-block-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 32px 32px 24px;
+      border-bottom: 1px solid var(--md-border);
+      flex-wrap: wrap;
+    }
+    .service-block-icon {
+      width: 56px; height: 56px;
+      background: var(--md-primary-light);
+      border-radius: var(--md-radius-lg);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px;
+      flex-shrink: 0;
+    }
+    .service-block-meta { flex: 1; min-width: 200px; }
+    .service-block-meta h2 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--md-on-surface);
+      margin-bottom: 6px;
+    }
+    .service-block-meta p {
+      font-size: 14px;
+      color: var(--md-on-surface-3);
+      line-height: 1.6;
+      max-width: 600px;
+    }
+    .service-block-price { text-align: right; flex-shrink: 0; }
+    .price-from-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--md-on-surface-4);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .price-amount {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--md-primary);
+      line-height: 1;
+    }
+    .price-note {
+      font-size: 11px;
+      color: var(--md-on-surface-4);
+      margin-top: 4px;
+    }
+    .service-block-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .service-col { padding: 24px 32px; }
+    .service-col:first-child { border-right: 1px solid var(--md-border); }
+    .service-col-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--md-on-surface-3);
+      margin-bottom: 16px;
+    }
+
+    /* checklist — same check pattern as apply.html success-list */
+    .check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--md-on-surface-2);
+      line-height: 1.5;
+    }
+    .check-icon {
+      width: 18px; height: 18px;
+      background: var(--md-success);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .docs-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .docs-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--md-on-surface-2);
+      line-height: 1.5;
+    }
+    .doc-dot {
+      width: 6px; height: 6px;
+      background: var(--md-primary);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+    .service-block-footer {
+      padding: 18px 32px;
+      border-top: 1px solid var(--md-border);
+      background: var(--md-background);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .chips-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--md-surface);
+      border: 1px solid var(--md-border-dark);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 12px;
+      color: var(--md-on-surface-2);
+      font-weight: 400;
+    }
+
+    /* ── BUTTONS — same as index.html & apply.html ── */
+    .btn-contained {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--md-primary);
+      color: var(--md-on-primary);
+      border: none;
+      border-radius: 999px;
+      padding: 10px 24px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: var(--md-elevation-1);
+      transition: box-shadow 0.2s, background 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .btn-contained:hover { background: var(--md-primary-dark); box-shadow: var(--md-elevation-2); }
+
+    /* ── BAND SECTION — same as index.html how-section ── */
+    .band-section {
+      background: var(--md-surface);
+      border-top: 1px solid var(--md-border);
+      border-bottom: 1px solid var(--md-border);
+    }
+
+    /* ── COMPARE TABLE ── */
+    .compare-wrap { overflow-x: auto; }
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .compare-table th {
+      padding: 14px 18px;
+      text-align: left;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--md-on-surface);
+      border-bottom: 2px solid var(--md-border);
+      background: var(--md-background);
+      white-space: nowrap;
+    }
+    .compare-table th:first-child {
+      color: var(--md-on-surface-3);
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .compare-table td {
+      padding: 13px 18px;
+      border-bottom: 1px solid var(--md-border);
+      color: var(--md-on-surface-2);
+      vertical-align: middle;
+    }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:hover td { background: var(--md-background); }
+    .compare-table td:first-child {
+      font-size: 12px; font-weight: 500;
+      color: var(--md-on-surface-3);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .tick  { color: var(--md-success); font-size: 16px; }
+    .cross { color: var(--md-error);   font-size: 14px; }
+    .part  { color: var(--md-warning); font-size: 14px; }
+
+    /* ── FAQ ACCORDION ── */
+    .faq-wrap { max-width: 720px; margin: 0 auto; }
+    .faq-item {
+      border: 1px solid var(--md-border);
+      border-radius: var(--md-radius-lg);
+      margin-bottom: 8px;
+      background: var(--md-surface);
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .faq-item:hover { box-shadow: var(--md-elevation-1); }
+    .faq-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      background: none;
+      border: none;
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--md-on-surface);
+      cursor: pointer;
+      text-align: left;
+      gap: 16px;
+      transition: background 0.15s;
+    }
+    .faq-btn:hover { background: var(--md-background); }
+    .faq-chevron {
+      flex-shrink: 0;
+      font-size: 18px;
+      color: var(--md-on-surface-4);
+      transition: transform 0.25s;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 24px;
+      font-size: 14px;
+      color: var(--md-on-surface-3);
+      line-height: 1.7;
+    }
+    .faq-item.open .faq-answer { max-height: 400px; padding: 0 24px 20px; }
+
+    /* ── TRUST SECTION — identical to index.html ── */
+    .trust-section { background: var(--md-on-surface); }
+    .trust-section .section-title { color: #fff; }
+    .trust-section .section-body  { color: var(--md-on-surface-4); }
+    .trust-section .overline       { color: var(--md-primary); }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .trust-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--md-radius-xl);
+      padding: 28px 24px;
+      transition: background 0.2s;
+    }
+    .trust-card:hover { background: rgba(255,255,255,0.08); }
+    .trust-card-icon {
+      width: 44px; height: 44px;
+      background: var(--md-primary-light);
+      border-radius: var(--md-radius);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+    .trust-card h4 {
+      font-family: var(--font-display);
+      font-size: 15px; font-weight: 500;
+      color: #fff; margin-bottom: 6px;
+    }
+    .trust-card p { font-size: 13px; color: var(--md-on-surface-4); line-height: 1.5; }
+
+    /* ── CTA BANNER — identical to index.html ── */
+    .cta-banner { background: var(--md-primary); padding: 64px 24px; text-align: center; }
+    .cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: 36px; font-weight: 400;
+      color: #fff; margin-bottom: 12px; letter-spacing: -0.01em;
+    }
+    .cta-banner h2 strong { font-weight: 700; }
+    .cta-banner p {
+      font-size: 16px; color: rgba(255,255,255,0.8);
+      margin-bottom: 32px; max-width: 500px;
+      margin-left: auto; margin-right: auto;
+    }
+    .btn-white {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; color: var(--md-primary);
+      border: none; border-radius: 999px;
+      padding: 14px 32px; font-size: 15px; font-weight: 500;
+      font-family: var(--font-sans); cursor: pointer;
+      text-decoration: none; box-shadow: var(--md-elevation-2);
+      transition: box-shadow 0.2s; letter-spacing: 0.01em;
+    }
+    .btn-white:hover { box-shadow: var(--md-elevation-3); }
+
+    /* ── FOOTER — identical to index.html ── */
+    footer { background: var(--md-surface); border-top: 1px solid var(--md-border); padding: 32px 24px; }
+    .footer-inner {
+      max-width: 1128px; margin: 0 auto;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-logo { font-family: var(--font-display); font-size: 16px; font-weight: 500; color: var(--md-on-surface); }
+    .footer-logo span { color: var(--md-primary); }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--md-on-surface-3); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--md-primary); }
+    .footer-copy {
+      font-size: 12px; color: var(--md-on-surface-4);
+      width: 100%; text-align: center;
+      margin-top: 16px; padding-top: 16px;
+      border-top: 1px solid var(--md-border);
+    }
+
+    /* ── FLOATING WHATSAPP ── */
+    .wa-float {
+      position: fixed; bottom: 24px; right: 24px; z-index: 999;
+      width: 56px; height: 56px; background: #25D366;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 28px; box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+      text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(37,211,102,0.5); }
+    .wa-tooltip {
+      position: absolute; right: 68px;
+      background: var(--md-on-surface); color: #fff;
+      font-size: 12px; font-weight: 500;
+      padding: 6px 12px; border-radius: var(--md-radius);
+      white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.2s;
+    }
+    .wa-float:hover .wa-tooltip { opacity: 1; }
+
+    /* ── RTL — same as all pages ── */
+    [dir="rtl"] nav a { margin-left: 0; }
+    [dir="rtl"] .lang-bar { justify-content: flex-start; }
+    [dir="rtl"] body { font-family: 'Roboto', 'Traditional Arabic', Arial, sans-serif; }
+    [dir="rtl"] .service-col:first-child { border-right: none; border-left: 1px solid var(--md-border); }
+    [dir="rtl"] .wa-float { right: auto; left: 24px; }
+    [dir="rtl"] .wa-tooltip { right: auto; left: 68px; }
+
+    /* ── RESPONSIVE — same breakpoints as all pages ── */
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 28px; }
+      header { padding: 0 16px; }
+      nav a { padding: 8px 10px; font-size: 13px; }
+      .section { padding: 48px 16px; }
+      .service-block-body { grid-template-columns: 1fr; }
+      .service-col:first-child { border-right: none; border-bottom: 1px solid var(--md-border); }
+      .service-block-header { padding: 20px; gap: 14px; }
+      .service-col { padding: 20px; }
+      .service-block-footer { padding: 16px 20px; }
+      .service-block-price { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── 5. LANGUAGE BAR ── -->
+  <div class="lang-bar">
+    <button class="lang-btn active" onclick="setLang('en')" id="btn-en">🇬🇧 EN</button>
+    <button class="lang-btn" onclick="setLang('ar')" id="btn-ar">🇸🇦 AR</button>
+    <button class="lang-btn" onclick="setLang('fr')" id="btn-fr">🇫🇷 FR</button>
+  </div>
+
+  <!-- ── 6. HEADER ── -->
+  <header>
+    <a href="index.html" class="logo">
+      <div class="logo-mark">🌍</div>
+      <span class="logo-name">Path<span>Way</span> Africa</span>
+    </a>
+    <nav>
+      <a href="index.html" id="nav-home">Home</a>
+      <a href="services.html" class="nav-active" id="nav-services">Services</a>
+      <a href="universities.html" id="nav-uni">Universities</a>
+      <a href="about.html" id="nav-about">About</a>
+      <a href="apply.html" class="nav-cta" id="nav-apply">Apply Now</a>
+    </nav>
+  </header>
+
+  <!-- ── 7. PAGE CONTENT ── -->
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="hero-eyebrow" id="ph-badge">🛎️ What we offer</div>
+    <h1 id="ph-title">Everything you need<br><strong>from Africa to the World</strong></h1>
+    <p id="ph-sub">Visa. University. Flights. Hotels. Medical. Work. We handle it all — so you can focus on your future.</p>
+  </div>
+
+  <!-- SERVICE 1: STUDY ABROAD -->
+  <div class="section" id="study">
+    <div class="service-block">
+      <div class="service-block-header">
+        <div class="service-block-icon">🎓</div>
+        <div class="service-block-meta">
+          <h2 id="s1-title">Study Abroad</h2>
+          <p id="s1-desc">We connect African students with top universities worldwide. From choosing the right course to arriving at your new campus — we handle everything so you can focus on your future.</p>
+        </div>
+        <div class="service-block-price">
+          <div class="price-from-label" id="s1-from">Consultation from</div>
+          <div class="price-amount">$50</div>
+          <div class="price-note" id="s1-note">Full package quoted per case</div>
+        </div>
+      </div>
+      <div class="service-block-body">
+        <div class="service-col">
+          <div class="service-col-label" id="s1-inc-lbl">What's included</div>
+          <ul class="check-list">
+            <li><span class="check-icon">✓</span><span id="s1-i1">University search & shortlisting based on your qualifications</span></li>
+            <li><span class="check-icon">✓</span><span id="s1-i2">Application submission to up to 3 universities of your choice</span></li>
+            <li><span class="check-icon">✓</span><span id="s1-i3">Student visa application guidance & document preparation</span></li>
+            <li><span class="check-icon">✓</span><span id="s1-i4">Accommodation arrangement near your university</span></li>
+            <li><span class="check-icon">✓</span><span id="s1-i5">Flight booking assistance & airport pickup coordination</span></li>
+            <li><span class="check-icon">✓</span><span id="s1-i6">WhatsApp support throughout your entire journey</span></li>
+          </ul>
+        </div>
+        <div class="service-col">
+          <div class="service-col-label" id="s1-docs-lbl">Documents you will need</div>
+          <ul class="docs-list">
+            <li><span class="doc-dot"></span><span id="s1-d1">Valid passport (minimum 2 years remaining)</span></li>
+            <li><span class="doc-dot"></span><span id="s1-d2">Academic certificates (O-level, A-level or equivalent)</span></li>
+            <li><span class="doc-dot"></span><span id="s1-d3">English language test result (IELTS / TOEFL — if required)</span></li>
+            <li><span class="doc-dot"></span><span id="s1-d4">Bank statement or financial proof</span></li>
+            <li><span class="doc-dot"></span><span id="s1-d5">Passport-size photos (white background)</span></li>
+            <li><span class="doc-dot"></span><span id="s1-d6">Personal statement / motivation letter</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="service-block-footer">
+        <div class="chips-row">
+          <span class="chip">⏱️ <span id="s1-time">4–12 weeks processing</span></span>
+          <span class="chip">✈️ <span id="s1-dest">UK · Canada · Australia · Germany · Malaysia</span></span>
+        </div>
+        <a href="apply.html?service=study" class="btn-contained" id="s1-btn">Apply for Study Abroad →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE 2: WORK ABROAD -->
+  <div class="section" id="work" style="padding-top:0">
+    <div class="service-block">
+      <div class="service-block-header">
+        <div class="service-block-icon">💼</div>
+        <div class="service-block-meta">
+          <h2 id="s2-title">Work Abroad</h2>
+          <p id="s2-desc">We help skilled Africans find legitimate employment abroad. Job placement, work permit, visa application and full relocation support — all in one place.</p>
+        </div>
+        <div class="service-block-price">
+          <div class="price-from-label" id="s2-from">Consultation from</div>
+          <div class="price-amount">$100</div>
+          <div class="price-note" id="s2-note">Full package quoted per case</div>
+        </div>
+      </div>
+      <div class="service-block-body">
+        <div class="service-col">
+          <div class="service-col-label" id="s2-inc-lbl">What's included</div>
+          <ul class="check-list">
+            <li><span class="check-icon">✓</span><span id="s2-i1">Job search assistance in your field of expertise</span></li>
+            <li><span class="check-icon">✓</span><span id="s2-i2">CV / resume writing tailored to international standards</span></li>
+            <li><span class="check-icon">✓</span><span id="s2-i3">Work permit & visa application support</span></li>
+            <li><span class="check-icon">✓</span><span id="s2-i4">Employer contract review & guidance</span></li>
+            <li><span class="check-icon">✓</span><span id="s2-i5">Relocation support — flights, accommodation & orientation</span></li>
+            <li><span class="check-icon">✓</span><span id="s2-i6">Post-arrival WhatsApp support for the first 30 days</span></li>
+          </ul>
+        </div>
+        <div class="service-col">
+          <div class="service-col-label" id="s2-docs-lbl">Documents you will need</div>
+          <ul class="docs-list">
+            <li><span class="doc-dot"></span><span id="s2-d1">Valid passport (minimum 2 years remaining)</span></li>
+            <li><span class="doc-dot"></span><span id="s2-d2">Updated CV / resume</span></li>
+            <li><span class="doc-dot"></span><span id="s2-d3">Professional certificates / diplomas</span></li>
+            <li><span class="doc-dot"></span><span id="s2-d4">Work experience reference letters</span></li>
+            <li><span class="doc-dot"></span><span id="s2-d5">Police clearance certificate</span></li>
+            <li><span class="doc-dot"></span><span id="s2-d6">Medical fitness certificate</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="service-block-footer">
+        <div class="chips-row">
+          <span class="chip">⏱️ <span id="s2-time">6–16 weeks processing</span></span>
+          <span class="chip">✈️ <span id="s2-dest">UAE · Qatar · Saudi Arabia · UK · Canada</span></span>
+        </div>
+        <a href="apply.html?service=work" class="btn-contained" id="s2-btn">Apply for Work Abroad →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE 3: MEDICAL TOURISM -->
+  <div class="section" id="medical" style="padding-top:0">
+    <div class="service-block">
+      <div class="service-block-header">
+        <div class="service-block-icon">🏥</div>
+        <div class="service-block-meta">
+          <h2 id="s3-title">Medical Tourism</h2>
+          <p id="s3-desc">Access world-class hospitals in India, UAE and Thailand. We arrange your medical visa, hospital appointment, flights and hotel near the hospital — all coordinated for you.</p>
+        </div>
+        <div class="service-block-price">
+          <div class="price-from-label" id="s3-from">Consultation from</div>
+          <div class="price-amount">$200</div>
+          <div class="price-note" id="s3-note">Full package quoted per case</div>
+        </div>
+      </div>
+      <div class="service-block-body">
+        <div class="service-col">
+          <div class="service-col-label" id="s3-inc-lbl">What's included</div>
+          <ul class="check-list">
+            <li><span class="check-icon">✓</span><span id="s3-i1">Hospital & specialist selection based on your medical condition</span></li>
+            <li><span class="check-icon">✓</span><span id="s3-i2">Medical visa application & document preparation</span></li>
+            <li><span class="check-icon">✓</span><span id="s3-i3">Hospital appointment booking & written confirmation</span></li>
+            <li><span class="check-icon">✓</span><span id="s3-i4">Flight booking to the destination country</span></li>
+            <li><span class="check-icon">✓</span><span id="s3-i5">Hotel accommodation near the hospital</span></li>
+            <li><span class="check-icon">✓</span><span id="s3-i6">Airport pickup and local transport guidance</span></li>
+          </ul>
+        </div>
+        <div class="service-col">
+          <div class="service-col-label" id="s3-docs-lbl">Documents you will need</div>
+          <ul class="docs-list">
+            <li><span class="doc-dot"></span><span id="s3-d1">Valid passport (minimum 6 months remaining)</span></li>
+            <li><span class="doc-dot"></span><span id="s3-d2">Medical records & diagnosis reports</span></li>
+            <li><span class="doc-dot"></span><span id="s3-d3">Doctor's referral letter (from your local doctor)</span></li>
+            <li><span class="doc-dot"></span><span id="s3-d4">Bank statement showing sufficient funds</span></li>
+            <li><span class="doc-dot"></span><span id="s3-d5">Recent blood test & radiology reports</span></li>
+            <li><span class="doc-dot"></span><span id="s3-d6">Travel insurance (strongly recommended)</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="service-block-footer">
+        <div class="chips-row">
+          <span class="chip">⏱️ <span id="s3-time">2–6 weeks processing</span></span>
+          <span class="chip">🏥 <span id="s3-dest">India · UAE · Thailand · Turkey</span></span>
+        </div>
+        <a href="apply.html?service=medical" class="btn-contained" id="s3-btn">Apply for Medical Tourism →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE 4: TRAVEL & RELOCATION -->
+  <div class="section" id="travel" style="padding-top:0">
+    <div class="service-block">
+      <div class="service-block-header">
+        <div class="service-block-icon">✈️</div>
+        <div class="service-block-meta">
+          <h2 id="s4-title">Travel & Relocation</h2>
+          <p id="s4-desc">Moving to a new country permanently or for a short visit? We handle your travel visa, flight, hotel and guide you every step of the way on arrival.</p>
+        </div>
+        <div class="service-block-price">
+          <div class="price-from-label" id="s4-from">Consultation from</div>
+          <div class="price-amount">$100</div>
+          <div class="price-note" id="s4-note">Full package quoted per case</div>
+        </div>
+      </div>
+      <div class="service-block-body">
+        <div class="service-col">
+          <div class="service-col-label" id="s4-inc-lbl">What's included</div>
+          <ul class="check-list">
+            <li><span class="check-icon">✓</span><span id="s4-i1">Travel / tourist visa application & guidance</span></li>
+            <li><span class="check-icon">✓</span><span id="s4-i2">Flight booking — best routes & prices</span></li>
+            <li><span class="check-icon">✓</span><span id="s4-i3">Hotel or furnished apartment reservation</span></li>
+            <li><span class="check-icon">✓</span><span id="s4-i4">Airport pickup arrangement on arrival</span></li>
+            <li><span class="check-icon">✓</span><span id="s4-i5">Local orientation & safety guidance</span></li>
+            <li><span class="check-icon">✓</span><span id="s4-i6">SIM card & bank account opening assistance</span></li>
+          </ul>
+        </div>
+        <div class="service-col">
+          <div class="service-col-label" id="s4-docs-lbl">Documents you will need</div>
+          <ul class="docs-list">
+            <li><span class="doc-dot"></span><span id="s4-d1">Valid passport (minimum 6 months remaining)</span></li>
+            <li><span class="doc-dot"></span><span id="s4-d2">Bank statement (last 3 months)</span></li>
+            <li><span class="doc-dot"></span><span id="s4-d3">Proof of accommodation / hotel booking</span></li>
+            <li><span class="doc-dot"></span><span id="s4-d4">Return ticket or onward travel proof</span></li>
+            <li><span class="doc-dot"></span><span id="s4-d5">Travel insurance</span></li>
+            <li><span class="doc-dot"></span><span id="s4-d6">Passport-size photos (white background)</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="service-block-footer">
+        <div class="chips-row">
+          <span class="chip">⏱️ <span id="s4-time">1–4 weeks processing</span></span>
+          <span class="chip">✈️ <span id="s4-dest">50+ countries worldwide</span></span>
+        </div>
+        <a href="apply.html?service=travel" class="btn-contained" id="s4-btn">Apply for Travel & Relocation →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE 5: VISITOR GUIDE -->
+  <div class="section" id="visitor" style="padding-top:0">
+    <div class="service-block">
+      <div class="service-block-header">
+        <div class="service-block-icon">🗺️</div>
+        <div class="service-block-meta">
+          <h2 id="s5-title">Visitor Guide</h2>
+          <p id="s5-desc">Foreigners, NGO workers, journalists and investors visiting South Sudan or East Africa — we provide safe local transport, trusted hotels, security briefing and on-the-ground support.</p>
+        </div>
+        <div class="service-block-price">
+          <div class="price-from-label" id="s5-from">Consultation from</div>
+          <div class="price-amount">$30</div>
+          <div class="price-note" id="s5-note">Full package quoted per case</div>
+        </div>
+      </div>
+      <div class="service-block-body">
+        <div class="service-col">
+          <div class="service-col-label" id="s5-inc-lbl">What's included</div>
+          <ul class="check-list">
+            <li><span class="check-icon">✓</span><span id="s5-i1">Airport pickup in Juba or Kampala on arrival</span></li>
+            <li><span class="check-icon">✓</span><span id="s5-i2">Trusted hotel & guesthouse reservations</span></li>
+            <li><span class="check-icon">✓</span><span id="s5-i3">Safe local transport with verified drivers</span></li>
+            <li><span class="check-icon">✓</span><span id="s5-i4">Local SIM card & internet setup</span></li>
+            <li><span class="check-icon">✓</span><span id="s5-i5">Security briefing & safe-zone guidance</span></li>
+            <li><span class="check-icon">✓</span><span id="s5-i6">Emergency WhatsApp support 24/7</span></li>
+          </ul>
+        </div>
+        <div class="service-col">
+          <div class="service-col-label" id="s5-docs-lbl">Documents you will need</div>
+          <ul class="docs-list">
+            <li><span class="doc-dot"></span><span id="s5-d1">Valid passport (minimum 6 months remaining)</span></li>
+            <li><span class="doc-dot"></span><span id="s5-d2">South Sudan / Uganda entry visa (we help arrange)</span></li>
+            <li><span class="doc-dot"></span><span id="s5-d3">Yellow fever vaccination card</span></li>
+            <li><span class="doc-dot"></span><span id="s5-d4">Travel insurance with emergency cover</span></li>
+            <li><span class="doc-dot"></span><span id="s5-d5">Organisation letter (for NGO / press visitors)</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="service-block-footer">
+        <div class="chips-row">
+          <span class="chip">⏱️ <span id="s5-time">Book 3–7 days in advance</span></span>
+          <span class="chip">📍 <span id="s5-dest">Juba · Kampala · Nairobi · Kigali</span></span>
+        </div>
+        <a href="apply.html?service=visitor" class="btn-contained" id="s5-btn">Book Visitor Guide →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPARE TABLE — band style like how-section in index.html -->
+  <div class="band-section">
+    <div class="section">
+      <div class="section-header center">
+        <div class="overline" id="cmp-overline">Compare services</div>
+        <h2 class="section-title" id="cmp-title">Which service is <strong>right for you?</strong></h2>
+        <p class="section-body" id="cmp-sub">Use this table to find the service that matches your situation.</p>
+      </div>
+      <div class="compare-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th id="cmp-h0">Feature</th>
+              <th>🎓 <span id="cmp-h1">Study</span></th>
+              <th>💼 <span id="cmp-h2">Work</span></th>
+              <th>🏥 <span id="cmp-h3">Medical</span></th>
+              <th>✈️ <span id="cmp-h4">Travel</span></th>
+              <th>🗺️ <span id="cmp-h5">Visitor</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td id="cmp-r1">Visa assistance</td><td><span class="tick">✔</span></td><td><span class="tick">✔</span></td><td><span class="tick">✔</span></td><td><span class="tick">✔</span></td><td><span class="part">~</span></td></tr>
+            <tr><td id="cmp-r2">Flight booking</td><td><span class="tick">✔</span></td><td><span class="tick">✔</span></td><td><span class="tick">✔</span></td><td><span class="tick">✔</span></td><td><span class="cross">✗</span></td></tr>
+            <tr><td id="cmp-r3">Hotel / accommodation</td><td><span class="tick">✔</span></td><td><span class="tick">✔</span></td><td><span class="tick">✔</span></td><td><span class="tick">✔</span></td><td><span class="tick">✔</span></td></tr>
+            <tr><td id="cmp-r4">Airport pickup</td><td><span class="tick">✔</span></td><td><span class="tick">✔</span></td><td><span class="tick">✔</span></td><td><span class="tick">✔</span></td><td><span class="tick">✔</span></td></tr>
+            <tr><td id="cmp-r5">University application</td><td><span class="tick">✔</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td></tr>
+            <tr><td id="cmp-r6">Job placement</td><td><span class="cross">✗</span></td><td><span class="tick">✔</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td></tr>
+            <tr><td id="cmp-r7">Hospital appointment</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="tick">✔</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td></tr>
+            <tr><td id="cmp-r8">WhatsApp support</td><td><span class="tick">✔</span></td><td><span class="tick">✔</span></td><td><span class="tick">✔</span></td><td><span class="tick">✔</span></td><td><span class="tick">✔</span></td></tr>
+            <tr><td id="cmp-r9">Consultation fee</td><td><strong style="color:var(--md-primary)">$50</strong></td><td><strong style="color:var(--md-primary)">$100</strong></td><td><strong style="color:var(--md-primary)">$200</strong></td><td><strong style="color:var(--md-primary)">$100</strong></td><td><strong style="color:var(--md-primary)">$30</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <div class="section-header center">
+      <div class="overline" id="faq-overline">FAQ</div>
+      <h2 class="section-title" id="faq-title">Frequently asked <strong>questions</strong></h2>
+      <p class="section-body" id="faq-sub">Everything you need to know before you apply.</p>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span id="faq-q1">Is PathWay Africa a legitimate company?</span>
+          <span class="faq-chevron">⌄</span>
+        </button>
+        <div class="faq-answer" id="faq-a1">Yes. PathWay Africa is a registered travel and relocation consultancy based in South Sudan and Uganda. All our university partners, visa agents and hospital partners are fully verified. We have helped clients from South Sudan, Uganda, Kenya, Ethiopia and DR Congo.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span id="faq-q2">Why do I pay a consultation fee first?</span>
+          <span class="faq-chevron">⌄</span>
+        </button>
+        <div class="faq-answer" id="faq-a2">The consultation fee activates your case in our system and covers the time of our specialist who reviews your application and contacts you personally via WhatsApp within 24 hours. It is separate from the actual visa, university or flight costs.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span id="faq-q3">What if my visa application is rejected?</span>
+          <span class="faq-chevron">⌄</span>
+        </button>
+        <div class="faq-answer" id="faq-a3">We work hard to prepare strong applications. In the event of a rejection we analyze the reason and advise you on next steps — reapplication, alternative destinations or different visa categories. We do not abandon clients after a rejection.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span id="faq-q4">How do I pay? I don't have a bank account.</span>
+          <span class="faq-chevron">⌄</span>
+        </button>
+        <div class="faq-answer" id="faq-a4">No bank account needed. We accept MTN Mobile Money — send the consultation fee to +211 922 882 019 and paste your transaction ID into the application form. This works from South Sudan, Uganda, Kenya, Rwanda and most East African countries.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span id="faq-q5">How long does the whole process take?</span>
+          <span class="faq-chevron">⌄</span>
+        </button>
+        <div class="faq-answer" id="faq-a5">Travel visas: 1–4 weeks. Student visas: 4–12 weeks. Work visas: 6–16 weeks. Medical tourism: 2–6 weeks. We give you an exact timeline during your WhatsApp consultation call.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span id="faq-q6">I have no passport yet. Can you still help?</span>
+          <span class="faq-chevron">⌄</span>
+        </button>
+        <div class="faq-answer" id="faq-a6">Yes — we guide you through the passport application process in South Sudan or Uganda. A passport is always the first step and we advise you to start as early as possible since it can take several weeks.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRUST SECTION — identical to index.html -->
+  <div class="trust-section">
+    <div class="section">
+      <div class="section-header center">
+        <div class="overline" id="trust-overline">Why choose us</div>
+        <h2 class="section-title" id="trust-title">Built for Africans.<br><strong>Trusted by Africans.</strong></h2>
+        <p class="section-body" id="trust-sub">We understand the challenges of travelling from conflict-affected regions.</p>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="trust-card-icon">🔒</div>
+          <h4 id="trust1-title">100% Legitimate</h4>
+          <p id="trust1-desc">All our university partners, visa agents and hospitals are fully verified and legitimate.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card-icon">💬</div>
+          <h4 id="trust2-title">WhatsApp support</h4>
+          <p id="trust2-desc">We communicate with you directly on WhatsApp — no complicated systems or call centres.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card-icon">💰</div>
+          <h4 id="trust3-title">Pay via MTN Money</h4>
+          <p id="trust3-desc">Pay consultation fees easily via MTN Mobile Money — no bank account needed.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card-icon">🌍</div>
+          <h4 id="trust4-title">We know Africa</h4>
+          <p id="trust4-desc">Founded in South Sudan — we understand your documents, your situation and your needs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA BANNER — identical to index.html -->
+  <div class="cta-banner">
+    <h2 id="cta-title">Not sure which service <strong>you need?</strong></h2>
+    <p id="cta-sub">Apply now and describe your situation. Our team will advise you on the best service and route within 24 hours.</p>
+    <a href="apply.html" class="btn-white" id="cta-btn">Start your application →</a>
+  </div>
+
+  <!-- ── 8. FOOTER — identical to index.html ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Path<span>Way</span> Africa</div>
+      <div class="footer-links">
+        <a href="index.html" id="f-home">Home</a>
+        <a href="services.html" id="f-services">Services</a>
+        <a href="universities.html" id="f-uni">Universities</a>
+        <a href="apply.html" id="f-apply">Apply</a>
+        <a href="https://wa.me/211922882019" id="f-wa" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+      <div class="footer-copy" id="footer-copy">
+        PathWay Africa © 2026 — South Sudan & East Africa — thebangbe@gmail.com
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── 9. FLOATING WHATSAPP BUTTON ── -->
+  <a href="https://wa.me/211922882019?text=Hello%20PathWay%20Africa%2C%20I%20want%20to%20inquire%20about%20your%20services."
+     class="wa-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Chat on WhatsApp">
+    💬
+    <span class="wa-tooltip" id="wa-tooltip">Chat with us</span>
+  </a>
+
+  <!-- ── 10. JAVASCRIPT ── -->
+  <script>
+    // ── SECURITY: Anti-clickjacking — same as apply.html ──
+    if (window.self !== window.top) {
+      window.top.location = window.self.location;
+    }
+
+    // ── SECURITY: HTML sanitizer for any dynamic output ──
+    function escapeHTML(str) {
+      if (typeof str !== 'string') return '';
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // ── FAQ ACCORDION ──
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // ── 11. TRANSLATIONS — same T object structure as index.html & apply.html ──
+    const T = {
+      en: {
+        'nav-home':'Home','nav-services':'Services','nav-uni':'Universities',
+        'nav-about':'About','nav-apply':'Apply Now',
+        'ph-badge':'🛎️ What we offer',
+        'ph-title':'Everything you need<br><strong>from Africa to the World</strong>',
+        'ph-sub':'Visa. University. Flights. Hotels. Medical. Work. We handle it all — so you can focus on your future.',
+        's1-title':'Study Abroad',
+        's1-desc':'We connect African students with top universities worldwide. From choosing the right course to arriving at your new campus — we handle everything so you can focus on your future.',
+        's1-from':'Consultation from','s1-note':'Full package quoted per case',
+        's1-inc-lbl':'What\'s included','s1-docs-lbl':'Documents you will need',
+        's1-i1':'University search & shortlisting based on your qualifications',
+        's1-i2':'Application submission to up to 3 universities of your choice',
+        's1-i3':'Student visa application guidance & document preparation',
+        's1-i4':'Accommodation arrangement near your university',
+        's1-i5':'Flight booking assistance & airport pickup coordination',
+        's1-i6':'WhatsApp support throughout your entire journey',
+        's1-d1':'Valid passport (minimum 2 years remaining)',
+        's1-d2':'Academic certificates (O-level, A-level or equivalent)',
+        's1-d3':'English language test result (IELTS / TOEFL — if required)',
+        's1-d4':'Bank statement or financial proof',
+        's1-d5':'Passport-size photos (white background)',
+        's1-d6':'Personal statement / motivation letter',
+        's1-time':'4–12 weeks processing','s1-dest':'UK · Canada · Australia · Germany · Malaysia',
+        's1-btn':'Apply for Study Abroad →',
+        's2-title':'Work Abroad',
+        's2-desc':'We help skilled Africans find legitimate employment abroad. Job placement, work permit, visa application and full relocation support — all in one place.',
+        's2-from':'Consultation from','s2-note':'Full package quoted per case',
+        's2-inc-lbl':'What\'s included','s2-docs-lbl':'Documents you will need',
+        's2-i1':'Job search assistance in your field of expertise',
+        's2-i2':'CV / resume writing tailored to international standards',
+        's2-i3':'Work permit & visa application support',
+        's2-i4':'Employer contract review & guidance',
+        's2-i5':'Relocation support — flights, accommodation & orientation',
+        's2-i6':'Post-arrival WhatsApp support for the first 30 days',
+        's2-d1':'Valid passport (minimum 2 years remaining)',
+        's2-d2':'Updated CV / resume',
+        's2-d3':'Professional certificates / diplomas',
+        's2-d4':'Work experience reference letters',
+        's2-d5':'Police clearance certificate',
+        's2-d6':'Medical fitness certificate',
+        's2-time':'6–16 weeks processing','s2-dest':'UAE · Qatar · Saudi Arabia · UK · Canada',
+        's2-btn':'Apply for Work Abroad →',
+        's3-title':'Medical Tourism',
+        's3-desc':'Access world-class hospitals in India, UAE and Thailand. We arrange your medical visa, hospital appointment, flights and hotel near the hospital — all coordinated for you.',
+        's3-from':'Consultation from','s3-note':'Full package quoted per case',
+        's3-inc-lbl':'What\'s included','s3-docs-lbl':'Documents you will need',
+        's3-i1':'Hospital & specialist selection based on your medical condition',
+        's3-i2':'Medical visa application & document preparation',
+        's3-i3':'Hospital appointment booking & written confirmation',
+        's3-i4':'Flight booking to the destination country',
+        's3-i5':'Hotel accommodation near the hospital',
+        's3-i6':'Airport pickup and local transport guidance',
+        's3-d1':'Valid passport (minimum 6 months remaining)',
+        's3-d2':'Medical records & diagnosis reports',
+        's3-d3':'Doctor\'s referral letter (from your local doctor)',
+        's3-d4':'Bank statement showing sufficient funds',
+        's3-d5':'Recent blood test & radiology reports',
+        's3-d6':'Travel insurance (strongly recommended)',
+        's3-time':'2–6 weeks processing','s3-dest':'India · UAE · Thailand · Turkey',
+        's3-btn':'Apply for Medical Tourism →',
+        's4-title':'Travel & Relocation',
+        's4-desc':'Moving to a new country permanently or for a short visit? We handle your travel visa, flight, hotel and guide you every step of the way on arrival.',
+        's4-from':'Consultation from','s4-note':'Full package quoted per case',
+        's4-inc-lbl':'What\'s included','s4-docs-lbl':'Documents you will need',
+        's4-i1':'Travel / tourist visa application & guidance',
+        's4-i2':'Flight booking — best routes & prices',
+        's4-i3':'Hotel or furnished apartment reservation',
+        's4-i4':'Airport pickup arrangement on arrival',
+        's4-i5':'Local orientation & safety guidance',
+        's4-i6':'SIM card & bank account opening assistance',
+        's4-d1':'Valid passport (minimum 6 months remaining)',
+        's4-d2':'Bank statement (last 3 months)',
+        's4-d3':'Proof of accommodation / hotel booking',
+        's4-d4':'Return ticket or onward travel proof',
+        's4-d5':'Travel insurance',
+        's4-d6':'Passport-size photos (white background)',
+        's4-time':'1–4 weeks processing','s4-dest':'50+ countries worldwide',
+        's4-btn':'Apply for Travel & Relocation →',
+        's5-title':'Visitor Guide',
+        's5-desc':'Foreigners, NGO workers, journalists and investors visiting South Sudan or East Africa — safe local transport, trusted hotels, security briefing and on-the-ground support.',
+        's5-from':'Consultation from','s5-note':'Full package quoted per case',
+        's5-inc-lbl':'What\'s included','s5-docs-lbl':'Documents you will need',
+        's5-i1':'Airport pickup in Juba or Kampala on arrival',
+        's5-i2':'Trusted hotel & guesthouse reservations',
+        's5-i3':'Safe local transport with verified drivers',
+        's5-i4':'Local SIM card & internet setup',
+        's5-i5':'Security briefing & safe-zone guidance',
+        's5-i6':'Emergency WhatsApp support 24/7',
+        's5-d1':'Valid passport (minimum 6 months remaining)',
+        's5-d2':'South Sudan / Uganda entry visa (we help arrange)',
+        's5-d3':'Yellow fever vaccination card',
+        's5-d4':'Travel insurance with emergency cover',
+        's5-d5':'Organisation letter (for NGO / press visitors)',
+        's5-time':'Book 3–7 days in advance','s5-dest':'Juba · Kampala · Nairobi · Kigali',
+        's5-btn':'Book Visitor Guide →',
+        'cmp-overline':'Compare services',
+        'cmp-title':'Which service is <strong>right for you?</strong>',
+        'cmp-sub':'Use this table to find the service that matches your situation.',
+        'cmp-h0':'Feature','cmp-h1':'Study','cmp-h2':'Work','cmp-h3':'Medical','cmp-h4':'Travel','cmp-h5':'Visitor',
+        'cmp-r1':'Visa assistance','cmp-r2':'Flight booking','cmp-r3':'Hotel / accommodation',
+        'cmp-r4':'Airport pickup','cmp-r5':'University application','cmp-r6':'Job placement',
+        'cmp-r7':'Hospital appointment','cmp-r8':'WhatsApp support','cmp-r9':'Consultation fee',
+        'faq-overline':'FAQ','faq-title':'Frequently asked <strong>questions</strong>',
+        'faq-sub':'Everything you need to know before you apply.',
+        'faq-q1':'Is PathWay Africa a legitimate company?',
+        'faq-a1':'Yes. PathWay Africa is a registered travel and relocation consultancy based in South Sudan and Uganda. All our partners are fully verified. We have helped clients from South Sudan, Uganda, Kenya, Ethiopia and DR Congo.',
+        'faq-q2':'Why do I pay a consultation fee first?',
+        'faq-a2':'The fee activates your case and covers the time of our specialist who contacts you personally via WhatsApp within 24 hours. It is separate from visa, university or flight costs.',
+        'faq-q3':'What if my visa application is rejected?',
+        'faq-a3':'We analyze the reason and advise on next steps — reapplication, alternative destinations or different visa categories. We do not abandon clients after a rejection.',
+        'faq-q4':'How do I pay? I don\'t have a bank account.',
+        'faq-a4':'No bank account needed. Send the fee via MTN Mobile Money to +211 922 882 019 and paste your transaction ID into the application form.',
+        'faq-q5':'How long does the whole process take?',
+        'faq-a5':'Travel visas: 1–4 weeks. Student visas: 4–12 weeks. Work visas: 6–16 weeks. Medical tourism: 2–6 weeks. Exact timeline given during your WhatsApp consultation.',
+        'faq-q6':'I have no passport yet. Can you still help?',
+        'faq-a6':'Yes — we guide you through the passport application in South Sudan or Uganda. Start as early as possible since it can take several weeks.',
+        'trust-overline':'Why choose us',
+        'trust-title':'Built for Africans.<br><strong>Trusted by Africans.</strong>',
+        'trust-sub':'We understand the challenges of travelling from conflict-affected regions.',
+        'trust1-title':'100% Legitimate','trust1-desc':'All our university partners, visa agents and hospitals are fully verified and legitimate.',
+        'trust2-title':'WhatsApp support','trust2-desc':'We communicate with you directly on WhatsApp — no complicated systems or call centres.',
+        'trust3-title':'Pay via MTN Money','trust3-desc':'Pay consultation fees easily via MTN Mobile Money — no bank account needed.',
+        'trust4-title':'We know Africa','trust4-desc':'Founded in South Sudan — we understand your documents, your situation and your needs.',
+        'cta-title':'Not sure which service <strong>you need?</strong>',
+        'cta-sub':'Apply now and describe your situation. Our team will advise you on the best service and route within 24 hours.',
+        'cta-btn':'Start your application →',
+        'f-home':'Home','f-services':'Services','f-uni':'Universities','f-apply':'Apply','f-wa':'WhatsApp',
+        'footer-copy':'PathWay Africa © 2026 — South Sudan & East Africa — thebangbe@gmail.com',
+        'wa-tooltip':'Chat with us',
+      },
+
+      ar: {
+        'nav-home':'الرئيسية','nav-services':'الخدمات','nav-uni':'الجامعات',
+        'nav-about':'عن الشركة','nav-apply':'قدّم الآن',
+        'ph-badge':'🛎️ ما نقدمه',
+        'ph-title':'كل ما تحتاجه<br><strong>من أفريقيا إلى العالم</strong>',
+        'ph-sub':'تأشيرة. جامعة. رحلات. فنادق. طب. عمل. نتولى كل شيء — لتتفرّغ لمستقبلك.',
+        's1-title':'الدراسة في الخارج',
+        's1-desc':'نربط الطلاب الأفارقة بأفضل الجامعات في العالم. من اختيار التخصص حتى الوصول إلى الحرم الجامعي — نتولى كل شيء.',
+        's1-from':'الاستشارة من','s1-note':'يُقتبس الحزمة الكاملة لكل حالة',
+        's1-inc-lbl':'ما يشمله الخدمة','s1-docs-lbl':'المستندات المطلوبة',
+        's1-i1':'البحث عن الجامعات وإدراجها بناءً على مؤهلاتك',
+        's1-i2':'تقديم الطلبات إلى 3 جامعات من اختيارك',
+        's1-i3':'توجيه طلب تأشيرة الطالب وإعداد الوثائق',
+        's1-i4':'ترتيب السكن بالقرب من جامعتك',
+        's1-i5':'مساعدة في حجز الطيران وتنسيق الاستقبال في المطار',
+        's1-i6':'دعم واتساب طوال رحلتك',
+        's1-d1':'جواز سفر ساري (لا يقل عن سنتين متبقيتين)',
+        's1-d2':'الشهادات الأكاديمية (O-level أو ما يعادلها)',
+        's1-d3':'نتيجة اختبار اللغة الإنجليزية (IELTS/TOEFL إذا لزم)',
+        's1-d4':'كشف حساب بنكي أو إثبات مالي',
+        's1-d5':'صور بحجم جواز السفر (خلفية بيضاء)',
+        's1-d6':'رسالة شخصية / رسالة دوافع',
+        's1-time':'المعالجة: 4–12 أسبوعاً','s1-dest':'المملكة المتحدة · كندا · أستراليا · ألمانيا · ماليزيا',
+        's1-btn':'تقدم للدراسة في الخارج ←',
+        's2-title':'العمل في الخارج',
+        's2-desc':'نساعد الأفارقة المهرة في إيجاد فرص عمل مشروعة. التوظيف وتصريح العمل والتأشيرة ودعم الانتقال الكامل — في مكان واحد.',
+        's2-from':'الاستشارة من','s2-note':'يُقتبس الحزمة الكاملة لكل حالة',
+        's2-inc-lbl':'ما يشمله الخدمة','s2-docs-lbl':'المستندات المطلوبة',
+        's2-i1':'مساعدة في البحث عن وظيفة في مجال خبرتك',
+        's2-i2':'كتابة السيرة الذاتية وفق المعايير الدولية',
+        's2-i3':'دعم طلب تصريح العمل والتأشيرة',
+        's2-i4':'مراجعة عقد صاحب العمل والإرشاد',
+        's2-i5':'دعم الانتقال — رحلات وإقامة وتوجيه',
+        's2-i6':'دعم واتساب بعد الوصول لأول 30 يوماً',
+        's2-d1':'جواز سفر ساري (لا يقل عن سنتين)','s2-d2':'سيرة ذاتية محدّثة',
+        's2-d3':'شهادات مهنية / دبلومات','s2-d4':'خطابات مرجعية من جهات العمل السابقة',
+        's2-d5':'شهادة حسن السيرة والسلوك','s2-d6':'شهادة لياقة طبية',
+        's2-time':'المعالجة: 6–16 أسبوعاً','s2-dest':'الإمارات · قطر · السعودية · المملكة المتحدة · كندا',
+        's2-btn':'تقدم للعمل في الخارج ←',
+        's3-title':'السياحة العلاجية',
+        's3-desc':'الوصول إلى مستشفيات عالمية في الهند والإمارات وتايلاند. نرتب التأشيرة الطبية والموعد والرحلات والفندق بجانب المستشفى.',
+        's3-from':'الاستشارة من','s3-note':'يُقتبس الحزمة الكاملة لكل حالة',
+        's3-inc-lbl':'ما يشمله الخدمة','s3-docs-lbl':'المستندات المطلوبة',
+        's3-i1':'اختيار المستشفى والمتخصص بناءً على حالتك الطبية',
+        's3-i2':'طلب التأشيرة الطبية وإعداد الوثائق',
+        's3-i3':'حجز موعد المستشفى وتأكيده كتابياً',
+        's3-i4':'حجز رحلة إلى الدولة المقصودة',
+        's3-i5':'إقامة فندقية بالقرب من المستشفى',
+        's3-i6':'الاستقبال في المطار وإرشاد النقل المحلي',
+        's3-d1':'جواز سفر ساري (لا يقل عن 6 أشهر)',
+        's3-d2':'السجلات الطبية وتقارير التشخيص',
+        's3-d3':'خطاب إحالة من طبيبك المحلي',
+        's3-d4':'كشف حساب بنكي يُثبت توافر الأموال',
+        's3-d5':'نتائج تحاليل الدم والأشعة الحديثة',
+        's3-d6':'تأمين السفر (يُنصح به بشدة)',
+        's3-time':'المعالجة: 2–6 أسابيع','s3-dest':'الهند · الإمارات · تايلاند · تركيا',
+        's3-btn':'تقدم للسياحة العلاجية ←',
+        's4-title':'السفر والانتقال',
+        's4-desc':'هل تنتقل إلى دولة جديدة أو تزورها؟ نتولى التأشيرة والرحلة والفندق ونرشدك خطوة بخطوة عند الوصول.',
+        's4-from':'الاستشارة من','s4-note':'يُقتبس الحزمة الكاملة لكل حالة',
+        's4-inc-lbl':'ما يشمله الخدمة','s4-docs-lbl':'المستندات المطلوبة',
+        's4-i1':'طلب تأشيرة السفر/السياحة والإرشاد',
+        's4-i2':'حجز الطيران — أفضل المسارات والأسعار',
+        's4-i3':'حجز فندق أو شقة مفروشة',
+        's4-i4':'ترتيب الاستقبال في المطار عند الوصول',
+        's4-i5':'التوجيه المحلي وإرشادات السلامة',
+        's4-i6':'مساعدة في الحصول على شريحة اتصال وفتح حساب بنكي',
+        's4-d1':'جواز سفر ساري (لا يقل عن 6 أشهر)','s4-d2':'كشف حساب بنكي (آخر 3 أشهر)',
+        's4-d3':'إثبات الإقامة / حجز الفندق','s4-d4':'تذكرة العودة أو إثبات السفر المستمر',
+        's4-d5':'تأمين السفر','s4-d6':'صور بحجم جواز السفر (خلفية بيضاء)',
+        's4-time':'المعالجة: 1–4 أسابيع','s4-dest':'أكثر من 50 دولة حول العالم',
+        's4-btn':'تقدم للسفر والانتقال ←',
+        's5-title':'دليل الزوار',
+        's5-desc':'للأجانب وعمال المنظمات والصحفيين والمستثمرين القادمين إلى جنوب السودان أو شرق أفريقيا — نقل آمن وفنادق موثوقة وإرشاد أمني ودعم ميداني.',
+        's5-from':'الاستشارة من','s5-note':'يُقتبس الحزمة الكاملة لكل حالة',
+        's5-inc-lbl':'ما يشمله الخدمة','s5-docs-lbl':'المستندات المطلوبة',
+        's5-i1':'الاستقبال في مطار جوبا أو كمبالا عند الوصول',
+        's5-i2':'حجوزات فنادق وبيوت ضيافة موثوقة',
+        's5-i3':'نقل محلي آمن مع سائقين موثقين',
+        's5-i4':'إعداد شريحة اتصال محلية وإنترنت',
+        's5-i5':'إحاطة أمنية وإرشاد للمناطق الآمنة',
+        's5-i6':'دعم واتساب طارئ على مدار الساعة',
+        's5-d1':'جواز سفر ساري (لا يقل عن 6 أشهر)',
+        's5-d2':'تأشيرة دخول جنوب السودان/أوغندا (نساعد في ترتيبها)',
+        's5-d3':'بطاقة تطعيم الحمى الصفراء',
+        's5-d4':'تأمين سفر يشمل تغطية الطوارئ',
+        's5-d5':'خطاب منظمة (لزوار المنظمات/الصحافة)',
+        's5-time':'احجز قبل 3–7 أيام','s5-dest':'جوبا · كمبالا · نيروبي · كيغالي',
+        's5-btn':'احجز دليل الزوار ←',
+        'cmp-overline':'مقارنة الخدمات','cmp-title':'أي خدمة <strong>تناسبك؟</strong>',
+        'cmp-sub':'استخدم هذا الجدول للعثور على الخدمة المناسبة لوضعك.',
+        'cmp-h0':'الميزة','cmp-h1':'الدراسة','cmp-h2':'العمل','cmp-h3':'الطب','cmp-h4':'السفر','cmp-h5':'الزيارة',
+        'cmp-r1':'مساعدة التأشيرة','cmp-r2':'حجز الطيران','cmp-r3':'الفندق/الإقامة',
+        'cmp-r4':'الاستقبال في المطار','cmp-r5':'طلب جامعي','cmp-r6':'توظيف',
+        'cmp-r7':'موعد مستشفى','cmp-r8':'دعم واتساب','cmp-r9':'رسوم الاستشارة',
+        'faq-overline':'الأسئلة الشائعة','faq-title':'أسئلة <strong>متكررة</strong>',
+        'faq-sub':'كل ما تحتاج معرفته قبل التقديم.',
+        'faq-q1':'هل PathWay Africa شركة شرعية؟',
+        'faq-a1':'نعم. PathWay Africa استشارية سفر وانتقال مسجلة في جنوب السودان وأوغندا. جميع شركائنا موثقون بالكامل.',
+        'faq-q2':'لماذا أدفع رسوم الاستشارة أولاً؟',
+        'faq-a2':'الرسوم تفعّل قضيتك وتغطي وقت المتخصص الذي يتواصل معك عبر واتساب خلال 24 ساعة.',
+        'faq-q3':'ماذا لو رُفض طلب تأشيرتي؟',
+        'faq-a3':'نحلل السبب ونرشدك للخطوات التالية — إعادة التقديم أو وجهات بديلة أو فئات تأشيرة أخرى.',
+        'faq-q4':'كيف أدفع؟ ليس لدي حساب بنكي.',
+        'faq-a4':'لا حاجة لحساب بنكي. أرسل الرسوم عبر MTN موبايل موني إلى +211 922 882 019 والصق رقم المعاملة في النموذج.',
+        'faq-q5':'كم يستغرق الإجراء بأكمله؟',
+        'faq-a5':'تأشيرات السفر: 1–4 أسابيع. تأشيرات الطلاب: 4–12 أسبوعاً. تأشيرات العمل: 6–16 أسبوعاً. السياحة الطبية: 2–6 أسابيع.',
+        'faq-q6':'ليس لدي جواز سفر بعد. هل يمكنكم مساعدتي؟',
+        'faq-a6':'نعم — نرشدك خلال عملية طلب جواز السفر في جنوب السودان أو أوغندا.',
+        'trust-overline':'لماذا تختارنا',
+        'trust-title':'مبني للأفارقة.<br><strong>موثوق من الأفارقة.</strong>',
+        'trust-sub':'نفهم تحديات السفر من المناطق المتضررة من النزاعات.',
+        'trust1-title':'100% شرعي','trust1-desc':'جميع شركائنا من الجامعات ووكلاء التأشيرات والمستشفيات موثقون بالكامل.',
+        'trust2-title':'دعم واتساب','trust2-desc':'نتواصل معك مباشرة عبر واتساب — لا أنظمة معقدة.',
+        'trust3-title':'ادفع عبر MTN','trust3-desc':'ادفع بسهولة عبر MTN موبايل موني — لا حاجة لحساب بنكي.',
+        'trust4-title':'نعرف أفريقيا','trust4-desc':'تأسست في جنوب السودان — نفهم وثائقك واحتياجاتك.',
+        'cta-title':'لست متأكداً من الخدمة <strong>التي تحتاجها؟</strong>',
+        'cta-sub':'قدّم الآن وأخبرنا بوضعك. سيرشدك فريقنا خلال 24 ساعة.',
+        'cta-btn':'ابدأ طلبك الآن ←',
+        'f-home':'الرئيسية','f-services':'الخدمات','f-uni':'الجامعات','f-apply':'قدّم','f-wa':'واتساب',
+        'footer-copy':'PathWay Africa © 2026 — جنوب السودان وشرق أفريقيا — thebangbe@gmail.com',
+        'wa-tooltip':'تحدث معنا',
+      },
+
+      fr: {
+        'nav-home':'Accueil','nav-services':'Services','nav-uni':'Universités',
+        'nav-about':'À Propos','nav-apply':'Postuler',
+        'ph-badge':'🛎️ Ce que nous offrons',
+        'ph-title':'Tout ce dont vous avez besoin<br><strong>de l\'Afrique vers le Monde</strong>',
+        'ph-sub':'Visa. Université. Vols. Hôtels. Médical. Travail. Nous gérons tout — pour que vous vous concentriez sur votre avenir.',
+        's1-title':'Études à l\'Étranger',
+        's1-desc':'Nous connectons les étudiants africains aux meilleures universités mondiales. De la sélection du cours jusqu\'à votre arrivée — nous gérons tout.',
+        's1-from':'Consultation à partir de','s1-note':'Forfait complet sur devis',
+        's1-inc-lbl':'Ce qui est inclus','s1-docs-lbl':'Documents requis',
+        's1-i1':'Recherche et sélection d\'universités selon vos qualifications',
+        's1-i2':'Soumission de candidatures à 3 universités de votre choix',
+        's1-i3':'Guidance pour le visa étudiant et préparation des documents',
+        's1-i4':'Arrangement de logement près de votre université',
+        's1-i5':'Aide à la réservation de vols et coordination de l\'accueil',
+        's1-i6':'Support WhatsApp tout au long de votre voyage',
+        's1-d1':'Passeport valide (minimum 2 ans restants)',
+        's1-d2':'Certificats académiques (O-level, A-level ou équivalent)',
+        's1-d3':'Test de langue anglaise (IELTS/TOEFL si requis)',
+        's1-d4':'Relevé bancaire ou preuve financière',
+        's1-d5':'Photos format passeport (fond blanc)',
+        's1-d6':'Déclaration personnelle / lettre de motivation',
+        's1-time':'Traitement: 4–12 semaines','s1-dest':'UK · Canada · Australie · Allemagne · Malaisie',
+        's1-btn':'Postuler pour Études à l\'Étranger →',
+        's2-title':'Travail à l\'Étranger',
+        's2-desc':'Nous aidons les Africains qualifiés à trouver des emplois légitimes à l\'étranger. Placement, permis de travail, visa et soutien complet à la relocalisation.',
+        's2-from':'Consultation à partir de','s2-note':'Forfait complet sur devis',
+        's2-inc-lbl':'Ce qui est inclus','s2-docs-lbl':'Documents requis',
+        's2-i1':'Aide à la recherche d\'emploi dans votre domaine',
+        's2-i2':'Rédaction de CV selon les normes internationales',
+        's2-i3':'Soutien pour le permis de travail et la demande de visa',
+        's2-i4':'Révision du contrat employeur et conseils',
+        's2-i5':'Soutien à la relocalisation — vols, hébergement & orientation',
+        's2-i6':'Support WhatsApp post-arrivée pour les 30 premiers jours',
+        's2-d1':'Passeport valide (minimum 2 ans restants)','s2-d2':'CV à jour',
+        's2-d3':'Certificats professionnels / diplômes','s2-d4':'Lettres de référence professionnelles',
+        's2-d5':'Certificat de bonne conduite','s2-d6':'Certificat médical d\'aptitude',
+        's2-time':'Traitement: 6–16 semaines','s2-dest':'EAU · Qatar · Arabie Saoudite · UK · Canada',
+        's2-btn':'Postuler pour Travail à l\'Étranger →',
+        's3-title':'Tourisme Médical',
+        's3-desc':'Accédez aux meilleurs hôpitaux en Inde, EAU et Thaïlande. Nous arrangeons visa médical, rendez-vous, vols et hôtel près de l\'hôpital.',
+        's3-from':'Consultation à partir de','s3-note':'Forfait complet sur devis',
+        's3-inc-lbl':'Ce qui est inclus','s3-docs-lbl':'Documents requis',
+        's3-i1':'Sélection d\'hôpital et de spécialiste selon votre condition',
+        's3-i2':'Demande de visa médical et préparation des documents',
+        's3-i3':'Réservation et confirmation écrite de rendez-vous',
+        's3-i4':'Réservation de vol vers le pays de destination',
+        's3-i5':'Hébergement hôtelier près de l\'hôpital',
+        's3-i6':'Accueil à l\'aéroport et guidance du transport local',
+        's3-d1':'Passeport valide (minimum 6 mois restants)',
+        's3-d2':'Dossiers médicaux et rapports de diagnostic',
+        's3-d3':'Lettre de référence d\'un médecin local',
+        's3-d4':'Relevé bancaire montrant des fonds suffisants',
+        's3-d5':'Résultats récents d\'analyses et de radiologie',
+        's3-d6':'Assurance voyage (fortement recommandée)',
+        's3-time':'Traitement: 2–6 semaines','s3-dest':'Inde · EAU · Thaïlande · Turquie',
+        's3-btn':'Postuler pour Tourisme Médical →',
+        's4-title':'Voyage et Relocalisation',
+        's4-desc':'Vous déménagez dans un nouveau pays? Nous gérons visa, vol, hôtel et vous guidons à chaque étape à votre arrivée.',
+        's4-from':'Consultation à partir de','s4-note':'Forfait complet sur devis',
+        's4-inc-lbl':'Ce qui est inclus','s4-docs-lbl':'Documents requis',
+        's4-i1':'Demande de visa touristique et guidance',
+        's4-i2':'Réservation de vol — meilleures routes et prix',
+        's4-i3':'Réservation d\'hôtel ou appartement meublé',
+        's4-i4':'Organisation de l\'accueil à l\'aéroport',
+        's4-i5':'Orientation locale et conseils de sécurité',
+        's4-i6':'Aide pour la carte SIM et l\'ouverture d\'un compte bancaire',
+        's4-d1':'Passeport valide (minimum 6 mois restants)','s4-d2':'Relevé bancaire (3 derniers mois)',
+        's4-d3':'Preuve d\'hébergement / réservation hôtelière','s4-d4':'Billet de retour ou preuve de voyage ultérieur',
+        's4-d5':'Assurance voyage','s4-d6':'Photos format passeport (fond blanc)',
+        's4-time':'Traitement: 1–4 semaines','s4-dest':'Plus de 50 pays dans le monde',
+        's4-btn':'Postuler pour Voyage et Relocalisation →',
+        's5-title':'Guide Visiteur',
+        's5-desc':'Pour les étrangers, travailleurs ONG, journalistes et investisseurs visitant le Soudan du Sud ou l\'Afrique de l\'Est — transport sécurisé, hôtels fiables, briefing sécurité et support terrain.',
+        's5-from':'Consultation à partir de','s5-note':'Forfait complet sur devis',
+        's5-inc-lbl':'Ce qui est inclus','s5-docs-lbl':'Documents requis',
+        's5-i1':'Accueil à l\'aéroport de Juba ou Kampala',
+        's5-i2':'Réservations d\'hôtels et maisons d\'hôtes fiables',
+        's5-i3':'Transport local sécurisé avec chauffeurs vérifiés',
+        's5-i4':'Installation de carte SIM locale et internet',
+        's5-i5':'Briefing sécurité et guidance des zones sûres',
+        's5-i6':'Support WhatsApp d\'urgence 24h/24',
+        's5-d1':'Passeport valide (minimum 6 mois restants)',
+        's5-d2':'Visa d\'entrée Soudan du Sud/Ouganda (nous aidons)',
+        's5-d3':'Carte de vaccination contre la fièvre jaune',
+        's5-d4':'Assurance voyage avec couverture urgence',
+        's5-d5':'Lettre d\'organisation (pour visiteurs ONG/presse)',
+        's5-time':'Réserver 3–7 jours à l\'avance','s5-dest':'Juba · Kampala · Nairobi · Kigali',
+        's5-btn':'Réserver Guide Visiteur →',
+        'cmp-overline':'Comparer les services','cmp-title':'Quel service vous <strong>convient le mieux?</strong>',
+        'cmp-sub':'Utilisez ce tableau pour trouver le service qui correspond à votre situation.',
+        'cmp-h0':'Fonctionnalité','cmp-h1':'Études','cmp-h2':'Travail','cmp-h3':'Médical','cmp-h4':'Voyage','cmp-h5':'Visiteur',
+        'cmp-r1':'Aide visa','cmp-r2':'Réservation vol','cmp-r3':'Hôtel/hébergement',
+        'cmp-r4':'Accueil aéroport','cmp-r5':'Candidature universitaire','cmp-r6':'Placement emploi',
+        'cmp-r7':'Rendez-vous hôpital','cmp-r8':'Support WhatsApp','cmp-r9':'Frais consultation',
+        'faq-overline':'FAQ','faq-title':'Questions <strong>fréquentes</strong>',
+        'faq-sub':'Tout ce que vous devez savoir avant de postuler.',
+        'faq-q1':'PathWay Africa est-elle une entreprise légitime?',
+        'faq-a1':'Oui. PathWay Africa est une agence enregistrée au Soudan du Sud et en Ouganda. Tous nos partenaires sont entièrement vérifiés.',
+        'faq-q2':'Pourquoi payer des frais de consultation d\'abord?',
+        'faq-a2':'Les frais activent votre dossier et couvrent le temps de notre spécialiste qui vous contacte via WhatsApp dans les 24 heures.',
+        'faq-q3':'Que se passe-t-il si ma demande de visa est rejetée?',
+        'faq-a3':'Nous analysons la raison et vous conseillons sur les prochaines étapes — réapplication, destinations alternatives ou autres catégories de visa.',
+        'faq-q4':'Comment payer? Je n\'ai pas de compte bancaire.',
+        'faq-a4':'Pas besoin de compte bancaire. Envoyez les frais via MTN Mobile Money au +211 922 882 019 et collez votre ID de transaction dans le formulaire.',
+        'faq-q5':'Combien de temps dure tout le processus?',
+        'faq-a5':'Visa touristique: 1–4 sem. Visa étudiant: 4–12 sem. Visa travail: 6–16 sem. Tourisme médical: 2–6 sem.',
+        'faq-q6':'Je n\'ai pas encore de passeport. Pouvez-vous aider?',
+        'faq-a6':'Oui — nous vous guidons dans la demande de passeport au Soudan du Sud ou en Ouganda.',
+        'trust-overline':'Pourquoi nous choisir',
+        'trust-title':'Construit pour les Africains.<br><strong>De confiance.</strong>',
+        'trust-sub':'Nous comprenons les défis des voyages depuis les régions touchées par les conflits.',
+        'trust1-title':'100% Légitime','trust1-desc':'Tous nos partenaires sont entièrement vérifiés.',
+        'trust2-title':'Support WhatsApp','trust2-desc':'Nous communiquons directement sur WhatsApp — aucun système compliqué.',
+        'trust3-title':'Payer via MTN','trust3-desc':'Payez facilement via MTN Mobile Money — pas besoin de compte bancaire.',
+        'trust4-title':'Nous connaissons l\'Afrique','trust4-desc':'Fondé au Soudan du Sud — nous comprenons vos documents et vos besoins.',
+        'cta-title':'Pas sûr du service <strong>dont vous avez besoin?</strong>',
+        'cta-sub':'Postulez maintenant et décrivez votre situation. Notre équipe vous conseillera dans les 24 heures.',
+        'cta-btn':'Commencer votre demande →',
+        'f-home':'Accueil','f-services':'Services','f-uni':'Universités','f-apply':'Postuler','f-wa':'WhatsApp',
+        'footer-copy':'PathWay Africa © 2026 — Soudan du Sud & Afrique de l\'Est — thebangbe@gmail.com',
+        'wa-tooltip':'Discutez avec nous',
+      }
+    };
+
+    // ── 12. setLang — identical function to index.html & apply.html ──
+    function setLang(lang) {
+      if (!['en','ar','fr'].includes(lang)) return; // Security: whitelist only
+      const html = document.getElementById('html-root');
+      html.setAttribute('lang', lang);
+      html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      ['btn-en','btn-ar','btn-fr'].forEach(id => {
+        document.getElementById(id).className = 'lang-btn';
+      });
+      document.getElementById('btn-' + lang).className = 'lang-btn active';
+      const t = T[lang];
+      for (const [id, text] of Object.entries(t)) {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = text;
+      }
+      try { localStorage.setItem('pw-lang', lang); } catch(e) {}
+    }
+
+    // ── 13. Restore saved language on load — same as index.html ──
+    try {
+      const saved = localStorage.getItem('pw-lang');
+      if (saved && ['en','ar','fr'].includes(saved)) setLang(saved);
+    } catch(e) {}
+
+  </script>
+</body>
 </html>
